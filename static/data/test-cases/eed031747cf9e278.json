@@ -1,0 +1,58 @@
+{
+  "uid" : "eed031747cf9e278",
+  "name" : "test_minor",
+  "fullName" : "test_demo#test_minor",
+  "historyId" : "1ae6d4eb7f35adb84aa0e07cb83710fb",
+  "time" : {
+    "start" : 1522291858295,
+    "stop" : 1522291858298,
+    "duration" : 3
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert False",
+  "statusTrace" : "@allure.feature('Feature1')\n    @allure.story('Story1')\n    def test_minor():\n>       assert False\nE       assert False\n\ntest_demo.py:7: AssertionError",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "Feature1"
+  }, {
+    "name" : "story",
+    "value" : "Story1"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-5PN9VPJ"
+  }, {
+    "name" : "thread",
+    "value" : "21440-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_demo"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "eed031747cf9e278.json",
+  "parameterValues" : [ ]
+}
