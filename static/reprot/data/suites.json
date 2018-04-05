@@ -1,0 +1,53 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "name" : "suites",
+  "children" : [ {
+    "name" : "测试报告",
+    "uid" : "7f0d92a1602c1789",
+    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
+    "status" : "passed",
+    "time" : {
+      "start" : 1522915782733,
+      "stop" : 1522915782734,
+      "duration" : 1
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "测试报告1",
+    "uid" : "ce0f21c9b0ebc315",
+    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
+    "status" : "passed",
+    "time" : {
+      "start" : 1522915782739,
+      "stop" : 1522915782739,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "测试报告2",
+    "uid" : "d77f766b92940d74",
+    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
+    "status" : "failed",
+    "time" : {
+      "start" : 1522915782745,
+      "stop" : 1522915782749,
+      "duration" : 4
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "测试报告3",
+    "uid" : "44128d153a7c8838",
+    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
+    "status" : "passed",
+    "time" : {
+      "start" : 1522915782776,
+      "stop" : 1522915782776,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "parameters" : [ ]
+  } ]
+}

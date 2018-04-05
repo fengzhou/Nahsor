@@ -1,7 +1,4 @@
 {
   "test_demo.py": true,
-  "test_demo1.py::TestBar::()::test_bar1": true,
-  "test_demo1.py::TestBar::()::test_bar2": true,
-  "test_demo1.py::TestBar::()::test_bar3": true,
-  "test_demo1.py::test_minor": true
+  "test_demo1.py::TestBar::()::test_bar2": true
 }

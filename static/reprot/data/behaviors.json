@@ -1,0 +1,149 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "testsuite1",
+    "children" : [ {
+      "name" : "testcass1",
+      "children" : [ {
+        "name" : "测试报告",
+        "uid" : "7f0d92a1602c1789",
+        "parentUid" : "b8e2f648d9bd8ba820fc8e6b172bd121",
+        "status" : "passed",
+        "time" : {
+          "start" : 1522915782733,
+          "stop" : 1522915782734,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b8e2f648d9bd8ba820fc8e6b172bd121"
+    } ],
+    "uid" : "c6231a8b3b4a098a9db6f124bd57239b"
+  }, {
+    "name" : "testsuite2",
+    "children" : [ {
+      "name" : "testcass2",
+      "children" : [ {
+        "name" : "测试报告1",
+        "uid" : "ce0f21c9b0ebc315",
+        "parentUid" : "869ea167a7ee15e56640779e2f09b3a1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1522915782739,
+          "stop" : 1522915782739,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告2",
+        "uid" : "d77f766b92940d74",
+        "parentUid" : "869ea167a7ee15e56640779e2f09b3a1",
+        "status" : "failed",
+        "time" : {
+          "start" : 1522915782745,
+          "stop" : 1522915782749,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告3",
+        "uid" : "44128d153a7c8838",
+        "parentUid" : "869ea167a7ee15e56640779e2f09b3a1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1522915782776,
+          "stop" : 1522915782776,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "869ea167a7ee15e56640779e2f09b3a1"
+    }, {
+      "name" : "testcass3",
+      "children" : [ {
+        "name" : "测试报告1",
+        "uid" : "ce0f21c9b0ebc315",
+        "parentUid" : "3b275157faa6c0d881e2bc2bf0d828a9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1522915782739,
+          "stop" : 1522915782739,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告2",
+        "uid" : "d77f766b92940d74",
+        "parentUid" : "3b275157faa6c0d881e2bc2bf0d828a9",
+        "status" : "failed",
+        "time" : {
+          "start" : 1522915782745,
+          "stop" : 1522915782749,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告3",
+        "uid" : "44128d153a7c8838",
+        "parentUid" : "3b275157faa6c0d881e2bc2bf0d828a9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1522915782776,
+          "stop" : 1522915782776,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "3b275157faa6c0d881e2bc2bf0d828a9"
+    }, {
+      "name" : "testcass4",
+      "children" : [ {
+        "name" : "测试报告1",
+        "uid" : "ce0f21c9b0ebc315",
+        "parentUid" : "ad4bebf0e57856f06c0fc77d8d120e50",
+        "status" : "passed",
+        "time" : {
+          "start" : 1522915782739,
+          "stop" : 1522915782739,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告2",
+        "uid" : "d77f766b92940d74",
+        "parentUid" : "ad4bebf0e57856f06c0fc77d8d120e50",
+        "status" : "failed",
+        "time" : {
+          "start" : 1522915782745,
+          "stop" : 1522915782749,
+          "duration" : 4
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告3",
+        "uid" : "44128d153a7c8838",
+        "parentUid" : "ad4bebf0e57856f06c0fc77d8d120e50",
+        "status" : "passed",
+        "time" : {
+          "start" : 1522915782776,
+          "stop" : 1522915782776,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "ad4bebf0e57856f06c0fc77d8d120e50"
+    } ],
+    "uid" : "1424ca905bc3b1d4a27d987de683aa1e"
+  } ]
+}
