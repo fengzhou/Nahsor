@@ -1,3 +1,5 @@
 "Status","Name","Duration in ms","Description"
-"failed","test_demo#test_minor","3",""
-"passed","test_demo.TestBar#test_bar","0",""
+"failed","test_demo1.TestBar#test_bar2","3",""
+"passed","test_demo1.TestBar#test_bar3","0",""
+"passed","test_demo1#test_minor","1",""
+"passed","test_demo1.TestBar#test_bar1","0",""

@@ -4,33 +4,57 @@
   "children" : [ {
     "name" : "DESKTOP-5PN9VPJ",
     "children" : [ {
-      "name" : "21440-MainThread",
+      "name" : "25224-MainThread",
       "children" : [ {
-        "name" : "test_minor",
-        "uid" : "eed031747cf9e278",
-        "parentUid" : "f1a764e2526ece6d636fd4a2fb5a027d",
+        "name" : "测试报告2",
+        "uid" : "a0445f616c23a4ef",
+        "parentUid" : "7ba2f69503ee384de97dcf22fb3dfae5",
         "status" : "failed",
         "time" : {
-          "start" : 1522291858295,
-          "stop" : 1522291858298,
+          "start" : 1522905898921,
+          "stop" : 1522905898924,
           "duration" : 3
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告3",
+        "uid" : "f5da771f107ff089",
+        "parentUid" : "7ba2f69503ee384de97dcf22fb3dfae5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1522905898948,
+          "stop" : 1522905898948,
+          "duration" : 0
         },
         "flaky" : false,
         "parameters" : [ ]
       }, {
-        "name" : "test_bar",
-        "uid" : "7420c336db56e392",
-        "parentUid" : "f1a764e2526ece6d636fd4a2fb5a027d",
+        "name" : "测试报告",
+        "uid" : "d88f9d76a20cdf85",
+        "parentUid" : "7ba2f69503ee384de97dcf22fb3dfae5",
         "status" : "passed",
         "time" : {
-          "start" : 1522291858316,
-          "stop" : 1522291858316,
+          "start" : 1522905898911,
+          "stop" : 1522905898912,
+          "duration" : 1
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告1",
+        "uid" : "f2722cd34c54fe14",
+        "parentUid" : "7ba2f69503ee384de97dcf22fb3dfae5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1522905898916,
+          "stop" : 1522905898916,
           "duration" : 0
         },
         "flaky" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "f1a764e2526ece6d636fd4a2fb5a027d"
+      "uid" : "7ba2f69503ee384de97dcf22fb3dfae5"
     } ],
     "uid" : "7dd3f16887bcb91a3944bfb120fb64a6"
   } ]

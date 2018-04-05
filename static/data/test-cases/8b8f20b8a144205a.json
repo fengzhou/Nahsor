@@ -1,0 +1,52 @@
+{
+  "uid" : "8b8f20b8a144205a",
+  "name" : "测试报告",
+  "fullName" : "test_demo1#test_minor",
+  "historyId" : "6351ca98ef5e8c24e24936de8f0bf324",
+  "time" : {
+    "start" : 1522905366521,
+    "stop" : 1522905366521,
+    "duration" : 0
+  },
+  "status" : "failed",
+  "statusMessage" : "AttributeError: module 'allure' has no attribute 'environment'",
+  "statusTrace" : "@allure.title(\"测试报告\")\n    @allure.feature('testsuite1')\n    @allure.story('testcass1')\n    def test_minor():\n>       allure.environment(hostname='www.baidu.com')\nE       AttributeError: module 'allure' has no attribute 'environment'\n\ntest_demo1.py:12: AttributeError",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "testsuite1"
+  }, {
+    "name" : "story",
+    "value" : "testcass1"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-5PN9VPJ"
+  }, {
+    "name" : "thread",
+    "value" : "4192-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_demo1"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "8b8f20b8a144205a.json",
+  "parameterValues" : [ ]
+}

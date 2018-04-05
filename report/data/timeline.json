@@ -4,33 +4,33 @@
   "children" : [ {
     "name" : "DESKTOP-5PN9VPJ",
     "children" : [ {
-      "name" : "21440-MainThread",
+      "name" : "11932-MainThread",
       "children" : [ {
         "name" : "test_minor",
-        "uid" : "eed031747cf9e278",
-        "parentUid" : "f1a764e2526ece6d636fd4a2fb5a027d",
+        "uid" : "9041ae5725474127",
+        "parentUid" : "5037d6285b3c2f449e7785d7a259fd2a",
         "status" : "failed",
         "time" : {
-          "start" : 1522291858295,
-          "stop" : 1522291858298,
-          "duration" : 3
+          "start" : 1522897143780,
+          "stop" : 1522897143782,
+          "duration" : 2
         },
-        "flaky" : false,
+        "flaky" : true,
         "parameters" : [ ]
       }, {
         "name" : "test_bar",
-        "uid" : "7420c336db56e392",
-        "parentUid" : "f1a764e2526ece6d636fd4a2fb5a027d",
+        "uid" : "4630c111835b7af8",
+        "parentUid" : "5037d6285b3c2f449e7785d7a259fd2a",
         "status" : "passed",
         "time" : {
-          "start" : 1522291858316,
-          "stop" : 1522291858316,
+          "start" : 1522897143802,
+          "stop" : 1522897143802,
           "duration" : 0
         },
         "flaky" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "f1a764e2526ece6d636fd4a2fb5a027d"
+      "uid" : "5037d6285b3c2f449e7785d7a259fd2a"
     } ],
     "uid" : "7dd3f16887bcb91a3944bfb120fb64a6"
   } ]

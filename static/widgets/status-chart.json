@@ -1,19 +1,39 @@
 [ {
-  "uid" : "eed031747cf9e278",
-  "name" : "test_minor",
+  "uid" : "a0445f616c23a4ef",
+  "name" : "测试报告2",
   "time" : {
-    "start" : 1522291858295,
-    "stop" : 1522291858298,
+    "start" : 1522905898921,
+    "stop" : 1522905898924,
     "duration" : 3
   },
   "status" : "failed",
   "severity" : "normal"
 }, {
-  "uid" : "7420c336db56e392",
-  "name" : "test_bar",
+  "uid" : "f5da771f107ff089",
+  "name" : "测试报告3",
   "time" : {
-    "start" : 1522291858316,
-    "stop" : 1522291858316,
+    "start" : 1522905898948,
+    "stop" : 1522905898948,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d88f9d76a20cdf85",
+  "name" : "测试报告",
+  "time" : {
+    "start" : 1522905898911,
+    "stop" : 1522905898912,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f2722cd34c54fe14",
+  "name" : "测试报告1",
+  "time" : {
+    "start" : 1522905898916,
+    "stop" : 1522905898916,
     "duration" : 0
   },
   "status" : "passed",

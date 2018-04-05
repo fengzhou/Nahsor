@@ -1,11 +1,11 @@
 {
-  "uid" : "7420c336db56e392",
+  "uid" : "24c1ec82a17a1179",
   "name" : "test_bar",
-  "fullName" : "test_demo.TestBar#test_bar",
-  "historyId" : "63ad83dc0f15a2db8411c53796a8a644",
+  "fullName" : "test_demo1.TestBar#test_bar",
+  "historyId" : "2c218ac21b8eac9b21e82267011b62ba",
   "time" : {
-    "start" : 1522291858316,
-    "stop" : 1522291858316,
+    "start" : 1522897052853,
+    "stop" : 1522897052853,
     "duration" : 0
   },
   "status" : "passed",
@@ -13,23 +13,23 @@
   "beforeStages" : [ ],
   "afterStages" : [ ],
   "labels" : [ {
+    "name" : "story",
+    "value" : "testcass4"
+  }, {
+    "name" : "story",
+    "value" : "testcass2"
+  }, {
+    "name" : "story",
+    "value" : "testcass3"
+  }, {
     "name" : "feature",
-    "value" : "Feature2"
-  }, {
-    "name" : "story",
-    "value" : "Story4"
-  }, {
-    "name" : "story",
-    "value" : "Story2"
-  }, {
-    "name" : "story",
-    "value" : "Story3"
+    "value" : "testsuite2"
   }, {
     "name" : "host",
     "value" : "DESKTOP-5PN9VPJ"
   }, {
     "name" : "thread",
-    "value" : "21440-MainThread"
+    "value" : "11220-MainThread"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -38,21 +38,19 @@
     "value" : "cpython3"
   }, {
     "name" : "package",
-    "value" : "test_demo"
+    "value" : "test_demo1"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "7420c336db56e392.json",
+  "source" : "24c1ec82a17a1179.json",
   "parameterValues" : [ ]
 }

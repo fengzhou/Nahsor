@@ -1,0 +1,123 @@
+{
+  "uid" : "d88f9d76a20cdf85",
+  "name" : "测试报告",
+  "fullName" : "test_demo1#test_minor",
+  "historyId" : "6351ca98ef5e8c24e24936de8f0bf324",
+  "time" : {
+    "start" : 1522905898911,
+    "stop" : 1522905898912,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "flaky" : true,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "testsuite1"
+  }, {
+    "name" : "story",
+    "value" : "testcass1"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-5PN9VPJ"
+  }, {
+    "name" : "thread",
+    "value" : "25224-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_demo1"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "b69b454c14428241",
+      "status" : "passed",
+      "time" : {
+        "start" : 1522905896896,
+        "stop" : 1522905896896,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "cf0bc3cf53796c24",
+      "status" : "failed",
+      "statusDetails" : "AttributeError: module 'allure' has no attribute 'environment'",
+      "time" : {
+        "start" : 1522905862920,
+        "stop" : 1522905862920,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "8b8f20b8a144205a",
+      "status" : "failed",
+      "statusDetails" : "AttributeError: module 'allure' has no attribute 'environment'",
+      "time" : {
+        "start" : 1522905366521,
+        "stop" : 1522905366521,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "e5f8d941ff5f285a",
+      "status" : "failed",
+      "statusDetails" : "AttributeError: module 'allure' has no attribute 'environment'",
+      "time" : {
+        "start" : 1522905340714,
+        "stop" : 1522905340714,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "70ecee12c5b6d765",
+      "status" : "failed",
+      "statusDetails" : "AttributeError: module 'allure' has no attribute 'environment'",
+      "time" : {
+        "start" : 1522905310151,
+        "stop" : 1522905310151,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "fabf1a13c45dcb1e",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert False",
+      "time" : {
+        "start" : 1522905125701,
+        "stop" : 1522905125703,
+        "duration" : 2
+      }
+    }, {
+      "uid" : "4ecfdfc66f063007",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert False",
+      "time" : {
+        "start" : 1522900054074,
+        "stop" : 1522900054076,
+        "duration" : 2
+      }
+    }, {
+      "uid" : "8d767594c21cd93f",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert False",
+      "time" : {
+        "start" : 1522899920800,
+        "stop" : 1522899920802,
+        "duration" : 2
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d88f9d76a20cdf85.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,123 @@
+{
+  "uid" : "b87168db812d0f71",
+  "name" : "测试报告2",
+  "fullName" : "test_demo1.TestBar#test_bar2",
+  "historyId" : "ae3b472d7595459a20e0469e7ce9ae96",
+  "time" : {
+    "start" : 1522900054109,
+    "stop" : 1522900054111,
+    "duration" : 2
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert False",
+  "statusTrace" : "self = <test_demo1.TestBar object at 0x0000019C2166B358>\n\n    @allure.title(\"测试报告2\")\n    def test_bar2(self):\n        with allure.step(\"步骤一\"):\n            assert True\n        with allure.step(\"步骤二\"):\n            assert True\n        with allure.step(\"步骤三\"):\n            allure.attach('失败的步骤', '具体内容')\n>           assert False\nE           assert False\n\ntest_demo1.py:31: AssertionError",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert False",
+    "statusTrace" : "self = <test_demo1.TestBar object at 0x0000019C2166B358>\n\n    @allure.title(\"测试报告2\")\n    def test_bar2(self):\n        with allure.step(\"步骤一\"):\n            assert True\n        with allure.step(\"步骤二\"):\n            assert True\n        with allure.step(\"步骤三\"):\n            allure.attach('失败的步骤', '具体内容')\n>           assert False\nE           assert False\n\ntest_demo1.py:31: AssertionError",
+    "steps" : [ {
+      "name" : "步骤一",
+      "time" : {
+        "start" : 1522900054110,
+        "stop" : 1522900054110,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "步骤二",
+      "time" : {
+        "start" : 1522900054110,
+        "stop" : 1522900054110,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "步骤三",
+      "time" : {
+        "start" : 1522900054110,
+        "stop" : 1522900054111,
+        "duration" : 1
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: assert False\n",
+      "statusTrace" : "  File \"E:\\Nahsor\\test_demo1.py\", line 31, in test_bar2\n    assert False\n",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9f2ca56081f87bc8",
+        "name" : "具体内容",
+        "source" : "9f2ca56081f87bc8.attach",
+        "type" : "text/plain",
+        "size" : 15
+      } ],
+      "parameters" : [ ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 3,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "testsuite2"
+  }, {
+    "name" : "story",
+    "value" : "testcass2"
+  }, {
+    "name" : "story",
+    "value" : "testcass3"
+  }, {
+    "name" : "story",
+    "value" : "testcass4"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-5PN9VPJ"
+  }, {
+    "name" : "thread",
+    "value" : "15312-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_demo1"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "b87168db812d0f71.json",
+  "parameterValues" : [ ]
+}
