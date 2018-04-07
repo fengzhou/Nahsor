@@ -3,7 +3,6 @@ app = Flask(__name__,static_url_path='')
 
 @app.route('/')
 def index():
-    # return render_template('请访问http://127.0.0.1:8808/reprot/index.html')
     return '<h1>请访问http://127.0.0.1:8808/report/index.html</h1>'
 
 
