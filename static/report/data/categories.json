@@ -7,12 +7,12 @@
       "name" : "AssertionError: assert False",
       "children" : [ {
         "name" : "测试报告2",
-        "uid" : "d77f766b92940d74",
+        "uid" : "f9fe28113fbbf712",
         "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
         "status" : "failed",
         "time" : {
-          "start" : 1522915782745,
-          "stop" : 1522915782749,
+          "start" : 1523245730517,
+          "stop" : 1523245730521,
           "duration" : 4
         },
         "flaky" : false,

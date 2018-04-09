@@ -26,13 +26,15 @@ py.test --alluredir ./test
 本机的浏览器将打开http://127.0.0.1:8083/index.html网页，展示测试报告。
 
 
-安装scopr
-Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-iex (new-object net.webclient).downloadstring('https://get.scoop.sh')
-安装allure
-scoop install allure
-配置java环境变量
-安装allure-pytest
+#安装scopr
+1、在windows powershell 输入：  
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser  
+iex (new-object net.webclient).downloadstring('https://get.scoop.sh')  
+# 安装allure
+2、在cmd输入  
+scoop install allure  
+3、配置java环境变量  
+4、安装allure-pytest  
 OK
 运行脚本并生成测试报告需要的文件
 py.test --alluredir=%allure_result_folder% ./tests
