@@ -1,5 +1,5 @@
 {
-  "uid" : "f9fe28113fbbf712",
+  "uid" : "61c7f57e251f6bbb",
   "name" : "测试报告2",
   "fullName" : "test_demo1.TestBar#test_bar2",
   "historyId" : "ae3b472d7595459a20e0469e7ce9ae96",
@@ -28,10 +28,10 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
-      "hasContent" : false,
       "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0
+      "attachmentsCount" : 0,
+      "hasContent" : false,
+      "stepsCount" : 0
     }, {
       "name" : "步骤二",
       "time" : {
@@ -43,10 +43,10 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "stepsCount" : 0,
-      "hasContent" : false,
       "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0
+      "attachmentsCount" : 0,
+      "hasContent" : false,
+      "stepsCount" : 0
     }, {
       "name" : "步骤三",
       "time" : {
@@ -59,24 +59,24 @@
       "statusTrace" : "  File \"E:\\Nahsor\\test_demo1.py\", line 35, in test_bar2\n    assert False\n",
       "steps" : [ ],
       "attachments" : [ {
-        "uid" : "58b401f8a7e184a4",
+        "uid" : "af7ba275b75b4a98",
         "name" : "具体内容",
-        "source" : "58b401f8a7e184a4.attach",
+        "source" : "af7ba275b75b4a98.attach",
         "type" : "text/plain",
         "size" : 15
       } ],
       "parameters" : [ ],
-      "stepsCount" : 0,
-      "hasContent" : true,
       "shouldDisplayMessage" : true,
-      "attachmentsCount" : 1
+      "attachmentsCount" : 1,
+      "hasContent" : true,
+      "stepsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 3,
-    "hasContent" : true,
     "shouldDisplayMessage" : true,
-    "attachmentsCount" : 1
+    "attachmentsCount" : 1,
+    "hasContent" : true,
+    "stepsCount" : 3
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -112,18 +112,12 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ ],
-    "categories" : [ {
-      "name" : "Product defects",
-      "matchedStatuses" : [ ],
-      "flaky" : false
-    } ],
+    "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "f9fe28113fbbf712.json",
+  "source" : "61c7f57e251f6bbb.json",
   "parameterValues" : [ ]
 }
