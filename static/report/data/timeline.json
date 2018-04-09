@@ -4,57 +4,57 @@
   "children" : [ {
     "name" : "DESKTOP-5PN9VPJ",
     "children" : [ {
-      "name" : "13228-MainThread",
+      "name" : "18440-Thread-1",
       "children" : [ {
-        "name" : "测试报告",
-        "uid" : "7f0d92a1602c1789",
-        "parentUid" : "8d1a3658129ac8414405fbde3cbc32c3",
+        "name" : "测试报告3",
+        "uid" : "2c6e094e19997e05",
+        "parentUid" : "5e5792f13449c82da5e45e6580ce04e7",
         "status" : "passed",
         "time" : {
-          "start" : 1522915782733,
-          "stop" : 1522915782734,
-          "duration" : 1
-        },
-        "flaky" : false,
-        "parameters" : [ ]
-      }, {
-        "name" : "测试报告1",
-        "uid" : "ce0f21c9b0ebc315",
-        "parentUid" : "8d1a3658129ac8414405fbde3cbc32c3",
-        "status" : "passed",
-        "time" : {
-          "start" : 1522915782739,
-          "stop" : 1522915782739,
+          "start" : 1523262101620,
+          "stop" : 1523262101620,
           "duration" : 0
         },
         "flaky" : false,
         "parameters" : [ ]
       }, {
-        "name" : "测试报告3",
-        "uid" : "44128d153a7c8838",
-        "parentUid" : "8d1a3658129ac8414405fbde3cbc32c3",
+        "name" : "测试报告",
+        "uid" : "c0344e15ca2772a",
+        "parentUid" : "5e5792f13449c82da5e45e6580ce04e7",
         "status" : "passed",
         "time" : {
-          "start" : 1522915782776,
-          "stop" : 1522915782776,
+          "start" : 1523262101588,
+          "stop" : 1523262101588,
           "duration" : 0
         },
         "flaky" : false,
         "parameters" : [ ]
       }, {
         "name" : "测试报告2",
-        "uid" : "d77f766b92940d74",
-        "parentUid" : "8d1a3658129ac8414405fbde3cbc32c3",
+        "uid" : "901c63a8e4455ddc",
+        "parentUid" : "5e5792f13449c82da5e45e6580ce04e7",
         "status" : "failed",
         "time" : {
-          "start" : 1522915782745,
-          "stop" : 1522915782749,
-          "duration" : 4
+          "start" : 1523262101601,
+          "stop" : 1523262101609,
+          "duration" : 8
+        },
+        "flaky" : true,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告1",
+        "uid" : "8a6aca1f18385c0d",
+        "parentUid" : "5e5792f13449c82da5e45e6580ce04e7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1523262101593,
+          "stop" : 1523262101594,
+          "duration" : 1
         },
         "flaky" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "8d1a3658129ac8414405fbde3cbc32c3"
+      "uid" : "5e5792f13449c82da5e45e6580ce04e7"
     } ],
     "uid" : "7dd3f16887bcb91a3944bfb120fb64a6"
   } ]

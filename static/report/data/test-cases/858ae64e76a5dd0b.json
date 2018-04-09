@@ -1,12 +1,12 @@
 {
-  "uid" : "44128d153a7c8838",
+  "uid" : "858ae64e76a5dd0b",
   "name" : "测试报告3",
   "fullName" : "test_demo1.TestBar#test_bar3",
   "historyId" : "b02d36fcef343a413e597191dfcd782d",
   "time" : {
-    "start" : 1522915782776,
-    "stop" : 1522915782776,
-    "duration" : 0
+    "start" : 1523252371424,
+    "stop" : 1523252371425,
+    "duration" : 1
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,8 +16,8 @@
     "steps" : [ {
       "name" : "步骤一",
       "time" : {
-        "start" : 1522915782776,
-        "stop" : 1522915782776,
+        "start" : 1523252371424,
+        "stop" : 1523252371424,
         "duration" : 0
       },
       "status" : "passed",
@@ -31,8 +31,8 @@
     }, {
       "name" : "步骤二",
       "time" : {
-        "start" : 1522915782776,
-        "stop" : 1522915782776,
+        "start" : 1523252371424,
+        "stop" : 1523252371424,
         "duration" : 0
       },
       "status" : "passed",
@@ -46,8 +46,8 @@
     }, {
       "name" : "步骤三",
       "time" : {
-        "start" : 1522915782776,
-        "stop" : 1522915782776,
+        "start" : 1523252371424,
+        "stop" : 1523252371424,
         "duration" : 0
       },
       "status" : "passed",
@@ -61,8 +61,8 @@
     }, {
       "name" : "外部调用的步骤",
       "time" : {
-        "start" : 1522915782776,
-        "stop" : 1522915782776,
+        "start" : 1523252371424,
+        "stop" : 1523252371424,
         "duration" : 0
       },
       "status" : "passed",
@@ -83,6 +83,9 @@
   },
   "afterStages" : [ ],
   "labels" : [ {
+    "name" : "feature",
+    "value" : "testsuite2"
+  }, {
     "name" : "story",
     "value" : "testcass2"
   }, {
@@ -92,14 +95,11 @@
     "name" : "story",
     "value" : "testcass4"
   }, {
-    "name" : "feature",
-    "value" : "testsuite2"
-  }, {
     "name" : "host",
     "value" : "DESKTOP-5PN9VPJ"
   }, {
     "name" : "thread",
-    "value" : "13228-MainThread"
+    "value" : "3600-Thread-1"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -115,14 +115,12 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "44128d153a7c8838.json",
+  "source" : "858ae64e76a5dd0b.json",
   "parameterValues" : [ ]
 }

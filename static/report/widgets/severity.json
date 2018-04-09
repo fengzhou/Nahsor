@@ -1,41 +1,41 @@
 [ {
-  "uid" : "44128d153a7c8838",
-  "name" : "测试报告3",
+  "uid" : "901c63a8e4455ddc",
+  "name" : "测试报告2",
   "time" : {
-    "start" : 1522915782776,
-    "stop" : 1522915782776,
-    "duration" : 0
+    "start" : 1523262101601,
+    "stop" : 1523262101609,
+    "duration" : 8
   },
-  "status" : "passed",
+  "status" : "failed",
   "severity" : "normal"
 }, {
-  "uid" : "ce0f21c9b0ebc315",
-  "name" : "测试报告1",
-  "time" : {
-    "start" : 1522915782739,
-    "stop" : 1522915782739,
-    "duration" : 0
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "7f0d92a1602c1789",
+  "uid" : "c0344e15ca2772a",
   "name" : "测试报告",
   "time" : {
-    "start" : 1522915782733,
-    "stop" : 1522915782734,
+    "start" : 1523262101588,
+    "stop" : 1523262101588,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2c6e094e19997e05",
+  "name" : "测试报告3",
+  "time" : {
+    "start" : 1523262101620,
+    "stop" : 1523262101620,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8a6aca1f18385c0d",
+  "name" : "测试报告1",
+  "time" : {
+    "start" : 1523262101593,
+    "stop" : 1523262101594,
     "duration" : 1
   },
   "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "d77f766b92940d74",
-  "name" : "测试报告2",
-  "time" : {
-    "start" : 1522915782745,
-    "stop" : 1522915782749,
-    "duration" : 4
-  },
-  "status" : "failed",
   "severity" : "normal"
 } ]

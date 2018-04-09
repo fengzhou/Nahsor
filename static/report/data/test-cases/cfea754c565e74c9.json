@@ -1,12 +1,12 @@
 {
-  "uid" : "ce0f21c9b0ebc315",
+  "uid" : "cfea754c565e74c9",
   "name" : "测试报告1",
   "fullName" : "test_demo1.TestBar#test_bar1",
   "historyId" : "8a550e9cd5ed6787c214b782a1d8b639",
   "time" : {
-    "start" : 1522915782739,
-    "stop" : 1522915782739,
-    "duration" : 0
+    "start" : 1523245730512,
+    "stop" : 1523245730513,
+    "duration" : 1
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,8 +16,8 @@
     "steps" : [ {
       "name" : "步骤一",
       "time" : {
-        "start" : 1522915782739,
-        "stop" : 1522915782739,
+        "start" : 1523245730512,
+        "stop" : 1523245730512,
         "duration" : 0
       },
       "status" : "passed",
@@ -31,8 +31,8 @@
     }, {
       "name" : "步骤二",
       "time" : {
-        "start" : 1522915782739,
-        "stop" : 1522915782739,
+        "start" : 1523245730512,
+        "stop" : 1523245730512,
         "duration" : 0
       },
       "status" : "passed",
@@ -46,9 +46,9 @@
     }, {
       "name" : "步骤三",
       "time" : {
-        "start" : 1522915782739,
-        "stop" : 1522915782739,
-        "duration" : 0
+        "start" : 1523245730512,
+        "stop" : 1523245730513,
+        "duration" : 1
       },
       "status" : "passed",
       "steps" : [ ],
@@ -84,7 +84,7 @@
     "value" : "DESKTOP-5PN9VPJ"
   }, {
     "name" : "thread",
-    "value" : "13228-MainThread"
+    "value" : "12564-Thread-1"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -100,14 +100,12 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "ce0f21c9b0ebc315.json",
+  "source" : "cfea754c565e74c9.json",
   "parameterValues" : [ ]
 }

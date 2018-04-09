@@ -1,8 +1,4 @@
 import allure
-import pytest
-import win_unicode_console
-win_unicode_console.enable()
-
 
 
 @allure.title("测试报告")
