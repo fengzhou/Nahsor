@@ -42,3 +42,11 @@ py.test --alluredir=%allure_result_folder% ./tests
 allure generate ./result/ -o ./report/ --clean
 打开报告
 allure open -h 127.0.0.1 -p 8083 ./report/
+
+
+# Pytest测试样例的命名规则
+测试文件以test_开头或结尾(否则用py.test命令行不能自动识别)
+测试类以Test开头，且不能带有init方法
+测试函数以test_开头
+断言使用assert
+fixture的文件名必须是conftest.py
