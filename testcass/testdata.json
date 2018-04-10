@@ -1,0 +1,36 @@
+[
+    {
+        "name":"测试用例1",
+        "request":{
+            "method":"POST",
+            "url":"http://10.20.11.7:5000/readtoken",
+            "data":{
+                "token":"2_99_token"
+            },
+            "headers":{
+                "content-type": "application/json"
+            }
+        },
+        "extract":{
+            "msg":"pass"
+        },
+        "assert":[1,3]
+    },
+    {
+        "name":"测试用例2",
+        "request":{
+            "method":"POST",
+            "url":"http://10.20.11.7:5000/readtoken",
+            "data":{
+                "token":"2_99_token"
+            },
+            "headers":{
+                "content-type": "application/json"
+            }
+        },
+        "extract":{
+            "msg":"pass"
+        },
+        "assert":[1,1]
+    }
+]

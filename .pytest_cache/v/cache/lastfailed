@@ -1,5 +1,8 @@
 {
   "test_demo.py": true,
   "test_demo1.py::TestBar::()::test_bar2": true,
-  "testcass/test_demo1.py::TestBar::()::test_bar2": true
+  "testcass/test_demo1.py::TestBar::()::test_bar2": true,
+  "testcass/test_json_cass.py::TestBar::()": true,
+  "testcass/test_json_cass.py::TestBar::()::test_bar2": true,
+  "testcass/test_json_cass.py::test_minor": true
 }

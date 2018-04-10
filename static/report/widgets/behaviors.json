@@ -1,24 +1,13 @@
 {
-  "total" : 2,
+  "total" : 1,
   "items" : [ {
-    "uid" : "1424ca905bc3b1d4a27d987de683aa1e",
-    "name" : "testsuite2",
+    "uid" : "8fecada08feda27b36a122cad0b73be2",
+    "name" : "测试用例2",
     "statistic" : {
-      "failed" : 3,
+      "failed" : 1,
       "broken" : 0,
       "skipped" : 0,
       "passed" : 0,
-      "unknown" : 0,
-      "total" : 3
-    }
-  }, {
-    "uid" : "c6231a8b3b4a098a9db6f124bd57239b",
-    "name" : "testsuite1",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 1,
       "unknown" : 0,
       "total" : 1
     }

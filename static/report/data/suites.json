@@ -2,98 +2,14 @@
   "uid" : "98d3104e051c652961429bf95fa0b5d6",
   "name" : "suites",
   "children" : [ {
-    "name" : "测试报告",
-    "uid" : "d3552c4b50990e33",
-    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
-    "status" : "passed",
-    "time" : {
-      "start" : 1523262101588,
-      "stop" : 1523262101588,
-      "duration" : 0
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "测试报告1",
-    "uid" : "9129d2c6a2ecab8e",
-    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
-    "status" : "passed",
-    "time" : {
-      "start" : 1523262101593,
-      "stop" : 1523262101594,
-      "duration" : 1
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "测试报告2",
-    "uid" : "5a0bb6f641fc1815",
+    "name" : "测试用例2",
+    "uid" : "1d839fd68e373336",
     "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
     "status" : "failed",
     "time" : {
-      "start" : 1523262101601,
-      "stop" : 1523262101609,
-      "duration" : 8
-    },
-    "flaky" : true,
-    "parameters" : [ ]
-  }, {
-    "name" : "测试报告3",
-    "uid" : "15669f18c289542",
-    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
-    "status" : "passed",
-    "time" : {
-      "start" : 1523262101620,
-      "stop" : 1523262101620,
-      "duration" : 0
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "测试报告",
-    "uid" : "8a1d73e5ed948029",
-    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
-    "status" : "passed",
-    "time" : {
-      "start" : 1523331140147,
-      "stop" : 1523331140147,
-      "duration" : 0
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "测试报告1",
-    "uid" : "d96e16e9dd8e7a7f",
-    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
-    "status" : "passed",
-    "time" : {
-      "start" : 1523331140152,
-      "stop" : 1523331140152,
-      "duration" : 0
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "测试报告2",
-    "uid" : "4cba8ec959e0e425",
-    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
-    "status" : "failed",
-    "time" : {
-      "start" : 1523331140156,
-      "stop" : 1523331140169,
-      "duration" : 13
-    },
-    "flaky" : false,
-    "parameters" : [ ]
-  }, {
-    "name" : "测试报告3",
-    "uid" : "4fd45edb3dc5fc08",
-    "parentUid" : "98d3104e051c652961429bf95fa0b5d6",
-    "status" : "passed",
-    "time" : {
-      "start" : 1523331140197,
-      "stop" : 1523331140197,
-      "duration" : 0
+      "start" : 1523345925510,
+      "stop" : 1523345925515,
+      "duration" : 5
     },
     "flaky" : false,
     "parameters" : [ ]

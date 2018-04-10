@@ -4,33 +4,21 @@
   "children" : [ {
     "name" : "Product defects",
     "children" : [ {
-      "name" : "AssertionError: assert False",
+      "name" : "AssertionError: assert 1 == 3",
       "children" : [ {
-        "name" : "测试报告2",
-        "uid" : "5a0bb6f641fc1815",
-        "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
+        "name" : "测试用例2",
+        "uid" : "1d839fd68e373336",
+        "parentUid" : "3cf866d47a780b101bbe5ac274604b7c",
         "status" : "failed",
         "time" : {
-          "start" : 1523262101601,
-          "stop" : 1523262101609,
-          "duration" : 8
-        },
-        "flaky" : true,
-        "parameters" : [ ]
-      }, {
-        "name" : "测试报告2",
-        "uid" : "4cba8ec959e0e425",
-        "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
-        "status" : "failed",
-        "time" : {
-          "start" : 1523331140156,
-          "stop" : 1523331140169,
-          "duration" : 13
+          "start" : 1523345925510,
+          "stop" : 1523345925515,
+          "duration" : 5
         },
         "flaky" : false,
         "parameters" : [ ]
       } ],
-      "uid" : "8d89788b03808d3beec6ddf8e7d75f3d"
+      "uid" : "3cf866d47a780b101bbe5ac274604b7c"
     } ],
     "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
   } ]
