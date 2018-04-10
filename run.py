@@ -10,9 +10,9 @@ def index():
 
 @app.route('/run')
 def run():
-    args = ['--alluredir=./test']
+    args = ['--alluredir=./result']
     pytest.main(args)
-    allure = subprocess.Popen('allure generate ./test/ -o ./static/report/ --clean', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    allure = subprocess.Popen('allure generate ./result/ -o ./static/report/ --clean', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     # print()
     response = {}
     response["code"] = 200

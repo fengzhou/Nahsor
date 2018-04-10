@@ -1,82 +1,82 @@
 {
-  "uid" : "d3e397180c63f8c7",
+  "uid" : "b81b7eda6499fd1",
   "name" : "测试报告2",
   "fullName" : "test_demo1.TestBar#test_bar2",
   "historyId" : "ae3b472d7595459a20e0469e7ce9ae96",
   "time" : {
-    "start" : 1523262087172,
-    "stop" : 1523262087177,
-    "duration" : 5
+    "start" : 1523251923595,
+    "stop" : 1523251923599,
+    "duration" : 4
   },
   "status" : "failed",
   "statusMessage" : "AssertionError: assert False",
-  "statusTrace" : "self = <test_demo1.TestBar object at 0x000002E5DC72AC88>\n\n    @allure.title(\"测试报告2\")\n    def test_bar2(self):\n        with allure.step(\"步骤一\"):\n            assert True\n        with allure.step(\"步骤二\"):\n            assert True\n        with allure.step(\"步骤三\"):\n            allure.attach('失败的步骤', '具体内容')\n>           assert False\nE           assert False\n\ntest_demo1.py:31: AssertionError",
+  "statusTrace" : "self = <test_demo1.TestBar object at 0x0000019C885626D8>\n\n    @allure.title(\"测试报告2\")\n    def test_bar2(self):\n        with allure.step(\"步骤一\"):\n            assert True\n        with allure.step(\"步骤二\"):\n            assert True\n        with allure.step(\"步骤三\"):\n            allure.attach('失败的步骤', '具体内容')\n>           assert False\nE           assert False\n\ntest_demo1.py:35: AssertionError",
   "flaky" : false,
   "beforeStages" : [ ],
   "testStage" : {
     "status" : "failed",
     "statusMessage" : "AssertionError: assert False",
-    "statusTrace" : "self = <test_demo1.TestBar object at 0x000002E5DC72AC88>\n\n    @allure.title(\"测试报告2\")\n    def test_bar2(self):\n        with allure.step(\"步骤一\"):\n            assert True\n        with allure.step(\"步骤二\"):\n            assert True\n        with allure.step(\"步骤三\"):\n            allure.attach('失败的步骤', '具体内容')\n>           assert False\nE           assert False\n\ntest_demo1.py:31: AssertionError",
+    "statusTrace" : "self = <test_demo1.TestBar object at 0x0000019C885626D8>\n\n    @allure.title(\"测试报告2\")\n    def test_bar2(self):\n        with allure.step(\"步骤一\"):\n            assert True\n        with allure.step(\"步骤二\"):\n            assert True\n        with allure.step(\"步骤三\"):\n            allure.attach('失败的步骤', '具体内容')\n>           assert False\nE           assert False\n\ntest_demo1.py:35: AssertionError",
     "steps" : [ {
       "name" : "步骤一",
       "time" : {
-        "start" : 1523262087172,
-        "stop" : 1523262087172,
+        "start" : 1523251923596,
+        "stop" : 1523251923596,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤二",
       "time" : {
-        "start" : 1523262087172,
-        "stop" : 1523262087172,
+        "start" : 1523251923596,
+        "stop" : 1523251923596,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤三",
       "time" : {
-        "start" : 1523262087172,
-        "stop" : 1523262087177,
-        "duration" : 5
+        "start" : 1523251923596,
+        "stop" : 1523251923598,
+        "duration" : 2
       },
       "status" : "failed",
       "statusMessage" : "AssertionError: assert False\n",
-      "statusTrace" : "  File \"E:\\Nahsor\\test_demo1.py\", line 31, in test_bar2\n    assert False\n",
+      "statusTrace" : "  File \"E:\\Nahsor\\test_demo1.py\", line 35, in test_bar2\n    assert False\n",
       "steps" : [ ],
       "attachments" : [ {
-        "uid" : "fe97f50648d5883b",
+        "uid" : "cccaf6338cbf7364",
         "name" : "具体内容",
-        "source" : "fe97f50648d5883b.attach",
+        "source" : "cccaf6338cbf7364.attach",
         "type" : "text/plain",
         "size" : 15
       } ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : true,
-      "attachmentsCount" : 1,
       "hasContent" : true,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 1
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : true,
-    "attachmentsCount" : 1,
     "hasContent" : true,
-    "stepsCount" : 3
+    "stepsCount" : 3,
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -96,7 +96,7 @@
     "value" : "DESKTOP-5PN9VPJ"
   }, {
     "name" : "thread",
-    "value" : "18440-Thread-1"
+    "value" : "11172-Thread-1"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -118,6 +118,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "d3e397180c63f8c7.json",
+  "source" : "b81b7eda6499fd1.json",
   "parameterValues" : [ ]
 }

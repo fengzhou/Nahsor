@@ -1,11 +1,11 @@
 {
-  "uid" : "fad0951f8fdf407d",
+  "uid" : "4d5f1a6f5f1d6355",
   "name" : "测试报告",
   "fullName" : "test_demo1#test_minor",
   "historyId" : "6351ca98ef5e8c24e24936de8f0bf324",
   "time" : {
-    "start" : 1523245730507,
-    "stop" : 1523245730507,
+    "start" : 1523251923581,
+    "stop" : 1523251923581,
     "duration" : 0
   },
   "status" : "passed",
@@ -13,17 +13,17 @@
   "beforeStages" : [ ],
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "story",
-    "value" : "testcass1"
-  }, {
     "name" : "feature",
     "value" : "testsuite1"
+  }, {
+    "name" : "story",
+    "value" : "testcass1"
   }, {
     "name" : "host",
     "value" : "DESKTOP-5PN9VPJ"
   }, {
     "name" : "thread",
-    "value" : "12564-Thread-1"
+    "value" : "11172-Thread-1"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -45,6 +45,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "fad0951f8fdf407d.json",
+  "source" : "4d5f1a6f5f1d6355.json",
   "parameterValues" : [ ]
 }

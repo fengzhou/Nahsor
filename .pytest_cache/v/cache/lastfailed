@@ -1,4 +1,5 @@
 {
   "test_demo.py": true,
-  "test_demo1.py::TestBar::()::test_bar2": true
+  "test_demo1.py::TestBar::()::test_bar2": true,
+  "testcass/test_demo1.py::TestBar::()::test_bar2": true
 }

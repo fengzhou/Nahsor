@@ -7,7 +7,7 @@
       "name" : "AssertionError: assert False",
       "children" : [ {
         "name" : "测试报告2",
-        "uid" : "901c63a8e4455ddc",
+        "uid" : "5a0bb6f641fc1815",
         "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
         "status" : "failed",
         "time" : {
@@ -16,6 +16,18 @@
           "duration" : 8
         },
         "flaky" : true,
+        "parameters" : [ ]
+      }, {
+        "name" : "测试报告2",
+        "uid" : "4cba8ec959e0e425",
+        "parentUid" : "8d89788b03808d3beec6ddf8e7d75f3d",
+        "status" : "failed",
+        "time" : {
+          "start" : 1523331140156,
+          "stop" : 1523331140169,
+          "duration" : 13
+        },
+        "flaky" : false,
         "parameters" : [ ]
       } ],
       "uid" : "8d89788b03808d3beec6ddf8e7d75f3d"

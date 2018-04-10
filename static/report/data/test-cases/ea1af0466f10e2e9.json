@@ -1,11 +1,11 @@
 {
-  "uid" : "397e1d3b97a65cc0",
+  "uid" : "ea1af0466f10e2e9",
   "name" : "测试报告",
   "fullName" : "test_demo1#test_minor",
   "historyId" : "6351ca98ef5e8c24e24936de8f0bf324",
   "time" : {
-    "start" : 1523251923581,
-    "stop" : 1523251923581,
+    "start" : 1523252371371,
+    "stop" : 1523252371371,
     "duration" : 0
   },
   "status" : "passed",
@@ -23,7 +23,7 @@
     "value" : "DESKTOP-5PN9VPJ"
   }, {
     "name" : "thread",
-    "value" : "11172-Thread-1"
+    "value" : "3600-Thread-1"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -45,6 +45,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "397e1d3b97a65cc0.json",
+  "source" : "ea1af0466f10e2e9.json",
   "parameterValues" : [ ]
 }

@@ -1,5 +1,5 @@
 {
-  "uid" : "901c63a8e4455ddc",
+  "uid" : "5a0bb6f641fc1815",
   "name" : "测试报告2",
   "fullName" : "test_demo1.TestBar#test_bar2",
   "historyId" : "ae3b472d7595459a20e0469e7ce9ae96",
@@ -28,10 +28,10 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤二",
       "time" : {
@@ -43,10 +43,10 @@
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤三",
       "time" : {
@@ -59,24 +59,24 @@
       "statusTrace" : "  File \"E:\\Nahsor\\test_demo1.py\", line 31, in test_bar2\n    assert False\n",
       "steps" : [ ],
       "attachments" : [ {
-        "uid" : "18c95c9a185c96b9",
+        "uid" : "e586e3b9b7028c2d",
         "name" : "具体内容",
-        "source" : "18c95c9a185c96b9.attach",
+        "source" : "e586e3b9b7028c2d.attach",
         "type" : "text/plain",
         "size" : 15
       } ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : true,
-      "attachmentsCount" : 1,
       "hasContent" : true,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "attachmentsCount" : 1
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : true,
-    "attachmentsCount" : 1,
     "hasContent" : true,
-    "stepsCount" : 3
+    "stepsCount" : 3,
+    "shouldDisplayMessage" : true,
+    "attachmentsCount" : 1
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -117,7 +117,7 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "d3e397180c63f8c7",
+      "uid" : "bed4b62a70d3ea20",
       "status" : "failed",
       "statusDetails" : "AssertionError: assert False",
       "time" : {
@@ -126,7 +126,7 @@
         "duration" : 5
       }
     }, {
-      "uid" : "d77d22f9dc0b417b",
+      "uid" : "6855259699774cfa",
       "status" : "failed",
       "statusDetails" : "AssertionError: assert False",
       "time" : {
@@ -135,7 +135,7 @@
         "duration" : 3
       }
     }, {
-      "uid" : "96051dc1911521c9",
+      "uid" : "b81b7eda6499fd1",
       "status" : "failed",
       "statusDetails" : "AssertionError: assert False",
       "time" : {
@@ -144,7 +144,7 @@
         "duration" : 4
       }
     }, {
-      "uid" : "61c7f57e251f6bbb",
+      "uid" : "1178e7a9a0f01e0b",
       "status" : "failed",
       "statusDetails" : "AssertionError: assert False",
       "time" : {
@@ -160,6 +160,6 @@
     } ],
     "tags" : [ ]
   },
-  "source" : "901c63a8e4455ddc.json",
+  "source" : "5a0bb6f641fc1815.json",
   "parameterValues" : [ ]
 }

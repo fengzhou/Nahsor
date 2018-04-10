@@ -1,11 +1,11 @@
 {
-  "uid" : "af537a24e8ff7ecc",
+  "uid" : "8a1d73e5ed948029",
   "name" : "测试报告",
-  "fullName" : "test_demo1#test_minor",
-  "historyId" : "6351ca98ef5e8c24e24936de8f0bf324",
+  "fullName" : "testcass.test_demo1#test_minor",
+  "historyId" : "d6a3b36b87c8b42404812923515ef2e6",
   "time" : {
-    "start" : 1523262087162,
-    "stop" : 1523262087162,
+    "start" : 1523331140147,
+    "stop" : 1523331140147,
     "duration" : 0
   },
   "status" : "passed",
@@ -13,17 +13,17 @@
   "beforeStages" : [ ],
   "afterStages" : [ ],
   "labels" : [ {
-    "name" : "feature",
-    "value" : "testsuite1"
-  }, {
     "name" : "story",
     "value" : "testcass1"
+  }, {
+    "name" : "feature",
+    "value" : "testsuite1"
   }, {
     "name" : "host",
     "value" : "DESKTOP-5PN9VPJ"
   }, {
     "name" : "thread",
-    "value" : "18440-Thread-1"
+    "value" : "5636-Thread-1"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -32,19 +32,21 @@
     "value" : "cpython3"
   }, {
     "name" : "package",
-    "value" : "test_demo1"
+    "value" : "testcass.test_demo1"
   }, {
     "name" : "resultFormat",
     "value" : "allure2"
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : true,
-  "retry" : true,
+  "hidden" : false,
+  "retry" : false,
   "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "af537a24e8ff7ecc.json",
+  "source" : "8a1d73e5ed948029.json",
   "parameterValues" : [ ]
 }

@@ -1,11 +1,11 @@
 {
-  "uid" : "b886f06fd452a127",
+  "uid" : "15669f18c289542",
   "name" : "测试报告3",
   "fullName" : "test_demo1.TestBar#test_bar3",
   "historyId" : "b02d36fcef343a413e597191dfcd782d",
   "time" : {
-    "start" : 1523262087228,
-    "stop" : 1523262087228,
+    "start" : 1523262101620,
+    "stop" : 1523262101620,
     "duration" : 0
   },
   "status" : "passed",
@@ -16,70 +16,70 @@
     "steps" : [ {
       "name" : "步骤一",
       "time" : {
-        "start" : 1523262087228,
-        "stop" : 1523262087228,
+        "start" : 1523262101620,
+        "stop" : 1523262101620,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤二",
       "time" : {
-        "start" : 1523262087228,
-        "stop" : 1523262087228,
+        "start" : 1523262101620,
+        "stop" : 1523262101620,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤三",
       "time" : {
-        "start" : 1523262087228,
-        "stop" : 1523262087228,
+        "start" : 1523262101620,
+        "stop" : 1523262101620,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "外部调用的步骤",
       "time" : {
-        "start" : 1523262087228,
-        "stop" : 1523262087228,
+        "start" : 1523262101620,
+        "stop" : 1523262101620,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
     "hasContent" : true,
-    "stepsCount" : 4
+    "stepsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -115,12 +115,46 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : true,
-  "retry" : true,
+  "hidden" : false,
+  "retry" : false,
   "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "27480d34471e0706",
+      "status" : "passed",
+      "time" : {
+        "start" : 1523262087228,
+        "stop" : 1523262087228,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "df960b61ac93abbf",
+      "status" : "passed",
+      "time" : {
+        "start" : 1523252371424,
+        "stop" : 1523252371425,
+        "duration" : 1
+      }
+    }, {
+      "uid" : "54fe0b9a7746fba9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1523251923630,
+        "stop" : 1523251923630,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "2f4bb4d029ceb1b6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1523245730552,
+        "stop" : 1523245730552,
+        "duration" : 0
+      }
+    } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "b886f06fd452a127.json",
+  "source" : "15669f18c289542.json",
   "parameterValues" : [ ]
 }

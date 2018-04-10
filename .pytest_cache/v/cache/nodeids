@@ -1,6 +1,6 @@
 [
-  "test_demo1.py::test_minor",
-  "test_demo1.py::TestBar::()::test_bar1",
-  "test_demo1.py::TestBar::()::test_bar2",
-  "test_demo1.py::TestBar::()::test_bar3"
+  "testcass/test_demo1.py::test_minor",
+  "testcass/test_demo1.py::TestBar::()::test_bar1",
+  "testcass/test_demo1.py::TestBar::()::test_bar2",
+  "testcass/test_demo1.py::TestBar::()::test_bar3"
 ]

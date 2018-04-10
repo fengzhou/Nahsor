@@ -1,12 +1,12 @@
 {
-  "uid" : "8a6aca1f18385c0d",
+  "uid" : "1ff53a4173436e87",
   "name" : "测试报告1",
   "fullName" : "test_demo1.TestBar#test_bar1",
   "historyId" : "8a550e9cd5ed6787c214b782a1d8b639",
   "time" : {
-    "start" : 1523262101593,
-    "stop" : 1523262101594,
-    "duration" : 1
+    "start" : 1523252371378,
+    "stop" : 1523252371378,
+    "duration" : 0
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,55 +16,55 @@
     "steps" : [ {
       "name" : "步骤一",
       "time" : {
-        "start" : 1523262101594,
-        "stop" : 1523262101594,
+        "start" : 1523252371378,
+        "stop" : 1523252371378,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤二",
       "time" : {
-        "start" : 1523262101594,
-        "stop" : 1523262101594,
+        "start" : 1523252371378,
+        "stop" : 1523252371378,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤三",
       "time" : {
-        "start" : 1523262101594,
-        "stop" : 1523262101594,
+        "start" : 1523252371378,
+        "stop" : 1523252371378,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
     "hasContent" : true,
-    "stepsCount" : 3
+    "stepsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -84,7 +84,7 @@
     "value" : "DESKTOP-5PN9VPJ"
   }, {
     "name" : "thread",
-    "value" : "18440-Thread-1"
+    "value" : "3600-Thread-1"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -100,46 +100,12 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ {
-      "uid" : "5e2d6c84b9bbcca0",
-      "status" : "passed",
-      "time" : {
-        "start" : 1523262087167,
-        "stop" : 1523262087167,
-        "duration" : 0
-      }
-    }, {
-      "uid" : "8c61e0b656d71743",
-      "status" : "passed",
-      "time" : {
-        "start" : 1523252371378,
-        "stop" : 1523252371378,
-        "duration" : 0
-      }
-    }, {
-      "uid" : "e3bdaecce3033e0f",
-      "status" : "passed",
-      "time" : {
-        "start" : 1523251923589,
-        "stop" : 1523251923589,
-        "duration" : 0
-      }
-    }, {
-      "uid" : "cfea754c565e74c9",
-      "status" : "passed",
-      "time" : {
-        "start" : 1523245730512,
-        "stop" : 1523245730513,
-        "duration" : 1
-      }
-    } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "8a6aca1f18385c0d.json",
+  "source" : "1ff53a4173436e87.json",
   "parameterValues" : [ ]
 }

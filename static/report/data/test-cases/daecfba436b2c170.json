@@ -1,11 +1,11 @@
 {
-  "uid" : "892ca52401beef57",
-  "name" : "测试报告3",
-  "fullName" : "test_demo1.TestBar#test_bar3",
-  "historyId" : "b02d36fcef343a413e597191dfcd782d",
+  "uid" : "daecfba436b2c170",
+  "name" : "测试报告1",
+  "fullName" : "test_demo1.TestBar#test_bar1",
+  "historyId" : "8a550e9cd5ed6787c214b782a1d8b639",
   "time" : {
-    "start" : 1523251923630,
-    "stop" : 1523251923630,
+    "start" : 1523251923589,
+    "stop" : 1523251923589,
     "duration" : 0
   },
   "status" : "passed",
@@ -16,70 +16,55 @@
     "steps" : [ {
       "name" : "步骤一",
       "time" : {
-        "start" : 1523251923630,
-        "stop" : 1523251923630,
+        "start" : 1523251923589,
+        "stop" : 1523251923589,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤二",
       "time" : {
-        "start" : 1523251923630,
-        "stop" : 1523251923630,
+        "start" : 1523251923589,
+        "stop" : 1523251923589,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤三",
       "time" : {
-        "start" : 1523251923630,
-        "stop" : 1523251923630,
+        "start" : 1523251923589,
+        "stop" : 1523251923589,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
-    }, {
-      "name" : "外部调用的步骤",
-      "time" : {
-        "start" : 1523251923630,
-        "stop" : 1523251923630,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
+      "stepsCount" : 0,
       "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
-      "hasContent" : false,
-      "stepsCount" : 0
+      "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
     "hasContent" : true,
-    "stepsCount" : 4
+    "stepsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -121,6 +106,6 @@
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "892ca52401beef57.json",
+  "source" : "daecfba436b2c170.json",
   "parameterValues" : [ ]
 }

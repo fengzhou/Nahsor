@@ -1,12 +1,12 @@
 {
-  "uid" : "5e2d6c84b9bbcca0",
+  "uid" : "9129d2c6a2ecab8e",
   "name" : "测试报告1",
   "fullName" : "test_demo1.TestBar#test_bar1",
   "historyId" : "8a550e9cd5ed6787c214b782a1d8b639",
   "time" : {
-    "start" : 1523262087167,
-    "stop" : 1523262087167,
-    "duration" : 0
+    "start" : 1523262101593,
+    "stop" : 1523262101594,
+    "duration" : 1
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,55 +16,55 @@
     "steps" : [ {
       "name" : "步骤一",
       "time" : {
-        "start" : 1523262087167,
-        "stop" : 1523262087167,
+        "start" : 1523262101594,
+        "stop" : 1523262101594,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤二",
       "time" : {
-        "start" : 1523262087167,
-        "stop" : 1523262087167,
+        "start" : 1523262101594,
+        "stop" : 1523262101594,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤三",
       "time" : {
-        "start" : 1523262087167,
-        "stop" : 1523262087167,
+        "start" : 1523262101594,
+        "stop" : 1523262101594,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
     "hasContent" : true,
-    "stepsCount" : 3
+    "stepsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -100,12 +100,46 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : true,
-  "retry" : true,
+  "hidden" : false,
+  "retry" : false,
   "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "ec3b7f81f46f2a72",
+      "status" : "passed",
+      "time" : {
+        "start" : 1523262087167,
+        "stop" : 1523262087167,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "1ff53a4173436e87",
+      "status" : "passed",
+      "time" : {
+        "start" : 1523252371378,
+        "stop" : 1523252371378,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "daecfba436b2c170",
+      "status" : "passed",
+      "time" : {
+        "start" : 1523251923589,
+        "stop" : 1523251923589,
+        "duration" : 0
+      }
+    }, {
+      "uid" : "6ecda5ec215ad092",
+      "status" : "passed",
+      "time" : {
+        "start" : 1523245730512,
+        "stop" : 1523245730513,
+        "duration" : 1
+      }
+    } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "5e2d6c84b9bbcca0.json",
+  "source" : "9129d2c6a2ecab8e.json",
   "parameterValues" : [ ]
 }

@@ -1,11 +1,11 @@
 {
-  "uid" : "2c6e094e19997e05",
+  "uid" : "54fe0b9a7746fba9",
   "name" : "测试报告3",
   "fullName" : "test_demo1.TestBar#test_bar3",
   "historyId" : "b02d36fcef343a413e597191dfcd782d",
   "time" : {
-    "start" : 1523262101620,
-    "stop" : 1523262101620,
+    "start" : 1523251923630,
+    "stop" : 1523251923630,
     "duration" : 0
   },
   "status" : "passed",
@@ -16,70 +16,70 @@
     "steps" : [ {
       "name" : "步骤一",
       "time" : {
-        "start" : 1523262101620,
-        "stop" : 1523262101620,
+        "start" : 1523251923630,
+        "stop" : 1523251923630,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤二",
       "time" : {
-        "start" : 1523262101620,
-        "stop" : 1523262101620,
+        "start" : 1523251923630,
+        "stop" : 1523251923630,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "步骤三",
       "time" : {
-        "start" : 1523262101620,
-        "stop" : 1523262101620,
+        "start" : 1523251923630,
+        "stop" : 1523251923630,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     }, {
       "name" : "外部调用的步骤",
       "time" : {
-        "start" : 1523262101620,
-        "stop" : 1523262101620,
+        "start" : 1523251923630,
+        "stop" : 1523251923630,
         "duration" : 0
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "shouldDisplayMessage" : false,
-      "attachmentsCount" : 0,
       "hasContent" : false,
-      "stepsCount" : 0
+      "stepsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "attachmentsCount" : 0
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "shouldDisplayMessage" : false,
-    "attachmentsCount" : 0,
     "hasContent" : true,
-    "stepsCount" : 4
+    "stepsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -99,7 +99,7 @@
     "value" : "DESKTOP-5PN9VPJ"
   }, {
     "name" : "thread",
-    "value" : "18440-Thread-1"
+    "value" : "11172-Thread-1"
   }, {
     "name" : "framework",
     "value" : "pytest"
@@ -115,46 +115,12 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : false,
-  "retry" : false,
+  "hidden" : true,
+  "retry" : true,
   "extra" : {
-    "severity" : "normal",
-    "retries" : [ {
-      "uid" : "b886f06fd452a127",
-      "status" : "passed",
-      "time" : {
-        "start" : 1523262087228,
-        "stop" : 1523262087228,
-        "duration" : 0
-      }
-    }, {
-      "uid" : "858ae64e76a5dd0b",
-      "status" : "passed",
-      "time" : {
-        "start" : 1523252371424,
-        "stop" : 1523252371425,
-        "duration" : 1
-      }
-    }, {
-      "uid" : "892ca52401beef57",
-      "status" : "passed",
-      "time" : {
-        "start" : 1523251923630,
-        "stop" : 1523251923630,
-        "duration" : 0
-      }
-    }, {
-      "uid" : "1e06fa135f2ee7e7",
-      "status" : "passed",
-      "time" : {
-        "start" : 1523245730552,
-        "stop" : 1523245730552,
-        "duration" : 0
-      }
-    } ],
     "categories" : [ ],
     "tags" : [ ]
   },
-  "source" : "2c6e094e19997e05.json",
+  "source" : "54fe0b9a7746fba9.json",
   "parameterValues" : [ ]
 }
