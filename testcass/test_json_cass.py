@@ -4,29 +4,32 @@ import allure
 import pytest
 import os
 
+def xxx():
+    path = os.listdir()
+    namelist = []
+    requestlist = []
+    for f in path:
+        if ".json" in f:
+            with open(f, 'r', encoding='utf-8') as f:
+                testdata = json.load(f)
+                # print(testdata)
+    nonlocal testdata
+    for data in testdata:
+        name = data["name"]
+        namelist.append(name)
+        request = data["request"]
+        requestlist.append(request)
+    # print(namelist)
+    return namelist, requestlist
 
-path = os.getcwd()
+print(xxx()[1])
 
-with open(path + '/testcass/testdata.json', 'r', encoding='utf-8') as f:
-    testdata = json.load(f)
-    print(testdata)
-for testcass in testdata:
-    print(testcass["name"])
-    print(testcass["request"])
-
-print(json.dumps(testcass['request']['data']))
-@allure.feature("获取token数据")
-@allure.story(testcass["name"])
-class TestBar:
-    # will have 'Feature2 and Story2 and Story3 and Story4'
-    @allure.title(testcass["name"])
-    # @pytest.mark.parametrize()
-    def test_bar2():
-        with allure.step("步骤1"):
-            response = requests.request(testcass['request']['method'], testcass['request']['url'], data=testcass['request']['data'], headers=testcass['request']['headers'])
-            # print(response.text)
-            allure.attach(response.text, '接口返回值')
-            assert testcass["assert"][0] == testcass["assert"][1]
-        with allure.step("步骤三"):
-            allure.attach('失败的步骤', '具体内容')
-            assert False
+@allure.feature('testsuite1')
+@allure.story("testcass111")
+@allure.title("测试报告")
+@pytest.mark.parametrize("request",xxx()[1])
+def test_cass(request):
+    # with allure.step("步骤一"):
+    res = requests.request(request["method"],request["url"],headers=request["headers"],data=request["data"])
+    allure.attach(res.text, "返回的参数")
+    assert True
