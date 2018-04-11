@@ -50,3 +50,7 @@ allure open -h 127.0.0.1 -p 8083 ./report/
 测试函数以test_开头
 断言使用assert
 fixture的文件名必须是conftest.py
+
+
+
+https://github.com/LangJin/Nahsor/invitations
