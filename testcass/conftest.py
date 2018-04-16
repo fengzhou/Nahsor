@@ -1,9 +1,14 @@
 # -*- coding:utf-8 -*-
 import pytest
 
-# def pytest_collect_file():
-#     print("测试！！！！")
 
-@pytest.fixture()
-def test():
-    print("test!!")
+hjson = {
+    "name":"name",
+    "POST":"POST"
+}
+
+def pytest_collect_file():
+    for key, value in hjson:
+        assert key == value
+
+    
