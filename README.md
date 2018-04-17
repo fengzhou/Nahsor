@@ -59,3 +59,6 @@ https://github.com/taverntesting/tavern
 https://www.kawabangga.com/posts/2662
 
 https://docs.pytest.org/en/latest/example/nonpython.html#yaml-plugin
+
+
+https://www.ctolib.com/taverntesting-tavern.html
