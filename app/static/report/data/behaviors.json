@@ -1,0 +1,25 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "测试用例2",
+    "children" : [ {
+      "name" : "测试用例2",
+      "children" : [ {
+        "name" : "测试用例2",
+        "uid" : "1d839fd68e373336",
+        "parentUid" : "9a0f1ca232dc26c69bc79a670e08796f",
+        "status" : "failed",
+        "time" : {
+          "start" : 1523345925510,
+          "stop" : 1523345925515,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "9a0f1ca232dc26c69bc79a670e08796f"
+    } ],
+    "uid" : "8fecada08feda27b36a122cad0b73be2"
+  } ]
+}

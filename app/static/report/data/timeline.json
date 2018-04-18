@@ -1,0 +1,25 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-5PN9VPJ",
+    "children" : [ {
+      "name" : "3540-Thread-1",
+      "children" : [ {
+        "name" : "测试用例2",
+        "uid" : "1d839fd68e373336",
+        "parentUid" : "0e3d63a22adeb33d543439e03f5ea595",
+        "status" : "failed",
+        "time" : {
+          "start" : 1523345925510,
+          "stop" : 1523345925515,
+          "duration" : 5
+        },
+        "flaky" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0e3d63a22adeb33d543439e03f5ea595"
+    } ],
+    "uid" : "7dd3f16887bcb91a3944bfb120fb64a6"
+  } ]
+}
