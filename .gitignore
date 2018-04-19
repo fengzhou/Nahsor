@@ -86,8 +86,6 @@ celerybeat-schedule
 .venv
 venv/
 ENV/
-.vscode/
-Nahsorenv/
 
 # Spyder project settings
 .spyderproject
@@ -104,4 +102,4 @@ Nahsorenv/
 
 # nahsor
 .vscode
-
+naenv/
