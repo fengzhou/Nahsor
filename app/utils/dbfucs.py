@@ -42,7 +42,7 @@ def excute(sql=""):
     '''
         ex: 根据sql插入或更新数据
         args: sql
-        return: is_success，1:成功 0失败
+        return: is_success，true:成功 false:失败
     '''
     is_success = True
     db = pymysql.connect(**db_config)
