@@ -1,7 +1,12 @@
+# -*- conding:utf-8 -*-
+__author__ = "Jin"
+from flask import jsonify
+from app import bp
 import pytest
 import subprocess
 
-@app.route('/run')
+
+@bp.route("/run", methods=["post"])
 def run():
     args = ['--alluredir=./result']
     pytest.main(args)

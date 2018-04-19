@@ -1,6 +1,8 @@
 # -*- coding:utf-8 -*-
 __author__ = 'Jin'
-
+'''
+flask/db/other配置文件
+'''
 import os
 
 
