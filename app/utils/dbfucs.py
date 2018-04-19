@@ -14,7 +14,7 @@ def query(sql=""):
         return: results
     """
     results = []
-    db = pymysql.connect(db_config)
+    db = pymysql.connect(**db_config)
     cur = db.cursor()
     try:
         cur.execute(sql)  # 执行sql语句
@@ -24,14 +24,36 @@ def query(sql=""):
             descs.append(desc[0])
         # 构造键值对{"列名":数据}
         results = []
-        for res in decode_result_date(cur.fetchall()):
+        for res in cur.fetchall():
             row = {}
             for i in range(len(descs)):
                 row[descs[i]] = res[i]
             results.append(row)
     except Exception as e:
+        # print(e)
         raise e
     finally:
         cur.close()
         db.close()  # 关闭连接
         return results
+
+
+def excute(sql=""):
+    '''
+        ex: 根据sql插入或更新数据
+        args: sql
+        return: is_success，1:成功 0失败
+    '''
+    is_success = True
+    db = pymysql.connect(**db_config)
+    cur = db.cursor()
+    try:
+        cur.execute(sql)
+        db.commit()
+    except Exception as e:
+        db.rollback()
+        is_success = False
+    finally:
+        cur.close()
+        db.close()
+        return is_success
