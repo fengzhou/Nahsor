@@ -3,7 +3,7 @@ import pytest
 
 
 def pytest_collect_file(parent, path):
-    print(path)
+    # print(path)
     if path.ext == ".json" and path.basename.startswith("test"):
         return JsonFile(path, parent)
 
@@ -13,7 +13,7 @@ class JsonFile(pytest.File):
         # with open(path, 'r') as f:
         #     raw = json.load(f)
         raws = json.load(self.fspath.open())
-        print(raws)
+        # print(raws)
         for raw in raws:
             for name, spec in sorted(raw.items()):
                 yield JsonItem(name, self, spec)
@@ -26,7 +26,7 @@ class JsonItem(pytest.Item):
     def runtest(self):
         for name, value in sorted(self.spec.items()):
             # some custom test execution (dumb example follows)
-            print(name, value)
+            # print(name, value)
             if name != value:
                 raise JsonException(self, name, value)
 
