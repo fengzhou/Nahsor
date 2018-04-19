@@ -1,12 +1,62 @@
 [
     {
-        "name1":{
-        "test1":"test1"
+        "testTRUE": {
+            "name":"test",
+            "req": {
+                "method": "GET",
+                "json": {
+                    "aaa": "bbb"
+                },
+                "url": "http://127.0.0.1:2333/test",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "timeout": 10
+            },
+            "validates": [
+                {
+                    "Equal": [
+                        "r.json()",
+                        "req[\"json\"]"
+                    ]
+                },
+                {
+                    "Equal": [
+                        "r.status_code",
+                        "200"
+                    ]
+                }
+            ]
         }
     },
     {
-        "name2":{
-            "test2":"test3"
+        "testFaile": {
+            "name":"test",
+            "req": {
+                "method": "GET",
+                "json": {
+                    "aaa": "bbb"
+                },
+                "url": "http://127.0.0.1:2333/test",
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "timeout": 10
+            },
+            "validates": [
+                {
+                    "Equal": [
+                        "r.json()",
+                        "req[\"json\"]"
+                    ]
+                },
+                {
+                    "Equal": [
+                        "r.status_code",
+                        "201"
+                    ]
+                }
+            ]
         }
     }
 ]
