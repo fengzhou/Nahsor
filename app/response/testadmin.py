@@ -6,7 +6,7 @@ import pytest
 import subprocess
 
 
-@bp.route("/run", methods=["post"])
+@bp.route("/run", methods=["get"])
 def run():
     args = ['--alluredir=./result']
     pytest.main(args)
@@ -16,3 +16,7 @@ def run():
     response["code"] = 200
     response["msg"] = "%s" % allure.stdout.read()
     return jsonify(response)
+
+bp.route("/test")
+def test():
+    return "helo"
