@@ -60,6 +60,7 @@ https://www.kawabangga.com/posts/2662
 
 https://docs.pytest.org/en/latest/example/nonpython.html#yaml-plugin
 
+https://docs.pytest.org/en/latest/contents.html
 
 https://www.ctolib.com/taverntesting-tavern.html
 
