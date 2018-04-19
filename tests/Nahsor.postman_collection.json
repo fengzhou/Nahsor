@@ -1,0 +1,49 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Nahsor",
+		"_postman_id": "f996438e-d9f8-c162-c8c6-c4769c01b9ef",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:8808/querytcass",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"idlist\":\"1,2\"}"
+				},
+				"url": "http://127.0.0.1:8808/querytcass",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8808/addtcass",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://127.0.0.1:8808/addtcass",
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
