@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'lux'
 from app import create_app
-from app.response import testadmin
+from app.response import servers
 
 app = create_app("DevelopmentConfig")
 
