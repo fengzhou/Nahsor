@@ -1,6 +1,6 @@
 import requests
 from asserts import asserts
-
+from exception import MyExcept
 # req = {
 #     "method":"GET",
 #     "json":{"aaa":"bbb"},
@@ -21,12 +21,15 @@ def httpcass(req,validates):
     try:
         r = requests.request(**req)
     except requests.exceptions.Timeout as timeout:
-        raise timeout
+        raise MyExcept(timeout)
     for validate in validates:
         validate = validate.items()
         # print(validate)
         for key, values in validate:
-            assert eval(values[0] + asserts[key] + values[1])
+            try:
+                assert eval(values[0] + asserts[key] + values[1])
+            except AssertionError:
+                raise MyExcept("".join(values[0] + asserts[key] + values[1]))
     return r
 
 

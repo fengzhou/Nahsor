@@ -7,10 +7,10 @@ import pytest
 import subprocess
 
 
-
-def _run():
-    args = ['--alluredir=./result']
-    pytest.main(args)
+@bp.route("/run", methods=["GET"])
+def run():
+    # args = ['--alluredir=./result']
+    # pytest.main(args)
     allure = subprocess.Popen('allure generate ./result/ -o ./static/report/ --clean', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     # print()
     response = {}

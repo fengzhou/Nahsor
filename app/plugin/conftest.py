@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
 import pytest
-import allure
 import core
 
 
@@ -33,7 +32,7 @@ class JsonItem(pytest.Item):
         req, validates = core.analyzejson(self.spec)
         res = core.httpcass(req,validates)
         if res.status_code != 200:
-            raise JsonException(self, name, req)
+            raise JsonException(self, name, res)
 
     def repr_failure(self, excinfo):
         """ called when self.runtest() raises an exception. """
@@ -43,9 +42,6 @@ class JsonItem(pytest.Item):
                 "   spec failed: %r: %r" % excinfo.value.args[1:3],
                 "   no further details known at this point."
             ])
-        # if not issubclass(excinfo.type, exceptions.TavernException):
-        #     return super(JsonItem, self).repr_failure(excinfo)
-        # return super(JsonItem, self).repr_failure(excinfo)
 
     def reportinfo(self):
         return self.fspath, 0, "usecase: %s" % self.name
