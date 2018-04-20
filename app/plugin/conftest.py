@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import pytest
 import core
+import allure
 
 
 def pytest_collect_file(parent, path):

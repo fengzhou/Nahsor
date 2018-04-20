@@ -1,0 +1,34 @@
+{
+    "statusDetails": {
+        "message": "AssertionError: r.status_code==201"
+    },
+    "start": 1524220630682,
+    "labels": [
+        {
+            "name": "host",
+            "value": "DESKTOP-5PN9VPJ"
+        },
+        {
+            "name": "thread",
+            "value": "19416-MainThread"
+        },
+        {
+            "name": "framework",
+            "value": "pytest"
+        },
+        {
+            "name": "language",
+            "value": "cpython3"
+        },
+        {
+            "name": "package",
+            "value": "test_json"
+        }
+    ],
+    "stop": 1524220630686,
+    "status": "failed",
+    "historyId": "d05db6e10641cf4ee66a0635b397ec0d",
+    "uuid": "392d5c84-9a0a-441f-b03e-bec9d8b3a816",
+    "name": "testFaile",
+    "fullName": "test_json#testFaile"
+}

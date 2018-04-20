@@ -1,0 +1,31 @@
+{
+    "start": 1524220630672,
+    "labels": [
+        {
+            "name": "host",
+            "value": "DESKTOP-5PN9VPJ"
+        },
+        {
+            "name": "thread",
+            "value": "19416-MainThread"
+        },
+        {
+            "name": "framework",
+            "value": "pytest"
+        },
+        {
+            "name": "language",
+            "value": "cpython3"
+        },
+        {
+            "name": "package",
+            "value": "test_json"
+        }
+    ],
+    "stop": 1524220630678,
+    "status": "passed",
+    "historyId": "f209eb7139a12e5512c1ed042e2e3d06",
+    "uuid": "b89ffd9a-a608-44ae-bf4f-24bd0641b636",
+    "name": "testTRUE",
+    "fullName": "test_json#testTRUE"
+}
