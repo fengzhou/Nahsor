@@ -40,3 +40,13 @@ def querytcass():
     response["msg"] = "查询成功！！！"
     return jsonify(response)
 
+
+@bp.route("/testPytest")
+def test_pytest_and_result():
+    import  os
+    tests_path = os.getcwd() + "\\tests"
+    command = "py.test --alluredir=%allure_result_folder% " + tests_path
+    result = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    print(result.stdout.read())
+    return jsonify({"code": 200, "msg": "ok"})
+
