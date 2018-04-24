@@ -3,20 +3,7 @@ __author__ = "Jin"
 from flask import jsonify, request
 from app import bp
 from app.utils import dbfucs
-import pytest
-import subprocess
-
-
-@bp.route("/run", methods=["GET"])
-def run():
-    # args = ['--alluredir=./result']
-    # pytest.main(args)
-    allure = subprocess.Popen('allure generate ./result/ -o ./static/report/ --clean', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    # print()
-    response = {}
-    response["code"] = 200
-    response["msg"] = "%s" % allure.stdout.read()
-    return jsonify(response)
+from app.core import jsonfuc
 
 
 @bp.route("/addtcass", methods=["POST"])
@@ -40,13 +27,19 @@ def querytcass():
     response["msg"] = "查询成功！！！"
     return jsonify(response)
 
-
-@bp.route("/testPytest")
-def test_pytest_and_result():
-    import  os
-    tests_path = os.getcwd() + "\\tests"
-    command = "py.test --alluredir=%allure_result_folder% " + tests_path
-    result = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-    print(result.stdout.read())
-    return jsonify({"code": 200, "msg": "ok"})
-
+@bp.route("/testgo", methods=["POST"])
+def testgo():
+    dictdata = request.get_json()
+    idlist = dictdata["idlist"]
+    sql = "select cassname,testcass from t_testcass where id in(%s);" % idlist
+    res = dbfucs.query(sql)
+    jsoncasss = []
+    for test in res:
+        jsoncasss.append(test["testcass"])
+    # print(jsoncasss)
+    for i in jsonfuc.collect_db_cass(jsoncasss):
+        print("用例执行结束")
+    response = {}
+    response["code"] = 200
+    response["msg"] = "成功！！！"
+    return jsonify(response)

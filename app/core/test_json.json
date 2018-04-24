@@ -1,6 +1,6 @@
 [
     {
-        "test_name":"test_name",
+        "cass_name":"test_name",
         "req": {
             "method": "GET",
             "json": {
@@ -16,7 +16,7 @@
             {
                 "Equal": [
                     "r.json()",
-                    "req[\"json\"]"
+                    "self.req[\"json\"]"
                 ]
             },
             {
@@ -28,7 +28,7 @@
         ]  
     },
     {
-        "test_name":"test_name111",
+        "cass_name":"test_name111",
         "req": {
             "method": "GET",
             "json": {
@@ -44,7 +44,35 @@
             {
                 "Equal": [
                     "r.json()",
-                    "req[\"json\"]"
+                    "self.req[\"json\"]"
+                ]
+            },
+            {
+                "Equal": [
+                    "r.status_code",
+                    "201"
+                ]
+            }
+        ]  
+    },
+    {
+        "cass_name":"test_name111111",
+        "req": {
+            "method": "GET",
+            "json": {
+                "aaa": "bbb"
+            },
+            "url": "http://127.0.0.1:2333/test",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "timeout": 10
+        },
+        "validates": [
+            {
+                "Equal": [
+                    "r.json()",
+                    "self.req[\"json\"]"
                 ]
             },
             {
