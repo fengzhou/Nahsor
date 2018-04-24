@@ -1,0 +1,58 @@
+[
+    {
+        "test_name":"test_name",
+        "req": {
+            "method": "GET",
+            "json": {
+                "aaa": "bbb"
+            },
+            "url": "http://127.0.0.1:2333/test",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "timeout": 10
+        },
+        "validates": [
+            {
+                "Equal": [
+                    "r.json()",
+                    "req[\"json\"]"
+                ]
+            },
+            {
+                "Equal": [
+                    "r.status_code",
+                    "200"
+                ]
+            }
+        ]  
+    },
+    {
+        "test_name":"test_name111",
+        "req": {
+            "method": "GET",
+            "json": {
+                "aaa": "bbb"
+            },
+            "url": "http://127.0.0.1:2333/test",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "timeout": 10
+        },
+        "validates": [
+            {
+                "Equal": [
+                    "r.json()",
+                    "req[\"json\"]"
+                ]
+            },
+            {
+                "Equal": [
+                    "r.status_code",
+                    "201"
+                ]
+            }
+        ]  
+    }
+]
