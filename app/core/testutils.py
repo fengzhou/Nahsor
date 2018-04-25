@@ -7,7 +7,7 @@ def run_http_test(cassname, req):
     try:
         r = requests.request(**req)
     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as timeout:
-        print("【%s】在只从过程中出现异常，错误信息：" % (cassname,timeout))
+        print("【%s】在只从过程中出现异常，错误信息：%s" % (cassname,timeout))
     return r
 
 
@@ -37,3 +37,5 @@ def equal(validate):
 
 def notequal(validate):
     assert validate[0] != validate[1]
+
+
