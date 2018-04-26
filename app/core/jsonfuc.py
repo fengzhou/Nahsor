@@ -1,5 +1,5 @@
 import json
-from app.core.runner import Runner
+from app.core.runner import Runner, run_test
 
 def jsonfile(filename):
     '''
@@ -44,7 +44,9 @@ def collect_db_cass(jsoncasss):
         try:
             runner = Runner(test)
             yield runner.run_test()
-        except:
+            # yield run_test(test)
+        except Exception as e:
+            raise e
             print("【%s】用例执行失败" % test["cass_name"])
 
 

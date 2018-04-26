@@ -36,3 +36,9 @@ CREATE TABLE `t_testcass` (
   `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+INSERT INTO `nahsor`.`t_testcass` (`id`, `cassname`, `testcass`, `remark`, `createtime`, `updatatime`) VALUES ('1', 'tastcass', '{\"req\": {\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"GET\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}, \"cass_name\": \"test_name\", \"validates\": [{\"Equal\": [\"r.json()\", \"self.req[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]}', '2333', '2018-04-19 14:48:25', '2018-04-24 18:46:12');
+INSERT INTO `nahsor`.`t_testcass` (`id`, `cassname`, `testcass`, `remark`, `createtime`, `updatatime`) VALUES ('2', 'tastcass', '{\"req\": {\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"GET\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}, \"cass_name\": \"test_name111\", \"validates\": [{\"Equal\": [\"r.json()\", \"self.req[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]}', '2333', '2018-04-19 14:48:31', '2018-04-24 18:46:30');
