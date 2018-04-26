@@ -16,11 +16,7 @@ def run_http_test(cassname, req):
     try:
         r = requests.request(**req)
     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as timeout:
-<<<<<<< HEAD
         print("【%s】在只从过程中出现异常，错误信息：%s" % (cassname,timeout))
-=======
-        print("【%s】在只从过程中出现异常，错误信息：%s" % (cassname, timeout))
->>>>>>> 6b97d43e0bb17e40d4a505acd7417872ead759e3
     return r
 
 
