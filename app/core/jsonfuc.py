@@ -43,10 +43,9 @@ def collect_db_cass(jsoncasss):
             Logger().error("没有发现测试用例，结束用例执行！")
         test = json.loads(test)
         try:
-            runner = Runner(test)
-            yield runner.run_test()
-            # yield run_test(test)
+            yield  Runner().run_test(test)
         except Exception as e:
+            raise e
             Logger().error("测试用例[%s]执行失败，失败原因 --> %s"  % (test["cass_name"], e))
 
 
