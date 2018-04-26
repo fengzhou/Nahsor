@@ -103,3 +103,4 @@ ENV/
 # nahsor
 .vscode
 naenv/
+.idea
