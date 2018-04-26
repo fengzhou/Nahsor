@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 # import json
 # with open('test_json.json', 'r') as f:
 #     data = json.load(f)

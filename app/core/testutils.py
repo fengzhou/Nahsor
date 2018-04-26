@@ -1,5 +1,14 @@
 import requests
 
+# def run_http_test(cassname, req):
+#     '''
+#     对HTTP接口发送请求
+#     '''
+#     try:
+#         r = requests.request(**req)
+#     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as timeout:
+#         print("【%s】在只从过程中出现异常，错误信息：%s" % (cassname, timeout))
+#     return r
 def run_http_test(cassname, req):
     '''
     对HTTP接口发送请求
@@ -7,7 +16,7 @@ def run_http_test(cassname, req):
     try:
         r = requests.request(**req)
     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as timeout:
-        print("【%s】在只从过程中出现异常，错误信息：" % (cassname,timeout))
+        print("【%s】在只从过程中出现异常，错误信息：%s" % (cassname, timeout))
     return r
 
 

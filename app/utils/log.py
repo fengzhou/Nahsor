@@ -1,65 +1,94 @@
-# encoding: utf-8
+# -*- coding:utf-8 -*-
+import logging, datetime, os
+import ctypes
+from app.utils.filehandler import make_file
 
-import logging
-import sys
+FOREGROUND_WHITE = 0x0007
+FOREGROUND_BLUE = 0x01  # text color contains blue.
+FOREGROUND_GREEN = 0x02  # text color contains green.
+FOREGROUND_RED = 0x04  # text color contains red.
+FOREGROUND_YELLOW = FOREGROUND_RED | FOREGROUND_GREEN
 
-from colorama import Back, Fore, Style, init
-from colorlog import ColoredFormatter
-
-init(autoreset=True)
-
-log_colors_config = {
-    'DEBUG':    'cyan',
-    'INFO':     'green',
-    'WARNING':  'yellow',
-    'ERROR':    'red',
-    'CRITICAL': 'red',
-}
-
-def setup_logger(log_level):
-    """setup root logger with ColoredFormatter."""
-    level = getattr(logging, log_level.upper(), None)
-    if not level:
-        color_print("Invalid log level: %s" % log_level, "RED")
-        sys.exit(1)
-
-    # hide traceback when log level is INFO/WARNING/ERROR/CRITICAL
-    if level >= logging.INFO:
-        sys.tracebacklimit = 0
-
-    formatter = ColoredFormatter(
-        u"%(log_color)s%(bg_white)s%(levelname)-8s%(reset)s %(message)s",
-        datefmt=None,
-        reset=True,
-        log_colors=log_colors_config
-    )
-
-    handler = logging.StreamHandler()
-    handler.setFormatter(formatter)
-    logging.root.addHandler(handler)
-    logging.root.setLevel(level)
+STD_OUTPUT_HANDLE = -11
+std_out_handle = ctypes.windll.kernel32.GetStdHandle(STD_OUTPUT_HANDLE)
 
 
-def coloring(text, color="WHITE"):
-    fore_color = getattr(Fore, color.upper())
-    return fore_color + text
-
-def color_print(msg, color="WHITE"):
-    fore_color = getattr(Fore, color.upper())
-    print(fore_color + msg)
-
-def log_with_color(level):
-    """ log with color by different level
+def set_color(color, handle=std_out_handle):
+    """内部函数
     """
-    def wrapper(text):
-        color = log_colors_config[level.upper()]
-        getattr(logging, level.lower())(coloring(text, color))
-
-    return wrapper
+    bool = ctypes.windll.kernel32.SetConsoleTextAttribute(handle, color)
+    return bool
 
 
-log_debug = log_with_color("debug")
-log_info = log_with_color("info")
-log_warning = log_with_color("warning")
-log_error = log_with_color("error")
-log_critical = log_with_color("critical")
+class Logger:
+    def __init__(self, clevel=logging.DEBUG, Flevel=logging.DEBUG):
+        # 创建日志文件
+        path = "../logs/" + datetime.datetime.now().strftime("%Y-%m-%d") + ".log"  # 默认为logs/yyyy-mm-dd.log
+        make_file(path)
+
+        self.logger = logging.getLogger(path)
+        self.logger.setLevel(logging.DEBUG)
+        fmt = logging.Formatter('[%(asctime)s] [%(levelname)s] %(message)s', '%Y-%m-%d %H:%M:%S')
+
+        # 设置CMD日志
+        sh = logging.StreamHandler()
+        sh.setFormatter(fmt)
+        sh.setLevel(clevel)
+
+        # 设置文件日志
+        fh = logging.FileHandler(path, encoding='utf-8')
+        fh.setFormatter(fmt)
+        fh.setLevel(Flevel)
+
+        self.logger.addHandler(sh)
+        self.logger.addHandler(fh)
+
+
+    def debug(self, message):
+        """
+        :ex: debug模式
+        :param message: 输出消息
+        :return:
+        """
+        self.logger.debug(message)
+
+    def info(self, message):
+        """
+        :ex: info模式
+        :param message: 输出消息
+        :return:
+        """
+        self.logger.info(message)
+
+    def war(self, message, color=FOREGROUND_YELLOW):
+        """
+        :ex: warrning模式
+        :param message: 输出消息， color: 输出颜色
+        :return:
+        """
+        set_color(color)
+        self.logger.warn(message)
+        set_color(FOREGROUND_WHITE)
+
+    def error(self, message, color=FOREGROUND_RED):
+        """
+         :ex: error模式
+         :param message: 输出消息， color: 输出颜色
+         :return:
+         """
+        set_color(color)
+        self.logger.error(message)
+        set_color(FOREGROUND_WHITE)
+
+    def cri(self, message):
+        self.logger.critical(message)
+
+
+if __name__ == '__main__':
+    logyyx = Logger(logging.WARNING, logging.DEBUG)
+    logyyx.debug('一个debug信息')
+    logyyx.info('一个info信息')
+    logyyx.war('一个warning信息')
+    logyyx.error('一个error信息')
+    logyyx.cri('一个致命critical信息')
+

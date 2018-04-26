@@ -27,6 +27,7 @@ def querytcass():
     response["msg"] = "查询成功！！！"
     return jsonify(response)
 
+
 @bp.route("/testgo", methods=["POST"])
 def testgo():
     dictdata = request.get_json()
