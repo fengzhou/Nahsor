@@ -1,4 +1,6 @@
 # -*- coding:utf-8 -*-
+__author__="SNake"
+
 import logging, datetime, os
 import ctypes
 from functools import wraps
