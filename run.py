@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'nahsor'
 from app import create_app
-from app.response import servers, tests
+from app.response import servers
 
 app = create_app("DevelopmentConfig")
 
@@ -12,4 +12,4 @@ def index():
     return app.send_static_file('index.html')
 
 if __name__ == "__main__":
-    app.run(port=2333)
+    app.run(port=8808)

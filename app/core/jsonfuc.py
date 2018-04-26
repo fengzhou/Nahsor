@@ -1,5 +1,6 @@
 import json
-from app.core.runner import Runner, run_test
+from app.core.runner import Runner
+from app.utils.log import Logger
 
 def jsonfile(filename):
     '''
@@ -10,7 +11,7 @@ def jsonfile(filename):
     if filetype[-1] == "json" and filename.startswith("test"):
         return filename
     else:
-        print("导入的json文件格式不正确")
+        Logger().error("导入的JSON文件格式不正确，请检查JSON格式！")
         return None
 
 
@@ -24,7 +25,7 @@ def collect_file_cass(filename):
         # print(all_tests)
     for test in all_tests:
         if not test:
-            print("没有测试用例")
+            Logger().error("没有发现测试用例，结束用例执行！")
         # try:
         runner = Runner(test)
         yield runner.run_test()
@@ -39,15 +40,14 @@ def collect_db_cass(jsoncasss):
     # all_tests = json.loads(jsoncasss)
     for test in jsoncasss:
         if not test:
-            print("没有测试用例")
+            Logger().error("没有发现测试用例，结束用例执行！")
         test = json.loads(test)
         try:
             runner = Runner(test)
             yield runner.run_test()
             # yield run_test(test)
         except Exception as e:
-            raise e
-            print("【%s】用例执行失败" % test["cass_name"])
+            Logger().error("测试用例[%s]执行失败，失败原因 --> %s"  % (test["cass_name"], e))
 
 
 def verify_test(test):

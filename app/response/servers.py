@@ -4,6 +4,7 @@ from flask import jsonify, request
 from app import bp
 from app.utils import dbfucs
 from app.core import jsonfuc
+from app.utils.log import Logger
 
 
 @bp.route("/addtcass", methods=["POST"])
@@ -39,7 +40,9 @@ def testgo():
         jsoncasss.append(test["testcass"])
     # print(jsoncasss)
     for i in jsonfuc.collect_db_cass(jsoncasss):
-        print("用例执行结束")
+        Logger().info("*" * 90)
+    Logger().info("共计[%d]条测试用例执行完成！" % len(jsoncasss))
+    Logger().info("*" * 90)
     response = {}
     response["code"] = 200
     response["msg"] = "成功！！！"

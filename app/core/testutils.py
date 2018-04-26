@@ -1,4 +1,5 @@
 import requests
+from app.utils.log import Logger
 
 # def run_http_test(cassname, req):
 #     '''
@@ -14,9 +15,15 @@ def run_http_test(cassname, req):
     对HTTP接口发送请求
     '''
     try:
+        Logger().info("开始执行测试用例[%s]" % cassname)
+        Logger().info("接口请求地址为 --> %s" %req["url"])
+        Logger().info("接口请求方法为 --> %s" %req["method"])
+        Logger().info("接口请求数据为 --> %s" %req["json"])
+        Logger().info("接口请求header --> %s" %req["headers"])
+
         r = requests.request(**req)
     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as timeout:
-        print("【%s】在只从过程中出现异常，错误信息：%s" % (cassname, timeout))
+        Logger().error("测试用例[%s]在执行过程中出现异常，错误信息为 --> %s" % (cassname, timeout))
     return r
 
 
