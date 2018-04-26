@@ -61,7 +61,7 @@ def set_color(color, handle=std_out_handle):
 class Logger(object):
     def __init__(self, clevel=logging.INFO, Flevel=logging.DEBUG):
         # 创建日志文件
-        path = os.getcwd()+"/app/logs/" + datetime.datetime.now().strftime("%Y-%m-%d") + ".log"  # 默认为logs/yyyy-mm-dd.log
+        path = os.getcwd()+"/app/logs/" + datetime.datetime.now().strftime("%Y-%m-%d") + ".log"  # 默认为logs/yyyy-mm-dd.logs
         make_file(path)
 
         # 设置日志文件路径/格式/日志级别
@@ -70,17 +70,17 @@ class Logger(object):
         fmt = logging.Formatter('[%(asctime)s] [%(levelname)s]: %(message)s', '%Y-%m-%d %H:%M:%S')
 
         # 设置CMD日志
-        sh = logging.StreamHandler()
-        sh.setFormatter(fmt)
-        sh.setLevel(clevel)
+        self.sh = logging.StreamHandler()
+        self.sh.setFormatter(fmt)
+        self.sh.setLevel(clevel)
 
         # 设置文件日志
-        fh = logging.FileHandler(path, encoding='utf-8')
-        fh.setFormatter(fmt)
-        fh.setLevel(Flevel)
+        self.fh = logging.FileHandler(path, encoding='utf-8')
+        self.fh.setFormatter(fmt)
+        self.fh.setLevel(Flevel)
 
-        self.logger.addHandler(sh)
-        self.logger.addHandler(fh)
+        self.logger.addHandler(self.sh)
+        self.logger.addHandler(self.fh)
 
 
     @_exception_debug
@@ -91,6 +91,8 @@ class Logger(object):
         :return:
         """
         self.logger.debug(message)
+        self.close()
+
 
     @_exception_debug
     def info(self, message):
@@ -100,6 +102,8 @@ class Logger(object):
         :return:
         """
         self.logger.info(message)
+        self.close()
+
 
     @_exception_debug
     def war(self, message, color=FOREGROUND_YELLOW):
@@ -111,6 +115,8 @@ class Logger(object):
         set_color(color)
         self.logger.warn(message)
         set_color(FOREGROUND_WHITE)
+        self.close()
+
 
     @_exception_debug
     def error(self, message, color=FOREGROUND_RED):
@@ -122,10 +128,19 @@ class Logger(object):
         set_color(color)
         self.logger.error(message)
         set_color(FOREGROUND_WHITE)
+        self.close()
+
 
     @_exception_debug
     def cri(self, message):
         self.logger.critical(message)
+        self.close()
+
+
+    @_exception_debug
+    def close(self):
+        self.sh.close()
+        self.fh.close()
 
 
 if __name__ == '__main__':
