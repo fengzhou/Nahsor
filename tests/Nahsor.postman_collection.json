@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"idlist\":\"1,2\"}"
+					"raw": "{\"idlist\":\"1,2,3,4\"}"
 				},
 				"url": "http://127.0.0.1:8808/querytcass",
 				"description": ""
@@ -41,6 +41,25 @@
 					"raw": ""
 				},
 				"url": "http://127.0.0.1:8808/addtcass",
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:8808/testgo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"idlist\":\"1,2\"}"
+				},
+				"url": "http://127.0.0.1:8808/testgo",
 				"description": ""
 			},
 			"response": []

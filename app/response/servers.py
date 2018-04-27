@@ -3,7 +3,7 @@ __author__ = "Jin"
 from flask import jsonify, request
 from app import bp
 from app.utils import dbfucs
-from app.core import jsonfuc
+from app.core import collect
 from app.utils.log import Logger
 
 @bp.route("/addtcass", methods=["POST"])
@@ -19,7 +19,7 @@ def addtcass():
 def querytcass():
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "select cassname,testcass from t_testcass where id in(%s);" % idlist
+    sql = "select testname,testtype,request,validate from t_testcass where id in(%s);" % idlist
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -32,13 +32,13 @@ def querytcass():
 def testgo():
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "select cassname,testcass from t_testcass where id in(%s);" % idlist
+    sql = "select testname,testtype,request,validate from t_testcass where id in(%s);" % idlist
     res = dbfucs.query(sql)
     jsoncasss = []
     for test in res:
-        jsoncasss.append(test["testcass"])
+        jsoncasss.append(test)
     # print(jsoncasss)
-    for i in jsonfuc.collect_db_cass(jsoncasss):
+    for i in collect.collect_db_cass(jsoncasss):
         Logger().info("*" * 90)
     Logger().info("共计[%d]条测试用例执行完成！" % len(jsoncasss))
     Logger().info("*" * 90)
