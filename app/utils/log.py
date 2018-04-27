@@ -1,10 +1,25 @@
 # -*- coding:utf-8 -*-
 __author__="SNake"
 
-import logging, datetime, os
-import ctypes
+
+import logging, datetime, os, ctypes
 from functools import wraps
-from app.utils.filehandler import make_file
+from app.utils.filehandle import make_file
+
+
+FOREGROUND_WHITE = 0x0007  # 白色文字
+FOREGROUND_BLUE = 0x01  # 蓝色文字
+FOREGROUND_GREEN = 0x02  # 绿色文字
+FOREGROUND_RED = 0x04  # 红色文字
+FOREGROUND_YELLOW = FOREGROUND_RED | FOREGROUND_GREEN  # 文字黄色
+
+STD_OUTPUT_HANDLE = -11
+std_out_handle = ctypes.windll.kernel32.GetStdHandle(STD_OUTPUT_HANDLE)
+
+
+def set_color(color, handle=std_out_handle):
+    bool = ctypes.windll.kernel32.SetConsoleTextAttribute(handle, color)
+    return bool
 
 
 def _exception_handle(func):
@@ -38,6 +53,8 @@ def _singleton(cls):
     return getinstance
 
 
+
+
 @_singleton
 class Logger(object):
     def __init__(self, clevel=logging.INFO, Flevel=logging.DEBUG):
@@ -63,7 +80,6 @@ class Logger(object):
         self.logger.addHandler(self.sh)
         self.logger.addHandler(self.fh)
 
-
     @_exception_handle
     def debug(self, message):
         """
@@ -73,7 +89,6 @@ class Logger(object):
         """
         self.logger.debug(message)
         self.close()
-
 
     @_exception_handle
     def info(self, message):
@@ -85,39 +100,41 @@ class Logger(object):
         self.logger.info(message)
         self.close()
 
-
     @_exception_handle
-    def war(self, message):
+    def war(self, message, color=FOREGROUND_YELLOW):
         """
         :ex: warrning模式
-        :param message: 输出消息， color: 输出颜色
+        :param message: 输出消息
         :return:
         """
+        set_color(color)
         self.logger.warning(message)
+        set_color(FOREGROUND_WHITE)
         self.close()
 
-
     @_exception_handle
-    def error(self, message):
+    def error(self, message, color=FOREGROUND_RED):
         """
          :ex: error模式
          :param message: 输出消息， color: 输出颜色
          :return:
          """
+        set_color(color)
         self.logger.error(message)
+        set_color(FOREGROUND_WHITE)
         self.close()
 
-
     @_exception_handle
-    def cri(self, message):
+    def cri(self, message, color=FOREGROUND_RED):
         """
          :ex: cri模式
          :param message: 输出消息， color: 输出颜色
          :return:
          """
+        set_color(color)
         self.logger.critical(message)
+        set_color(FOREGROUND_WHITE)
         self.close()
-
 
     @_exception_handle
     def close(self):

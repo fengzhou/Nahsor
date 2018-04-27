@@ -6,7 +6,6 @@ from app.utils import dbfucs
 from app.core import jsonfuc
 from app.utils.log import Logger
 
-
 @bp.route("/addtcass", methods=["POST"])
 def addtcass():
     sql = "insert into t_testcass values(null,'tastcass','{\"\key\":\"values\"}','2333',null,null)"
