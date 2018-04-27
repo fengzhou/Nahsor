@@ -13,12 +13,15 @@ def addtcass():
     testtype = dictdata["testtype"]
     requests = dictdata["request"]
     validate = dictdata["validate"]
-    # 这里有BUG，生成的sql不能用。
-    sql = "insert into t_testcass values(null,'%s','%s','%s','%s',null,null)" % (testname,testtype,requests,validate)
-    print(sql)
+    sql = "insert into t_testcass values(null,'%s','%s','%s','%s',null,null,null);" % (testname,testtype,requests,validate)
     response = {}
-    response["code"] = 200
-    response["msg"] = dbfucs.excute(sql)
+    data = dbfucs.excute(sql)
+    if data is True:
+        response["code"] = 200
+        response["msg"] = data
+    else:
+        response["code"] = 500
+        response["msg"] = data
     return jsonify(response)
 
 
@@ -54,4 +57,3 @@ def testgo():
     response["msg"] = "成功！！！"
     return jsonify(response)
 
-    

@@ -5,7 +5,7 @@ __author__ = 'Jin'
 '''
 import pymysql
 from config import db_config
-
+from app.utils.log import Logger
 
 def query(sql=""):
     """
@@ -30,7 +30,7 @@ def query(sql=""):
                 row[descs[i]] = res[i]
             results.append(row)
     except Exception as e:
-        # print(e)
+        Logger().error("sql语句[%s]执行失败,错误信息为 --> %s" % (sql, e))
         raise e
     finally:
         cur.close()
@@ -52,7 +52,8 @@ def excute(sql=""):
         db.commit()
     except Exception as e:
         db.rollback()
-        is_success = False
+        Logger().error("sql语句[%s]执行失败,错误信息为 --> %s" % (sql, e))
+        is_success = "%s" % e
     finally:
         cur.close()
         db.close()

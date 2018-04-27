@@ -18,7 +18,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"idlist\":\"1,2\"}"
+					"raw": "{\"idlist\":\"1,2,3\"}"
 				},
 				"url": "http://127.0.0.1:8808/querytcass"
 			},
@@ -36,7 +36,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"testname\":\"测试用例1\",\"testtype\":\"testcass\",\"request\":{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10},\"validate\":[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]}"
+					"raw": "{\n    \"request\": \"{\\\"url\\\": \\\"http://127.0.0.1:2333/test\\\", \\\"json\\\": {\\\"aaa\\\": \\\"bbb\\\"}, \\\"method\\\": \\\"POST\\\", \\\"headers\\\": {\\\"Content-Type\\\": \\\"application/json\\\"}, \\\"timeout\\\": 10}\",\n    \"testname\": \"用例99\",\n    \"testtype\": \"testcass\",\n    \"validate\": \"[{\\\"Equal\\\": [\\\"r.json()\\\",\\\"request[\\\\\\\\\\\"json\\\\\\\\\\\"]\\\"]},{\\\"Equal\\\": [\\\"r.status_code\\\",\\\"200\\\"]}]\"\n}"
 				},
 				"url": "http://127.0.0.1:8808/addtcass"
 			},
@@ -54,7 +54,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"idlist\":\"1,2\"}"
+					"raw": "{\"idlist\":\"42\"}"
 				},
 				"url": "http://127.0.0.1:8808/testgo",
 				"description": ""
