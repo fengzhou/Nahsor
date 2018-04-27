@@ -7,17 +7,7 @@ from functools import wraps
 from app.utils.filehandler import make_file
 
 
-FOREGROUND_WHITE = 0x0007                               # 白色文字
-FOREGROUND_BLUE = 0x01                                  # 蓝色文字
-FOREGROUND_GREEN = 0x02                                 # 绿色文字
-FOREGROUND_RED = 0x04                                   # 红色文字
-FOREGROUND_YELLOW = FOREGROUND_RED | FOREGROUND_GREEN   # 文字黄色
-
-STD_OUTPUT_HANDLE = -11
-std_out_handle = ctypes.windll.kernel32.GetStdHandle(STD_OUTPUT_HANDLE)
-
-
-def _exception_debug(func):
+def _exception_handle(func):
     """
     异常处理装饰器，确保代码不受日志影响
     :param func:
@@ -48,17 +38,6 @@ def _singleton(cls):
     return getinstance
 
 
-def set_color(color, handle=std_out_handle):
-    """
-    ex:内部函数，设置显示颜色
-    :param color:
-    :param handle:
-    :return:
-    """
-    bool = ctypes.windll.kernel32.SetConsoleTextAttribute(handle, color)
-    return bool
-
-
 @_singleton
 class Logger(object):
     def __init__(self, clevel=logging.INFO, Flevel=logging.DEBUG):
@@ -85,7 +64,7 @@ class Logger(object):
         self.logger.addHandler(self.fh)
 
 
-    @_exception_debug
+    @_exception_handle
     def debug(self, message):
         """
         :ex: debug模式
@@ -96,7 +75,7 @@ class Logger(object):
         self.close()
 
 
-    @_exception_debug
+    @_exception_handle
     def info(self, message):
         """
         :ex: info模式
@@ -107,39 +86,40 @@ class Logger(object):
         self.close()
 
 
-    @_exception_debug
-    def war(self, message, color=FOREGROUND_YELLOW):
+    @_exception_handle
+    def war(self, message):
         """
         :ex: warrning模式
         :param message: 输出消息， color: 输出颜色
         :return:
         """
-        set_color(color)
-        self.logger.warn(message)
-        set_color(FOREGROUND_WHITE)
+        self.logger.warning(message)
         self.close()
 
 
-    @_exception_debug
-    def error(self, message, color=FOREGROUND_RED):
+    @_exception_handle
+    def error(self, message):
         """
          :ex: error模式
          :param message: 输出消息， color: 输出颜色
          :return:
          """
-        set_color(color)
         self.logger.error(message)
-        set_color(FOREGROUND_WHITE)
         self.close()
 
 
-    @_exception_debug
+    @_exception_handle
     def cri(self, message):
+        """
+         :ex: cri模式
+         :param message: 输出消息， color: 输出颜色
+         :return:
+         """
         self.logger.critical(message)
         self.close()
 
 
-    @_exception_debug
+    @_exception_handle
     def close(self):
         self.sh.close()
         self.fh.close()
