@@ -11,7 +11,7 @@ import os
 class DevelopmentConfig:
     # FLASK启动配置
     DEBUG = True
-    HOST = "0.0.0.0"
+    HOST = "0.0.0.0",
     JSON_AS_ASCII = False #json 中文支持
     SECRET_KEY = os.urandom(24)    # SESSION配置
 

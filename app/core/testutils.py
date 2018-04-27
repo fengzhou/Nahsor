@@ -50,5 +50,6 @@ def run_validata_test(key):
 def equal(validate):
     assert validate[0] == validate[1]
 
+
 def notequal(validate):
     assert validate[0] != validate[1]

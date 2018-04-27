@@ -13,25 +13,24 @@ class Runner(object):
     def run_test(self):
         testname = self.testname
         testtype = self.testtype
-        request = self.request
-        validates = self.validates
-        # request = json_to_dict(request)
-        # 这个地方格式转换有问题！
-        print(request)
+        request = eval(self.request)
+        validates = eval(self.validates)
         try:
             r = run_http_test(testname, request)
             for validate in validates:
                 key = list(validate.keys())[0]
+                # print(key)
                 chicker = run_validata_test(key)
                 chicklist = []
                 for i in validate[key]:
                     chicklist.append(eval(i))
+                # print(chicklist)
                 try:
                     chicker(chicklist)
-                    Logger().info("测试用例[%s]检查点执行通过,检查点信息为 --> %s" % (cassname, chicklist))
+                    Logger().info("测试用例[%s]检查点执行通过,检查点信息为 --> %s" % (testname, chicklist))
                 except Exception as e:
-                    Logger().war("测试用例[%s]测试不通过,错误信息为 --> %s" % (cassname, e))
-        except:
-            pass
+                    Logger().war("测试用例[%s]测试不通过,错误信息为 --> %s" % (testname, e))
+        except Exception as e:
+            Logger().war("测试用例[%s]测试不通过,错误信息为 --> %s" % (testname, e))
 
 
