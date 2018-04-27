@@ -12,38 +12,38 @@ try:
 except AttributeError:
     JSONDecodeError = ValueError
 
-class MyBaseError(BaseException):
+class MyBaseException(BaseException):
     pass
 
-class FileFormatError(MyBaseError):
+class FileFormatException(MyBaseException):
     pass
 
-class ParamsError(MyBaseError):
+class ParamsException(MyBaseException):
     pass
 
-class ResponseError(MyBaseError):
+class ResponseException(MyBaseException):
     pass
 
-class ParseResponseError(MyBaseError):
+class ParseResponseException(MyBaseException):
     pass
 
-class ValidationError(MyBaseError):
+class ValidationException(MyBaseException):
     pass
 
-class NotFoundError(MyBaseError):
+class NotFoundException(MyBaseException):
     pass
 
-class FunctionNotFound(NotFoundError):
+class FunctionNotFound(NotFoundException):
     pass
 
-class VariableNotFound(NotFoundError):
+class VariableNotFound(NotFoundException):
     pass
 
-class ApiNotFound(NotFoundError):
+class ApiNotFound(NotFoundException):
     pass
 
-class SuiteNotFound(NotFoundError):
+class SuiteNotFound(NotFoundException):
     pass
 
-class TestcaseNotFound(NotFoundError):
+class TestcaseNotFound(NotFoundException):
     pass
