@@ -29,6 +29,7 @@ class Runner(object):
                     chicker(chicklist)
                     Logger().info("测试用例[%s]检查点执行通过,检查点信息为 --> %s" % (testname, chicklist))
                 except Exception as e:
+                    raise
                     Logger().war("测试用例[%s]测试不通过,错误信息为 --> %s" % (testname, e))
         except Exception as e:
             Logger().war("测试用例[%s]测试不通过,错误信息为 --> %s" % (testname, e))
