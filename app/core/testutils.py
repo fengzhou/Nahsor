@@ -1,15 +1,7 @@
 import requests
 from app.utils.log import Logger
 
-# def run_http_test(cassname, req):
-#     '''
-#     对HTTP接口发送请求
-#     '''
-#     try:
-#         r = requests.request(**req)
-#     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as timeout:
-#         print("【%s】在只从过程中出现异常，错误信息：%s" % (cassname, timeout))
-#     return r
+
 def run_http_test(cassname, req):
     '''
     对HTTP接口发送请求
@@ -24,7 +16,13 @@ def run_http_test(cassname, req):
         r = requests.request(**req)
     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as timeout:
         Logger().error("测试用例[%s]在执行过程中出现异常，错误信息为 --> %s" % (cassname, timeout))
-    return r
+    try:
+        assert r.status_code == 200
+        return r
+    except:
+        Logger().error("测试用例[%s]在执行过程中出现异常，错误信息为 --> [code:%s],[error:%s]" % (cassname, r.status_code, r.text))
+        raise
+    
 
 
 def run_validata_test(key):
