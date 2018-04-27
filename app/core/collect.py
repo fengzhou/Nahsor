@@ -41,22 +41,12 @@ def collect_db_cass(jsoncasss):
     for test in jsoncasss:
         if not test:
             Logger().error("没有发现测试用例，结束用例执行！")
-        test = json.loads(test)
+        # test = dict_to_json(test)
+        # testcass = json_to_dict(test)
         try:
-            yield  Runner().run_test(test)
+            runner = Runner(test)
+            yield  runner.run_test()
         except Exception as e:
             raise e
             Logger().error("测试用例[%s]执行失败，失败原因 --> %s"  % (test["cass_name"], e))
 
-
-def verify_test(test):
-    if test.has_key('cass_name'):
-        pass
-
-
-
-# filename = "test_json.json"
-# jsonfile(filename)
-# collect_file_cass(filename)
-# for i in collect_file_cass(filename):
-#     print("用例执行结束！")

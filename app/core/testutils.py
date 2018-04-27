@@ -2,25 +2,26 @@ import requests
 from app.utils.log import Logger
 
 
-def run_http_test(cassname, req):
+def run_http_test(testname, request):
     '''
     对HTTP接口发送请求
     '''
     try:
-        Logger().info("开始执行测试用例[%s]" % cassname)
-        Logger().info("接口请求地址为 --> %s" %req["url"])
-        Logger().info("接口请求方法为 --> %s" %req["method"])
-        Logger().info("接口请求数据为 --> %s" %req["json"])
-        Logger().info("接口请求header --> %s" %req["headers"])
+        Logger().info("开始执行测试用例[%s]" % testname)
+        Logger().info("接口请求地址为 --> %s" % request["url"])
+        Logger().info("接口请求方法为 --> %s" % request["method"])
+        Logger().info("接口请求header --> %s" % request["headers"])
+        Logger().info("接口请求数据为 --> %s" % request["json"])
 
-        r = requests.request(**req)
+
+        r = requests.request(**request)
     except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as timeout:
-        Logger().error("测试用例[%s]在执行过程中出现异常，错误信息为 --> %s" % (cassname, timeout))
+        Logger().error("测试用例[%s]在执行过程中出现异常，错误信息为 --> %s" % (testname, timeout))
     try:
         assert r.status_code == 200
         return r
     except:
-        Logger().error("测试用例[%s]在执行过程中出现异常，错误信息为 --> [code:%s],[error:%s]" % (cassname, r.status_code, r.text))
+        Logger().error("测试用例[%s]在执行过程中出现异常，错误信息为 --> [code:%s],[error:%s]" % (testname, r.status_code, r.text))
         raise
     
 
