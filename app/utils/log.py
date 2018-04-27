@@ -2,9 +2,8 @@
 __author__="SNake"
 
 
-import logging, datetime, os, ctypes
+import logging, datetime, os, ctypes, codecs
 from functools import wraps
-from app.utils.filehandle import make_file
 
 
 FOREGROUND_WHITE = 0x0007  # 白色文字
@@ -53,6 +52,19 @@ def _singleton(cls):
     return getinstance
 
 
+def make_file(path):
+    """
+    :ex: 创建文件
+    :param path: 文件路径
+    :return: false 失败， true 成功
+    """
+    if not os.path.exists(path):
+        try:
+            with open(path, 'w', encoding='utf8') as file:
+                file.close()
+            return True
+        except:
+            return False
 
 
 @_singleton

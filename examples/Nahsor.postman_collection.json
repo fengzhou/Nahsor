@@ -1,8 +1,7 @@
 {
-	"variables": [],
 	"info": {
 		"name": "Nahsor",
-		"_postman_id": "f996438e-d9f8-c162-c8c6-c4769c01b9ef",
+		"_postman_id": "d20882de-6d71-84a3-6974-bbc70280c12d",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
@@ -19,10 +18,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"idlist\":\"1,2,3,4\"}"
+					"raw": "{\"idlist\":\"1,2\"}"
 				},
-				"url": "http://127.0.0.1:8808/querytcass",
-				"description": ""
+				"url": "http://127.0.0.1:8808/querytcass"
 			},
 			"response": []
 		},
@@ -38,10 +36,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\"testname\":\"测试用例1\",\"testtype\":\"testcass\",\"request\":{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10},\"validate\":[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]}"
 				},
-				"url": "http://127.0.0.1:8808/addtcass",
-				"description": ""
+				"url": "http://127.0.0.1:8808/addtcass"
 			},
 			"response": []
 		},

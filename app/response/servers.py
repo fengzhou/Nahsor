@@ -8,7 +8,14 @@ from app.utils.log import Logger
 
 @bp.route("/addtcass", methods=["POST"])
 def addtcass():
-    sql = "insert into t_testcass values(null,'tastcass','{\"\key\":\"values\"}','2333',null,null)"
+    dictdata = request.get_json()
+    testname = dictdata["testname"]
+    testtype = dictdata["testtype"]
+    requests = dictdata["request"]
+    validate = dictdata["validate"]
+    # 这里有BUG，生成的sql不能用。
+    sql = "insert into t_testcass values(null,'%s','%s','%s','%s',null,null)" % (testname,testtype,requests,validate)
+    print(sql)
     response = {}
     response["code"] = 200
     response["msg"] = dbfucs.excute(sql)
@@ -46,3 +53,5 @@ def testgo():
     response["code"] = 200
     response["msg"] = "成功！！！"
     return jsonify(response)
+
+    
