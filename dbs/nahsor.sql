@@ -24,26 +24,28 @@ USE nahsor;
 
 
 SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
 -- Table structure for t_testcass
 -- ----------------------------
 DROP TABLE IF EXISTS `t_testcass`;
-CREATE TABLE `t_testcass`  (
+CREATE TABLE `t_testcass` (
   `id` int(16) NOT NULL AUTO_INCREMENT,
-  `cassname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用例名称',
-  `testcass` json NOT NULL COMMENT '用例内容，以json格式储存',
-  `remark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '备注',
-  `createtime` datetime(0) DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '创建时间',
-  `updatatime` datetime(0) DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  `testname` varchar(32) NOT NULL COMMENT '用例名称',
+  `testtype` varchar(16) DEFAULT NULL COMMENT '用例类型',
+  `request` json DEFAULT NULL COMMENT '请求参数',
+  `validate` json DEFAULT NULL COMMENT '校验参数',
+  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
+  `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_testcass
 -- ----------------------------
-INSERT INTO `t_testcass` VALUES (1, 'tastcass', '{\"req\": {\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"GET\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}, \"cass_name\": \"test_name\", \"validates\": [{\"Equal\": [\"r.json()\", \"req[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]}', '2333', '2018-04-26 22:50:25', '2018-04-26 22:50:25');
-INSERT INTO `t_testcass` VALUES (2, 'tastcass', '{\"req\": {\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"GET\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}, \"cass_name\": \"test_name111\", \"validates\": [{\"Equal\": [\"r.json()\", \"req[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]}', '2333', '2018-04-26 22:50:29', '2018-04-26 22:50:29');
+INSERT INTO `t_testcass` VALUES ('1', 'tastcass1', 'testcass', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '2333', '2018-04-28 01:07:15', '2018-04-28 01:07:15');
+INSERT INTO `t_testcass` VALUES ('2', 'tastcass2', 'testcass', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]', '2333', '2018-04-28 01:04:29', '2018-04-28 01:04:29');
 
 SET FOREIGN_KEY_CHECKS = 1;
