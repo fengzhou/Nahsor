@@ -23,7 +23,34 @@ def run_http_test(testname, request):
     except:
         Logger().error("测试用例[%s]在执行过程中出现异常，错误信息为 --> [code:%s],[error:%s]" % (testname, r.status_code, r.text))
         raise
-    
+
+def exex_global_values(request):
+    '''
+    {
+        "url": "http://127.0.0.1:2333/test",
+        "json": {'token': '$extracts["token"]'},
+        "method": "POST",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "timeout": 10
+    }
+    '''
+    execlist = []
+    for key in request:
+        if type(request[key]) == dict:
+            for key1 in request[key]:
+                # print(key)
+                if '$' == request[key][key1][:1]:
+                    # print(key1)
+                    execkey = "request['%s']['%s'] = %s" % (key, key1, request[key][key1][1:])
+                    execlist.append(execkey)
+                    # print(execkey)
+    return execlist
+
+
+
+
 def extract_global_values(extract):
     '''
     [
@@ -31,7 +58,14 @@ def extract_global_values(extract):
         {"token":"r.json()["data"]"}
     ]
     '''
-    pass
+    extlist = []
+    for extdict in extract:
+        key = list(extdict.keys())[0]
+        value = extdict[key]
+        extfuc = "extracts['%s'] = %s" % (key, value)
+        extlist.append(extfuc)
+    return extlist
+
 
 def run_validata_test(key):
     '''

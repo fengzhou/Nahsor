@@ -39,7 +39,7 @@ def chicktoken():
         response["msg"] = "操作成功"
     else:
         response = {}
-        response["code"] = 200
+        response["code"] = 403
         response["msg"] = "操作失败"
     response = jsonify(response)
     return response
@@ -47,3 +47,4 @@ def chicktoken():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=2333, debug=True)
+

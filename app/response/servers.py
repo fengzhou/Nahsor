@@ -13,7 +13,8 @@ def addtcass():
     testtype = dictdata["testtype"]
     requests = dictdata["request"]
     validate = dictdata["validate"]
-    sql = "insert into t_testcass values(null,'%s','%s','%s','%s','%s',null,null,null);" % (testname,testtype,requests,validate)
+    extract = dictdata["extract"]
+    sql = "insert into t_testcass values(null,'%s','%s','%s','%s','%s',null,null,null);" % (testname,testtype,requests,validate,extract)
     response = {}
     data = dbfucs.excute(sql)
     if data is True:
