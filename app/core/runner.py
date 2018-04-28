@@ -22,19 +22,19 @@ class Runner(object):
         extract = eval(self.extract)
         global extracts
         try:
-            execlist = exex_global_values(request)
-            if len(execlist) != 0:
-                for execkey in execlist:
-                    print(execkey)
-                    exec(execkey)
-            r = run_http_test(testname, request)
-            extlist = extract_global_values(extract)
-            for value in extlist:
-                # print(value)
-                try:
+            if testtype == "testsuite":
+                execlist = exex_global_values(request)
+                if len(execlist) != 0:
+                    for execkey in execlist:
+                        print(execkey)
+                        exec(execkey)
+                r = run_http_test(testname, request)
+                extlist = extract_global_values(extract)
+                for value in extlist:
+                    # print(value)
                     exec(value)
-                except Exception as e:
-                    Logger().error("测试不通过,错误信息为 --> %s" % e)
+            else:
+                r = run_http_test(testname, request)
             for validate in validates:
                 key = list(validate.keys())[0]
                 # print(key)
