@@ -47,6 +47,6 @@ def collect_db_cass(jsoncasss):
             runner = Runner(test)
             yield  runner.run_test()
         except Exception as e:
-            raise e
-            Logger().error("测试用例[%s]执行失败，失败原因 --> %s"  % (test["cass_name"], e))
+            # raise e
+            Logger().error("测试用例[%s]执行失败，失败原因 --> %s"  % (test["testname"], e))
 

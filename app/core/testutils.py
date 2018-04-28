@@ -24,7 +24,14 @@ def run_http_test(testname, request):
         Logger().error("测试用例[%s]在执行过程中出现异常，错误信息为 --> [code:%s],[error:%s]" % (testname, r.status_code, r.text))
         raise
     
-
+def extract_global_values(extract):
+    '''
+    [
+        {"token":"r.json()["data"]"},
+        {"token":"r.json()["data"]"}
+    ]
+    '''
+    pass
 
 def run_validata_test(key):
     '''

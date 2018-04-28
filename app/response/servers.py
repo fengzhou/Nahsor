@@ -13,7 +13,7 @@ def addtcass():
     testtype = dictdata["testtype"]
     requests = dictdata["request"]
     validate = dictdata["validate"]
-    sql = "insert into t_testcass values(null,'%s','%s','%s','%s',null,null,null);" % (testname,testtype,requests,validate)
+    sql = "insert into t_testcass values(null,'%s','%s','%s','%s','%s',null,null,null);" % (testname,testtype,requests,validate)
     response = {}
     data = dbfucs.excute(sql)
     if data is True:
@@ -29,7 +29,7 @@ def addtcass():
 def querytcass():
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "select testname,testtype,request,validate from t_testcass where id in(%s);" % idlist
+    sql = "select testname,testtype,request,validate,extract from t_testcass where id in(%s);" % idlist
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -42,7 +42,7 @@ def querytcass():
 def testgo():
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "select testname,testtype,request,validate from t_testcass where id in(%s);" % idlist
+    sql = "select testname,testtype,request,validate,extract from t_testcass where id in(%s);" % idlist
     res = dbfucs.query(sql)
     jsoncasss = []
     for test in res:

@@ -2,6 +2,8 @@ from app.core.testutils import run_http_test
 from app.core.testutils import run_validata_test
 from app.utils.log import Logger
 from app.utils.jsonfuc import json_to_dict
+extracts = {}
+
 
 class Runner(object):
     def __init__(self, testcass):
@@ -9,14 +11,18 @@ class Runner(object):
         self.testtype = testcass["testtype"]
         self.request = testcass["request"]
         self.validates = testcass["validate"]
+        self.extract = testcass["extract"]
 
     def run_test(self):
         testname = self.testname
         testtype = self.testtype
         request = eval(self.request)
         validates = eval(self.validates)
+        extract = eval(self.extract)
         try:
             r = run_http_test(testname, request)
+            global extracts
+            eval(extract)
             for validate in validates:
                 key = list(validate.keys())[0]
                 # print(key)
@@ -24,7 +30,6 @@ class Runner(object):
                 chicklist = []
                 for i in validate[key]:
                     chicklist.append(eval(i))
-                # print(chicklist)
                 try:
                     chicker(chicklist)
                     Logger().info("测试用例[%s]检查点执行通过,检查点信息为 --> %s" % (testname, chicklist))
