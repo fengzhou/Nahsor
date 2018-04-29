@@ -22,10 +22,10 @@ def run_http_test(testname, request):
     if r.status_code == 200:
         return r
     else:
-        Logger.error("测试用例[%s]在执行过程中出现异常，错误信息为 --> [code:%s],[error:%s]" % (testname, r.status_code, r.text))
+        # Logger.error("测试用例[%s]在执行过程中出现异常，错误信息为 --> [code:%s],[error:%s]" % (testname, r.status_code, r.text))
         raise
 
-def exec_global_values(request):
+def get_global_values(request):
     '''
     替换request里带了$的参数为全局变量中的值。
     {
@@ -67,11 +67,12 @@ def extract_global_values(extract):
     return execlist
 
 
-def run_execs_test(execlist,*arg):
+def run_execs_test(execlist):
     '''
     执行赋值类型的表达式
     extracts['token'] = 'ssdsfsdf4s6f54s6f1a3s'
     '''
+    # print(**arg)
     if len(execlist) != 0:
         for execkey in execlist:
             print(execkey)

@@ -1,6 +1,6 @@
-from app.core.testutils import run_http_test, get_validata_test
-from app.core.testutils import extract_global_values, run_execs_test, run_evals_test
-from app.core.testutils import run_validata_test, exec_global_values
+from app.core.testutils import run_http_test
+from app.core.testutils import extract_global_values
+from app.core.testutils import get_global_values, get_validata_test
 from app.utils.log import Logger
 from app.utils.jsonfuc import json_to_dict
 
@@ -25,17 +25,13 @@ class Runner(object):
         global extracts
         try:
             if testtype == "testsuite":
-                execlist = exec_global_values(request)
-                # print(execlist)
-                # run_execs_test(execlist)
+                execlist = get_global_values(request)
                 if len(execlist) != 0:
                     for execkey in execlist:
                         print("execkey:",execkey)
                         exec(execkey)
                 r = run_http_test(testname, request)
                 execlist = extract_global_values(extract)
-                # print(evalist)
-                # run_execs_test(execlist)
                 if len(execlist) != 0:
                     for execkey in execlist:
                         print("execkey:",execkey)
@@ -54,6 +50,6 @@ class Runner(object):
                         Logger.war("测试用例[%s]检查点执行失败,检查点信息为 --> %s" % (testname, validatekey))
 
         except Exception as e:
-            Logger.war("测试用例[%s]测试不通过,错误信息为 --> %s" % (testname, e))
+            Logger.error("测试用例[%s]在执行过程中出现异常，错误信息为 --> %s" % (testname, e))
 
 
