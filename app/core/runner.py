@@ -43,6 +43,8 @@ class Runner(object):
             # run_validata_test(testname, validatelist)
             if len(validatelist) != 0:
                 for validatekey in validatelist:
+                    # assert  eval(validatekey) ,"%s" % str(eval(validatekey))
+                    # Logger.info("测试用例[%s]检查点执行成功,检查点信息为 --> %s" % (testname, validatekey))
                     res = eval(validatekey)
                     if res == True:
                         Logger.info("测试用例[%s]检查点执行成功,检查点信息为 --> %s" % (testname, validatekey))
