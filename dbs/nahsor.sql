@@ -1,30 +1,103 @@
 /*
- Navicat Premium Data Transfer
+Navicat MySQL Data Transfer
 
- Source Server         : 本地
- Source Server Type    : MySQL
- Source Server Version : 50721
- Source Host           : localhost:3306
- Source Schema         : nahsor
+Source Server         : MyWeb
+Source Server Version : 50719
+Source Host           : localhost:3306
+Source Database       : nahsor
 
- Target Server Type    : MySQL
- Target Server Version : 50721
- File Encoding         : 65001
+Target Server Type    : MYSQL
+Target Server Version : 50719
+File Encoding         : 65001
 
- Date: 26/04/2018 22:53:13
+Date: 2018-05-01 16:41:59
 */
 
-
-DROP DATABASE IF EXISTS nahsor;
-CREATE DATABASE nahsor DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;
-
-
-USE nahsor;
-
-
-
-SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for t_config
+-- ----------------------------
+DROP TABLE IF EXISTS `t_config`;
+CREATE TABLE `t_config` (
+  `id` int(11) NOT NULL,
+  `url` json DEFAULT NULL,
+  `headers` json DEFAULT NULL,
+  `method` json DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_config
+-- ----------------------------
+INSERT INTO `t_config` VALUES ('1', '[\"www.baidu.com\"]', '{\"content-type\": \"application/json\"}', '[\"POST\", \"GET\"]');
+
+-- ----------------------------
+-- Table structure for t_modules
+-- ----------------------------
+DROP TABLE IF EXISTS `t_modules`;
+CREATE TABLE `t_modules` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `project` varchar(255) NOT NULL COMMENT '所属项目名称',
+  `modules` varchar(255) NOT NULL COMMENT '模块名称',
+  `status` int(11) DEFAULT NULL COMMENT '状态，0可用，1不可用',
+  `leader` varchar(255) DEFAULT NULL COMMENT '负责人',
+  `remark` varchar(255) DEFAULT NULL COMMENT '描述说明',
+  `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `modules` (`modules`),
+  KEY `project` (`project`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_modules
+-- ----------------------------
+INSERT INTO `t_modules` VALUES ('1', '测试项目', '测试模块', '0', 'Jin', '2333', null, null);
+
+-- ----------------------------
+-- Table structure for t_product
+-- ----------------------------
+DROP TABLE IF EXISTS `t_product`;
+CREATE TABLE `t_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `product` varchar(255) NOT NULL COMMENT '产品名称',
+  `leader` varchar(255) DEFAULT NULL COMMENT '负责人',
+  `status` int(11) DEFAULT NULL COMMENT '状态，0可用，1不可用',
+  `remark` varchar(255) DEFAULT NULL COMMENT '说明，描述',
+  `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `product` (`product`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_product
+-- ----------------------------
+INSERT INTO `t_product` VALUES ('1', '测试产品', 'Jin', '0', '2333', null, null);
+
+-- ----------------------------
+-- Table structure for t_project
+-- ----------------------------
+DROP TABLE IF EXISTS `t_project`;
+CREATE TABLE `t_project` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `product` varchar(255) NOT NULL COMMENT '产品名称',
+  `project` varchar(255) NOT NULL COMMENT '项目名称',
+  `leader` varchar(255) DEFAULT NULL COMMENT '负责人',
+  `status` int(255) DEFAULT NULL COMMENT '状态，0可用，1不可用',
+  `remark` varchar(255) DEFAULT NULL COMMENT '说明，描述',
+  `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `project` (`project`),
+  KEY `product` (`product`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of t_project
+-- ----------------------------
+INSERT INTO `t_project` VALUES ('1', '测试产品', '测试项目', 'Jin', '0', '2333', null, null);
 
 -- ----------------------------
 -- Table structure for t_testcass
@@ -33,22 +106,23 @@ DROP TABLE IF EXISTS `t_testcass`;
 CREATE TABLE `t_testcass` (
   `id` int(16) NOT NULL AUTO_INCREMENT,
   `testname` varchar(32) NOT NULL COMMENT '用例名称',
+  `modules` varchar(255) NOT NULL COMMENT '所属功能模块',
   `testtype` varchar(16) DEFAULT NULL COMMENT '用例类型',
   `request` json DEFAULT NULL COMMENT '请求参数',
   `validate` json DEFAULT NULL COMMENT '校验参数',
   `extract` json DEFAULT NULL COMMENT '提取参数',
+  `leader` varchar(255) DEFAULT NULL COMMENT '负责人',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `modules` (`modules`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_testcass
 -- ----------------------------
-INSERT INTO `t_testcass` VALUES ('1', 'tastcass1', 'testcass', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '2333', '2018-04-28 01:07:15', '2018-04-28 01:07:15');
-INSERT INTO `t_testcass` VALUES ('2', 'tastcass2', 'testcass', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '2333', '2018-04-28 01:04:29', '2018-04-28 01:04:29');
-INSERT INTO `t_testcass` VALUES ('3', '测试流程', 'testsuite', '{\"url\": \"http://127.0.0.1:2333/login\", \"json\": {\"password\": \"123456\", \"username\": \"admin\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"token\": \"r.json()[\\\"data\\\"]\"}]', null, '2018-04-28 13:21:04', '2018-04-28 13:21:04');
-INSERT INTO `t_testcass` VALUES ('4', '测试流程1', 'testsuite', '{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$extracts[\\\"token\\\"]\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()[\\\"code\\\"]\", \"200\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[]', null, '2018-04-28 14:39:06', '2018-04-28 14:39:06');
-
-SET FOREIGN_KEY_CHECKS = 1;
+INSERT INTO `t_testcass` VALUES ('1', 'tastcass1', '测试模块', 'testcass', '{\"url\": \"http://127.0.0.1:2333/tes1t\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', 'Jin', '2333', '2018-05-01 16:22:04', '2018-05-01 16:22:04');
+INSERT INTO `t_testcass` VALUES ('2', 'tastcass2', '测试模块', 'testcass', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', 'Jin', '2333', '2018-05-01 16:22:12', '2018-05-01 16:22:12');
+INSERT INTO `t_testcass` VALUES ('3', '测试流程', '测试模块', 'testsuite', '{\"url\": \"http://127.0.0.1:2333/login\", \"json\": {\"password\": \"123456\", \"username\": \"admin\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"token\": \"r.json()[\\\"data\\\"]\"}]', 'Jin', null, '2018-05-01 16:22:12', '2018-05-01 16:22:12');
+INSERT INTO `t_testcass` VALUES ('4', '测试流程1', '测试模块', 'testsuite', '{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$token\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()[\\\"code\\\"]\", \"200\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[]', 'Jin', null, '2018-05-01 16:22:12', '2018-05-01 16:22:12');
