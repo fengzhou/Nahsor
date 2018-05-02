@@ -1,61 +1,54 @@
 ﻿<!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="../picture/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8"/>
+    <link rel="icon" type="image/png" href="../picture/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-	<title>Light Bootstrap Dashboard PRO by Creative Tim</title>
+    <title>xxx测试报告</title>
 
 
     <!-- Bootstrap core CSS     -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
     <!--  Light Bootstrap Dashboard core CSS    -->
     <link href="css/light-bootstrap-dashboard.css" rel="stylesheet"/>
 
     <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="css/demo.css" rel="stylesheet" />
-
+    <link href="css/demo.css" rel="stylesheet"/>
 
     <!--     Fonts and icons     -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href='css/685fd913f1e14aebad0cc9d3713ee469.css' rel='stylesheet' type='text/css'>
-    <link href="css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="css/pe-icon-7-stroke.css" rel="stylesheet"/>
 
 </head>
 <body>
 
 <div class="wrapper">
-    <div class="sidebar" data-color="orange" data-image="../picture/full-screen-image-3.jpg">
-        <!--
-
-            Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
-            Tip 2: you can also add an image using data-image tag
-
-        -->
+    <div class="sidebar" data-color="black" data-image="../picture/full-screen-image-3.jpg">
 
         <div class="logo">
             <a href="#" class="logo-text">
-                Creative Tim
+                Nahsor
             </a>
         </div>
-		<div class="logo logo-mini">
-			<a href="#" class="logo-text">
-				Ct
-			</a>
-		</div>
+        <div class="logo logo-mini">
+            <a href="#" class="logo-text">
+                Ct
+            </a>
+        </div>
 
-    	<div class="sidebar-wrapper">
+        <div class="sidebar-wrapper">
             <div class="user">
                 <div class="photo">
-                    <img src="picture/default-avatar.png" />
+                    <img src="picture/default-avatar.png"/>
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-                        Tania Andrew
-                        <b class="caret"></b>
+                        SNake
                     </a>
+                    <!--
                     <div class="collapse" id="collapseExample">
                         <ul class="nav">
                             <li><a href="#">My Profile</a></li>
@@ -63,21 +56,64 @@
                             <li><a href="#">Settings</a></li>
                         </ul>
                     </div>
+                    -->
                 </div>
             </div>
 
+            <!-- Dashboard -->
             <ul class="nav">
+
+
+                <!-- 项目管理 -->
+                <li class="active">
+                    <a href="dashboard.html">
+                        <i class="pe-7s-menu"></i>
+                        <p>项目管理</p>
+                    </a>
+                </li>
+                <!-- 用例管理 -->
+                <li>
+                    <a href="dashboard.html">
+                        <i class="pe-7s-refresh-2"></i>
+                        <p>用例管理</p>
+                    </a>
+                </li>
+                <!-- 接口管理 -->
+                <li>
+                    <a href="dashboard.html">
+                        <i class="pe-7s-back-2"></i>
+                        <p>接口管理</p>
+                    </a>
+                </li>
+                <!-- 测试结果 -->
+                <li>
+                    <a href="dashboard.html">
+                        <i class="pe-7s-graph2"></i>
+                        <p>测试报告</p>
+                    </a>
+                </li>
+                <!-- 持续集成 -->
+                <li>
+                    <a href="dashboard.html">
+                        <i class="pe-7s-alarm"></i>
+                        <p>持续集成</p>
+                    </a>
+                </li>
+
+
                 <li class="active">
                     <a href="dashboard.html">
                         <i class="pe-7s-graph"></i>
-                        <p>Dashboard</p>
+                        <p>图表统计</p>
                     </a>
                 </li>
+
+                <!-- Components -->
                 <li>
                     <a data-toggle="collapse" href="#componentsExamples">
                         <i class="pe-7s-plugin"></i>
-                        <p>Components
-                           <b class="caret"></b>
+                        <p>组件
+                            <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse" id="componentsExamples">
@@ -93,11 +129,12 @@
                     </div>
                 </li>
 
+                <!-- Forms -->
                 <li>
                     <a data-toggle="collapse" href="#formsExamples">
                         <i class="pe-7s-note2"></i>
                         <p>Forms
-                           <b class="caret"></b>
+                            <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse" id="formsExamples">
@@ -110,11 +147,12 @@
                     </div>
                 </li>
 
+                <!-- Tables -->
                 <li>
                     <a data-toggle="collapse" href="#tablesExamples">
                         <i class="pe-7s-news-paper"></i>
-                        <p>Tables
-                           <b class="caret"></b>
+                        <p>表格
+                            <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse" id="tablesExamples">
@@ -122,31 +160,26 @@
                             <li><a href="tables/regular.html">Regular Tables</a></li>
                             <li><a href="tables/extended.html">Extended Tables</a></li>
                             <li><a href="tables/bootstrap-table.html">Bootstrap Table</a></li>
-							<li><a href="tables/datatables.net.html">DataTables.net</a></li>
+                            <li><a href="tables/datatables.net.html">DataTables.net</a></li>
                         </ul>
                     </div>
                 </li>
 
-
+                <!-- Charts -->
                 <li>
                     <a href="charts.html">
                         <i class="pe-7s-graph1"></i>
-                        <p>Charts</p>
+                        <p>统计饼图</p>
                     </a>
                 </li>
 
-                <li>
-                    <a href="calendar.html">
-                        <i class="pe-7s-date"></i>
-                        <p>Calendar</p>
-                    </a>
-                </li>
 
+                <!-- Pages -->
                 <li>
                     <a data-toggle="collapse" href="#pagesExamples">
                         <i class="pe-7s-gift"></i>
-                        <p>Pages
-                           <b class="caret"></b>
+                        <p>各个页面栗子
+                            <b class="caret"></b>
                         </p>
                     </a>
                     <div class="collapse" id="pagesExamples">
@@ -160,123 +193,59 @@
                     </div>
                 </li>
             </ul>
-    	</div>
+        </div>
     </div>
 
     <div class="main-panel">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-minimize">
-					<button id="minimizeSidebar" class="btn btn-warning btn-fill btn-round btn-icon">
-						<i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i>
-						<i class="fa fa-navicon visible-on-sidebar-mini"></i>
-					</button>
-				</div>
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">Dashboard PRO</a>
-				</div>
-				<div class="collapse navbar-collapse">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-minimize">
+                    <button id="minimizeSidebar" class="btn btn-warning btn-fill btn-round btn-icon">
+                        <i class="fa fa-ellipsis-v visible-on-sidebar-regular"></i>
+                        <i class="fa fa-navicon visible-on-sidebar-mini"></i>
+                    </button>
+                </div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Dashboard PRO</a>
+                </div>
+                <div class="collapse navbar-collapse">
 
-					<form class="navbar-form navbar-left navbar-search-form" role="search">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="fa fa-search"></i></span>
-							<input type="text" value="" class="form-control" placeholder="Search...">
-						</div>
-					</form>
+                    <form class="navbar-form navbar-left navbar-search-form" role="search">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" value="" class="form-control" placeholder="搜索">
+                        </div>
+                    </form>
 
-					<ul class="nav navbar-nav navbar-right">
-						<li>
-							<a href="charts.html">
-								<i class="fa fa-line-chart"></i>
-								<p>Stats</p>
-							</a>
-						</li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown dropdown-with-icons">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="fa fa-list"></i>
+                                <p class="hidden-md hidden-lg">
+                                    More
+                                    <b class="caret"></b>
+                                </p>
+                            </a>
+                            <ul class="dropdown-menu dropdown-with-icons">
+                                <li>
+                                    <a href="#" class="text-danger">
+                                        <i class="pe-7s-close-circle"></i>
+                                        退出
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-gavel"></i>
-								<p class="hidden-md hidden-lg">
-									Actions
-									<b class="caret"></b>
-								</p>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Create New Post</a></li>
-								<li><a href="#">Manage Something</a></li>
-								<li><a href="#">Do Nothing</a></li>
-								<li><a href="#">Submit to live</a></li>
-								<li class="divider"></li>
-								<li><a href="#">Another Action</a></li>
-							</ul>
-						</li>
-
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-bell-o"></i>
-								<span class="notification">5</span>
-								<p class="hidden-md hidden-lg">
-									Notifications
-									<b class="caret"></b>
-								</p>
-							</a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Notification 1</a></li>
-								<li><a href="#">Notification 2</a></li>
-								<li><a href="#">Notification 3</a></li>
-								<li><a href="#">Notification 4</a></li>
-								<li><a href="#">Another notification</a></li>
-							</ul>
-						</li>
-
-						<li class="dropdown dropdown-with-icons">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<i class="fa fa-list"></i>
-								<p class="hidden-md hidden-lg">
-									More
-									<b class="caret"></b>
-								</p>
-							</a>
-							<ul class="dropdown-menu dropdown-with-icons">
-								<li>
-									<a href="#">
-										<i class="pe-7s-mail"></i> Messages
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="pe-7s-help1"></i> Help Center
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<i class="pe-7s-tools"></i> Settings
-									</a>
-								</li>
-								<li class="divider"></li>
-								<li>
-									<a href="#">
-										<i class="pe-7s-lock"></i> Lock Screen
-									</a>
-								</li>
-								<li>
-									<a href="#" class="text-danger">
-										<i class="pe-7s-close-circle"></i>
-										Log out
-									</a>
-								</li>
-							</ul>
-						</li>
-
-					</ul>
-				</div>
-			</div>
-		</nav>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
         <div class="content">
             <div class="container-fluid">
@@ -294,90 +263,90 @@
                                         <div class="table-responsive">
                                             <table class="table">
                                                 <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="picture/us.png"
-                                                            </div>
-                                                        </td>
-                                                        <td>USA</td>
-                                                        <td class="text-right">
-                                                            2.920
-                                                        </td>
-                                                        <td class="text-right">
-                                                            53.23%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="picture/de.png"
-                                                            </div>
-                                                        </td>
-                                                        <td>Germany</td>
-                                                        <td class="text-right">
-                                                            1.300
-                                                        </td>
-                                                        <td class="text-right">
-                                                            20.43%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="picture/au.png"
-                                                            </div>
-                                                        </td>
-                                                        <td>Australia</td>
-                                                        <td class="text-right">
-                                                            760
-                                                        </td>
-                                                        <td class="text-right">
-                                                            10.35%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="picture/gb.png"
-                                                            </div>
-                                                        </td>
-                                                        <td>United Kingdom</td>
-                                                        <td class="text-right">
-                                                            690
-                                                        </td>
-                                                        <td class="text-right">
-                                                            7.87%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="picture/ro.png"
-                                                            </div>
-                                                        </td>
-                                                        <td>Romania</td>
-                                                        <td class="text-right">
-                                                            600
-                                                        </td>
-                                                        <td class="text-right">
-                                                            5.94%
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="flag">
-                                                                <img src="picture/br.png"
-                                                            </div>
-                                                        </td>
-                                                        <td>Brasil</td>
-                                                        <td class="text-right">
-                                                            550
-                                                        </td>
-                                                        <td class="text-right">
-                                                            4.34%
-                                                        </td>
-                                                    </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flag">
+                                                            <img src="picture/us.png"
+                                                        </div>
+                                                    </td>
+                                                    <td>USA</td>
+                                                    <td class="text-right">
+                                                        2.920
+                                                    </td>
+                                                    <td class="text-right">
+                                                        53.23%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flag">
+                                                            <img src="picture/de.png"
+                                                        </div>
+                                                    </td>
+                                                    <td>Germany</td>
+                                                    <td class="text-right">
+                                                        1.300
+                                                    </td>
+                                                    <td class="text-right">
+                                                        20.43%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flag">
+                                                            <img src="picture/au.png"
+                                                        </div>
+                                                    </td>
+                                                    <td>Australia</td>
+                                                    <td class="text-right">
+                                                        760
+                                                    </td>
+                                                    <td class="text-right">
+                                                        10.35%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flag">
+                                                            <img src="picture/gb.png"
+                                                        </div>
+                                                    </td>
+                                                    <td>United Kingdom</td>
+                                                    <td class="text-right">
+                                                        690
+                                                    </td>
+                                                    <td class="text-right">
+                                                        7.87%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flag">
+                                                            <img src="picture/ro.png"
+                                                        </div>
+                                                    </td>
+                                                    <td>Romania</td>
+                                                    <td class="text-right">
+                                                        600
+                                                    </td>
+                                                    <td class="text-right">
+                                                        5.94%
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="flag">
+                                                            <img src="picture/br.png"
+                                                        </div>
+                                                    </td>
+                                                    <td>Brasil</td>
+                                                    <td class="text-right">
+                                                        550
+                                                    </td>
+                                                    <td class="text-right">
+                                                        4.34%
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
@@ -390,7 +359,6 @@
                         </div>
                     </div>
                 </div>
-
 
 
                 <div class="row">
@@ -443,7 +411,6 @@
                 </div>
 
 
-
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card ">
@@ -477,103 +444,116 @@
                                 <div class="table-full-width">
                                     <table class="table">
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="" data-toggle="checkbox">
-                                                    </label>
-                                                </td>
-                                                <td>Sign contract for "What are conference organizers afraid of?"</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="" data-toggle="checkbox" checked="">
-                                                    </label>
-                                                </td>
-                                                <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="" data-toggle="checkbox" checked="">
-                                                    </label>
-                                                </td>
-                                                <td>Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="" data-toggle="checkbox">
-                                                    </label>
-                                                </td>
-                                                <td>Create 4 Invisible User Experiences you Never Knew About</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="" data-toggle="checkbox">
-                                                    </label>
-                                                </td>
-                                                <td>Read "Following makes Medium better"</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <label class="checkbox">
-                                                        <input type="checkbox" value="" data-toggle="checkbox">
-                                                    </label>
-                                                </td>
-                                                <td>Unfollow 5 enemies from twitter</td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title="Edit Task" class="btn btn-info btn-simple btn-xs">
-                                                        <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
-                                                        <i class="fa fa-times"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="" data-toggle="checkbox">
+                                                </label>
+                                            </td>
+                                            <td>Sign contract for "What are conference organizers afraid of?"</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                        class="btn btn-info btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove"
+                                                        class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="" data-toggle="checkbox" checked="">
+                                                </label>
+                                            </td>
+                                            <td>Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                        class="btn btn-info btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove"
+                                                        class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="" data-toggle="checkbox" checked="">
+                                                </label>
+                                            </td>
+                                            <td>Flooded: One year later, assessing what was lost and what was found when
+                                                a ravaging rain swept through metro Detroit
+                                            </td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                        class="btn btn-info btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove"
+                                                        class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="" data-toggle="checkbox">
+                                                </label>
+                                            </td>
+                                            <td>Create 4 Invisible User Experiences you Never Knew About</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                        class="btn btn-info btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove"
+                                                        class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="" data-toggle="checkbox">
+                                                </label>
+                                            </td>
+                                            <td>Read "Following makes Medium better"</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                        class="btn btn-info btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove"
+                                                        class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label class="checkbox">
+                                                    <input type="checkbox" value="" data-toggle="checkbox">
+                                                </label>
+                                            </td>
+                                            <td>Unfollow 5 enemies from twitter</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" title="Edit Task"
+                                                        class="btn btn-info btn-simple btn-xs">
+                                                    <i class="fa fa-edit"></i>
+                                                </button>
+                                                <button type="button" rel="tooltip" title="Remove"
+                                                        class="btn btn-danger btn-simple btn-xs">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -588,7 +568,6 @@
                         </div>
                     </div>
                 </div>
-
 
 
             </div>
@@ -616,7 +595,7 @@
                         </li>
                         <li>
                             <a href="#">
-                               Blog
+                                Blog
                             </a>
                         </li>
                     </ul>
@@ -630,175 +609,98 @@
     </div>
 </div>
 
-<div class="fixed-plugin">
-    <div class="dropdown show-dropdown">
-        <a href="#" data-toggle="dropdown">
-        <i class="fa fa-cog fa-2x"> </i>
-        </a>
-        <ul class="dropdown-menu">
-            <li class="header-title">Configuration</li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Sidebar Image</p>
-                    <div class="switch switch-sidebar-image"
-                        data-on-label="ON"
-                        data-off-label="OFF">
-                        <input type="checkbox" checked/>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-			<li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Sidebar Mini</p>
-                    <div class="switch  switch-sidebar-mini"
-                        data-on-label="ON"
-                        data-off-label="OFF">
-                        <input type="checkbox"/>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-			<li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Fixed Navbar</p>
-                    <div class="switch  switch-navbar-fixed"
-                        data-on-label="ON"
-                        data-off-label="OFF">
-                        <input type="checkbox"/>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="adjustments-line">
-                <a href="javascript:void(0)" class="switch-trigger">
-                    <p>Filters</p>
-                    <div class="pull-right">
-                        <span class="badge filter" data-color="black"></span>
-                        <span class="badge filter badge-azure" data-color="azure"></span>
-                        <span class="badge filter badge-green" data-color="green"></span>
-                        <span class="badge filter badge-orange active" data-color="orange"></span>
-                        <span class="badge filter badge-red" data-color="red"></span>
-                        <span class="badge filter badge-purple" data-color="purple"></span>
-                    </div>
-                    <div class="clearfix"></div>
-                </a>
-            </li>
-            <li class="header-title">Sidebar Images</li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="picture/full-screen-image-1.jpg">
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="picture/full-screen-image-2.jpg">
-                </a>
-            </li>
-            <li class="active">
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="picture/full-screen-image-3.jpg">
-                </a>
-            </li>
-            <li>
-                <a class="img-holder switch-trigger" href="javascript:void(0)">
-                    <img src="picture/full-screen-image-4.jpg">
-                </a>
-            </li>
-
-
-            <li class="header-title">Thank you for 452 shares!</li>
-
-            <li class="button-container"></br> </li>
-
-        </ul>
-    </div>
-</div>
 
 </body>
-    <!--   Core JS Files and PerfectScrollbar library inside jquery.ui   -->
-    <script src="js/jquery.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<!--   Core JS Files and PerfectScrollbar library inside jquery.ui   -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript"></script>
 
 
-	<!--  Forms Validations Plugin -->
-	<script src="js/jquery.validate.min.js"></script>
+<!--  Forms Validations Plugin -->
+<script src="js/jquery.validate.min.js"></script>
 
-	<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
-	<script src="js/moment.min.js"></script>
+<!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+<script src="js/moment.min.js"></script>
 
-    <!--  Date Time Picker Plugin is included in this js file -->
-    <script src="js/bootstrap-datetimepicker.js"></script>
+<!--  Date Time Picker Plugin is included in this js file -->
+<script src="js/bootstrap-datetimepicker.js"></script>
 
-    <!--  Select Picker Plugin -->
-    <script src="js/bootstrap-selectpicker.js"></script>
+<!--  Select Picker Plugin -->
+<script src="js/bootstrap-selectpicker.js"></script>
 
-	<!--  Checkbox, Radio, Switch and Tags Input Plugins -->
-	<script src="js/bootstrap-checkbox-radio-switch-tags.js"></script>
+<!--  Checkbox, Radio, Switch and Tags Input Plugins -->
+<script src="js/bootstrap-checkbox-radio-switch-tags.js"></script>
 
-	<!--  Charts Plugin -->
-	<script src="js/chartist.min.js"></script>
+<!--  Charts Plugin -->
+<script src="js/chartist.min.js"></script>
 
-    <!--  Notifications Plugin    -->
-    <script src="js/bootstrap-notify.js"></script>
+<!--  Notifications Plugin    -->
+<script src="js/bootstrap-notify.js"></script>
 
-    <!-- Sweet Alert 2 plugin -->
-	<script src="js/sweetalert2.js"></script>
+<!-- Sweet Alert 2 plugin -->
+<script src="js/sweetalert2.js"></script>
 
-    <!-- Vector Map plugin -->
-	<script src="js/jquery-jvectormap.js"></script>
-
-
-	<!-- Wizard Plugin    -->
-    <script src="js/jquery.bootstrap.wizard.min.js"></script>
-
-    <!--  Bootstrap Table Plugin    -->
-    <script src="js/bootstrap-table.js"></script>
-
-	<!--  Plugin for DataTables.net  -->
-    <script src="js/jquery.datatables.js"></script>
+<!-- Vector Map plugin -->
+<script src="js/jquery-jvectormap.js"></script>
 
 
-    <!--  Full Calendar Plugin    -->
-    <script src="js/fullcalendar.min.js"></script>
+<!-- Wizard Plugin    -->
+<script src="js/jquery.bootstrap.wizard.min.js"></script>
 
-    <!-- Light Bootstrap Dashboard Core javascript and methods -->
-	<script src="js/light-bootstrap-dashboard.js"></script>
+<!--  Bootstrap Table Plugin    -->
+<script src="js/bootstrap-table.js"></script>
 
-	<!--   Sharrre Library    -->
-    <script src="js/jquery.sharrre.js"></script>
+<!--  Plugin for DataTables.net  -->
+<script src="js/jquery.datatables.js"></script>
 
-	<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
-	<script src="js/demo.js"></script>
 
-	<script type="text/javascript">
-    	$(document).ready(function(){
+<!--  Full Calendar Plugin    -->
+<script src="js/fullcalendar.min.js"></script>
 
-        	demo.initDashboardPageCharts();
-        	demo.initVectorMap();
+<!-- Light Bootstrap Dashboard Core javascript and methods -->
+<script src="js/light-bootstrap-dashboard.js"></script>
 
-        	// $.notify({
-            // 	icon: 'pe-7s-bell',
-            // 	message: "<b>Light Bootstrap Dashboard PRO</b> - forget about boring dashboards."
+<!--   Sharrre Library    -->
+<script src="js/jquery.sharrre.js"></script>
 
-            // },{
-            //     type: 'warning',
-            //     timer: 4000
-            // });
+<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+<script src="js/demo.js"></script>
 
-    	});
-	</script>
+<script type="text/javascript">
+    $(document).ready(function () {
 
-	<script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        demo.initDashboardPageCharts();
+        demo.initVectorMap();
 
-      ga('create', 'UA-46172202-1', 'auto');
-      ga('send', 'pageview');
+        // $.notify({
+        // 	icon: 'pe-7s-bell',
+        // 	message: "<b>Light Bootstrap Dashboard PRO</b> - forget about boring dashboards."
 
-    </script>
+        // },{
+        //     type: 'warning',
+        //     timer: 4000
+        // });
+
+    });
+</script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-46172202-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
 
 </html>
