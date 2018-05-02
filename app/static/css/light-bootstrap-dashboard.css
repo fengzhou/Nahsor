@@ -4351,7 +4351,6 @@ h1 .subtitle {
 }
 .sidebar .logo .logo-text,
 .bootstrap-navbar .logo .logo-text {
-  text-transform: uppercase;
   padding: 7px 0px;
   display: block;
   font-size: 18px;
