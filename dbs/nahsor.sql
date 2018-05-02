@@ -12,7 +12,10 @@ File Encoding         : 65001
 
 Date: 2018-05-01 16:41:59
 */
-
+DROP DATABASE IF EXISTS nahsor;
+CREATE DATABASE nahsor DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_general_ci;
+USE nahsor;
+SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
