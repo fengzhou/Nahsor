@@ -132,4 +132,3 @@ def get_validata_test(validates):
         validatelist.append(validatekey)
 
     return validatelist
-
