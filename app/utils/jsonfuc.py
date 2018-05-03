@@ -38,11 +38,20 @@ def validate_req_json(json_str):
             req = {}
             jsons = {}
             req["timeout"] = 10
-            req["url"] = r["name"]
+            req["testname"] = r["name"]
+            req["url"] = r["request"]["url"]
             req["method"] = r["request"]["method"]
-            req["header"] = {r["request"]["header"][0]["key"]:r["request"]["header"][0]["value"]}
-            for k,v in eval(r["request"]["body"]["raw"]).items():
-                jsons[k] = v
+            # 循环header
+            for headers in r["request"]["header"]:
+                jsons[headers['key']] = headers['value']
+            req["header"] = jsons
+
+            jsons = {}
+            # 循环body，得到json数据
+            for h in r["request"]["body"]:
+                if h == "raw":
+                    data = r["request"]["body"][h].replace("\\\\","")
+                    print(data)
             req["json"] = jsons
             reqs.append(req)
         return reqs
@@ -58,8 +67,8 @@ def validate_req_json(json_str):
 if __name__ == "__main__":
     json = ""
     file_path = "C:/Users/SNake/PycharmProjects/Nahsor/examples/Nahsor.postman_collection.json"
-    for line in open(file_path):
+    for line in open(file_path, encoding="utf-8"):
         json += line
 
     reqs = validate_req_json(json)
-    print(reqs)
+    #print(reqs)
