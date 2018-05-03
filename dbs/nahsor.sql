@@ -41,22 +41,26 @@ INSERT INTO `t_config` VALUES ('1', '[\"www.baidu.com\"]', '{\"content-type\": \
 DROP TABLE IF EXISTS `t_modules`;
 CREATE TABLE `t_modules` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `project` varchar(255) NOT NULL COMMENT '所属项目名称',
+  `productid` int(16) NOT NULL COMMENT '所属产品ID',
+  `projectid` int(16) NOT NULL COMMENT '所属项目id',
   `modules` varchar(255) NOT NULL COMMENT '模块名称',
-  `status` int(11) DEFAULT NULL COMMENT '状态，0可用，1不可用',
+  `explain` varchar(255) DEFAULT NULL COMMENT '描述',
   `leader` varchar(255) DEFAULT NULL COMMENT '负责人',
-  `remark` varchar(255) DEFAULT NULL COMMENT '描述说明',
+  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `modules` (`modules`),
-  KEY `project` (`project`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  KEY `project` (`projectid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_modules
 -- ----------------------------
-INSERT INTO `t_modules` VALUES ('1', '测试项目', '测试模块', '0', 'Jin', '2333', null, null);
+INSERT INTO `t_modules` VALUES ('1', '1', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:01', '2018-05-03 14:55:01');
+INSERT INTO `t_modules` VALUES ('2', '1', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:08', '2018-05-03 14:55:08');
+INSERT INTO `t_modules` VALUES ('3', '2', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:09', '2018-05-03 14:55:09');
+INSERT INTO `t_modules` VALUES ('4', '2', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:16', '2018-05-03 14:55:16');
 
 -- ----------------------------
 -- Table structure for t_product
@@ -64,43 +68,47 @@ INSERT INTO `t_modules` VALUES ('1', '测试项目', '测试模块', '0', 'Jin',
 DROP TABLE IF EXISTS `t_product`;
 CREATE TABLE `t_product` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `product` varchar(255) NOT NULL COMMENT '产品名称',
-  `leader` varchar(255) DEFAULT NULL COMMENT '负责人',
-  `status` int(11) DEFAULT NULL COMMENT '状态，0可用，1不可用',
+  `product` varchar(64) NOT NULL COMMENT '产品名称',
+  `explain` varchar(255) DEFAULT NULL COMMENT '负责人',
+  `leader` varchar(16) DEFAULT NULL COMMENT '状态，0可用，1不可用',
   `remark` varchar(255) DEFAULT NULL COMMENT '说明，描述',
   `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `product` (`product`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_product
 -- ----------------------------
-INSERT INTO `t_product` VALUES ('1', '测试产品', 'Jin', '0', '2333', null, null);
+INSERT INTO `t_product` VALUES ('1', '测试产品1', '描述', '责任人', '备注', '2018-05-03 13:11:04', '2018-05-03 13:11:04');
+INSERT INTO `t_product` VALUES ('2', '产品名称2', '描述', '责任人', '备注', '2018-05-03 13:11:04', '2018-05-03 13:11:04');
+INSERT INTO `t_product` VALUES ('3', '产品名称3', '描述', '责任人', '备注', '2018-05-03 13:11:07', '2018-05-03 13:11:07');
 
 -- ----------------------------
 -- Table structure for t_project
 -- ----------------------------
 DROP TABLE IF EXISTS `t_project`;
 CREATE TABLE `t_project` (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `product` varchar(255) NOT NULL COMMENT '产品名称',
+  `id` int(16) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `productid` int(16) NOT NULL COMMENT '关联的产品id',
   `project` varchar(255) NOT NULL COMMENT '项目名称',
+  `explain` varchar(255) DEFAULT NULL COMMENT '描述',
   `leader` varchar(255) DEFAULT NULL COMMENT '负责人',
-  `status` int(255) DEFAULT NULL COMMENT '状态，0可用，1不可用',
-  `remark` varchar(255) DEFAULT NULL COMMENT '说明，描述',
+  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
   `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `project` (`project`),
-  KEY `product` (`product`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+  KEY `product` (`productid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_project
 -- ----------------------------
-INSERT INTO `t_project` VALUES ('1', '测试产品', '测试项目', 'Jin', '0', '2333', null, null);
+INSERT INTO `t_project` VALUES ('1', '2', '项目名称1', '描述', '负责人', '备注', '2018-05-03 13:59:35', '2018-05-03 13:59:35');
+INSERT INTO `t_project` VALUES ('2', '2', '项目名称2', '描述', '负责人', '备注', '2018-05-03 13:59:36', '2018-05-03 13:59:36');
+INSERT INTO `t_project` VALUES ('3', '1', '项目名称3', '描述', '负责人', '备注', '2018-05-03 13:59:42', '2018-05-03 13:59:42');
 
 -- ----------------------------
 -- Table structure for t_testcass
