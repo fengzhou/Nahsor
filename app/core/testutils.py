@@ -23,7 +23,7 @@ def run_http_test(testname, request):
         return r
     else:
         # Logger.error("测试用例[%s]在执行过程中出现异常，错误信息为 --> [code:%s],[error:%s]" % (testname, r.status_code, r.text))
-        raise
+        raise Exception()
 
 def get_global_values(request):
     '''
