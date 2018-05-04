@@ -123,24 +123,19 @@ def _postman_format_validate(case):
 
     # validate
     # todo validate str to dict异常，需要解决这个问题！！
-
-    print(type(case["validate"]))
-    a = case["validate"]
-    print(a)
-    print(json.loads(a, encoding="utf-8"))
     try:
-        validate = json.loads(case["validate"], encoding="utf-8")
+        validate = case["validate"]
         if validate is None or \
-               not isinstance(validate, list) or validate == []:
+               not isinstance(validate, str) or validate == "":
             return False
-        for val in validate:
-            if val is None or\
-                    not isinstance(val, dict) or val == {}:
-                return False
+        # for val in validate:
+        #     if val is None or\
+        #             not isinstance(val, dict) or val == {}:
+        #         return False
     except (JSONDecodeError, KeyError, SyntaxError) as e:
         return False
 
-
+    return True
 
 def validate_req_json(json_str):
     """
@@ -160,6 +155,7 @@ def validate_req_json(json_str):
                     data = r["request"]["body"][h]
                     # 判断通过
                     if _postman_format_validate(data):
+                        data = data.replace("\n", "").replace("\t", "").replace("\\", "").replace("    ", "")
                         reqs.append(data)
             #
             # # 判断格式内容
