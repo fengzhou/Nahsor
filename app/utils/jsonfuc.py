@@ -1,7 +1,6 @@
 # encoding: utf-8
-from app.utils.log import Logger
+import app.utils.log
 from app.utils.exception import JSONDecodeError,ParamsException
-
 
 def json_to_dict(json_str):
     '''
@@ -51,13 +50,16 @@ def validate_req_json(json_str):
             for h in r["request"]["body"]:
                 if h == "raw":
                     data = r["request"]["body"][h].replace("\\\\","")
-                    print(data)
+                    for k,v in eval(data).items():
+                        jsons[k] = v
+
             req["json"] = jsons
+            print(req)
             reqs.append(req)
         return reqs
 
     except (JSONDecodeError, ParamsException) as e:
-        # logger = Logger()
+        # logger = log.Logger()
         # logger.error("JSON校验异常,异常信息为 -->%s" % e)
         print(e)
         return False
