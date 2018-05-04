@@ -7,8 +7,6 @@ def json_to_dict(json_str):
     '''
     将json转换为dict
     '''
-    # print(json)
-    import json
     json = json_str.loads(json_str)
     return json
 
@@ -157,40 +155,9 @@ def validate_req_json(json_str):
                     if _postman_format_validate(data):
                         data = data.replace("\n", "").replace("\t", "").replace("\\", "").replace("    ", "")
                         reqs.append(data)
-            #
-            # # 判断格式内容
-            # if r["request"]["method"] != "POST" or r["request"]["body"]["raw"] is None:
-            #     print("解析JSON失败,JSON格式为  --> %s" % r)
-            #     continue
-
-            # # 判断
-            #
-            # req = {}
-            # jsons = {}
-            # req["timeout"] = 10
-            # req["testname"] = r["name"]
-            # req["url"] = r["request"]["url"]
-            # req["method"] = r["request"]["method"]
-            # # 循环header
-            # for headers in r["request"]["header"]:
-            #     jsons[headers['key']] = headers['value']
-            # req["header"] = jsons
-            #
-            # jsons = {}
-            # # 循环body，得到json数据
-            # for h in r["request"]["body"]:
-            #     if h == "raw":
-            #         data = r["request"]["body"][h].replace("\\","")
-            #         print(data)
-            # req["json"] = jsons
-            # reqs.append(req)
         return reqs
 
     except (JSONDecodeError, ParamsException) as e:
-        # logger = Logger()
-        # logger.error("JSON校验异常,异常信息为 -->%s" % e)
-        print("123")
-        raise e
         return False
 
 
