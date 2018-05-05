@@ -1,4 +1,7 @@
 # -*- conding:utf-8 -*-
+'''
+项目管理的相关接口
+'''
 __author__ = "Jin"
 from flask import jsonify, request
 from app import bp
@@ -6,6 +9,20 @@ from app.utils import dbfucs
 from app.core import collect
 from app.utils.log import Logger
 Logger = Logger()
+
+
+@bp.route("/getproduct",methods=["GET"])
+def getproduct():
+    '''
+    读取产品列表，这个接口是给新增项目等东西的时候，选择所属产品用的
+    '''
+    sql = "SELECT * FROM t_product"
+    res = dbfucs.query(sql)
+    response = {}
+    response["code"] = 200
+    response["data"] = res
+    response["msg"] = "查询成功！！！"
+    return jsonify(response)
 
 
 @bp.route("/addproject",methods=["POST"])
@@ -80,12 +97,13 @@ def deleteproject():
 @bp.route("/readproject",methods=["POST"])
 def readproject():
     '''
-    读取产品信息
+    读取项目信息
     {"pid":1}
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
     sql = "SELECT\
+        t_project.productid,\
         t_project.project,\
         t_project.`explain`,\
         t_project.leader,\
@@ -117,16 +135,18 @@ def updataproject():
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
+    productid = dictdata["productid"]
     project = dictdata["project"]
     explain = dictdata["explain"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
     sql = "UPDATE `t_project`\
-        SET `project` = '%s',\
+        SET `productid` = '%s',\
+        `project` = '%s',\
         `explain` = '%s',\
         `leader` = '%s',\
         `remark` = '%s'\
-        WHERE (`id` = '%s')" % (project, explain, leader, remark, pid)
+        WHERE (`id` = '%s')" % (productid,project, explain, leader, remark, pid)
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200

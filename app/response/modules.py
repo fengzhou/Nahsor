@@ -1,6 +1,6 @@
 # -*- conding:utf-8 -*-
 '''
-产品管理的相关接口
+模块管理的相关接口
 '''
 __author__ = "Jin"
 from flask import jsonify, request
@@ -11,23 +11,39 @@ from app.utils.log import Logger
 Logger = Logger()
 
 
-@bp.route("/addproduct",methods=["POST"])
-def addproduct():
+@bp.route("/getproject",methods=["GET"])
+def getproject():
     '''
-    新增产品
+    读取产品列表，这个接口是给新增项目等东西的时候，选择所属产品用的
+    '''
+    sql = "SELECT * FROM t_project"
+    res = dbfucs.query(sql)
+    response = {}
+    response["code"] = 200
+    response["data"] = res
+    response["msg"] = "查询成功！！！"
+    return jsonify(response)
+
+
+@bp.route("/addproject",methods=["POST"])
+def addproject():
+    '''
+    新增项目
     {
-        "product":"产品名称",
+        "moduleid":"所属产品id",
+        "project":"项目名称",
         "explain":"描述",
         "leader":"责任人",
         "remark":"备注"
     }
     '''
     dictdata = request.get_json()
-    product = dictdata["product"]
+    moduleid = dictdata["moduleid"]
+    project = dictdata["project"]
     explain = dictdata["explain"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "insert into t_product values(null,'%s','%s','%s','%s',null,null);" % (product,explain,leader,remark)
+    sql = "insert into t_project values(null,'%s','%s','%s','%s','%s',null,null);" % (moduleid,project,explain,leader,remark)
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -36,23 +52,23 @@ def addproduct():
     return jsonify(response)
 
 
-@bp.route("/queryproduct",methods=["GET"])
-def queryproduct():
+@bp.route("/queryproject",methods=["GET"])
+def queryproject():
     '''
-    查询产品列表
+    查询项目列表
     '''
     sql = "SELECT\
-        t_product.id,\
-        t_product.product,\
-        t_product.`explain`,\
-        (SELECT COUNT(*) FROM t_project WHERE productid = t_product.id) AS jectnum,\
-        (SELECT COUNT(*) FROM t_modules WHERE productid = t_product.id) AS modulenum,\
-        t_product.leader,\
-        t_product.remark,\
-        t_product.createtime,\
-        t_product.updatatime\
+        t_project.id,\
+        t_project.project,\
+        t_project.`explain`,\
+        (SELECT COUNT(*) FROM t_modules WHERE projectid = t_project.id) AS modulenum,\
+        (SELECT COUNT(*) FROM t_testcass WHERE projectid = t_project.id) AS cassnum,\
+        t_project.leader,\
+        t_project.remark,\
+        t_project.createtime,\
+        t_project.updatatime\
         FROM\
-        t_product"
+        t_project"
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -61,15 +77,15 @@ def queryproduct():
     return jsonify(response)
 
 
-@bp.route("/deleteproduct",methods=["POST"])
-def deleteproduct():
+@bp.route("/deleteproject",methods=["POST"])
+def deleteproject():
     '''
-    删除产品
+    删除项目
     {"pid":1}
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
-    sql = "DELETE FROM `t_product` WHERE (`id`='%s')" % pid
+    sql = "DELETE FROM `t_project` WHERE (`id`='%s')" % pid
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -78,23 +94,25 @@ def deleteproduct():
     return jsonify(response)
 
 
-@bp.route("/readproduct",methods=["POST"])
-def readproduct():
+@bp.route("/readproject",methods=["POST"])
+def readproject():
     '''
-    读取产品信息
+    读取项目信息
     {"pid":1}
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
     sql = "SELECT\
-        t_product.product,\
-        t_product.`explain`,\
-        t_product.leader,\
-        t_product.remark\
+        t_project.moduleid,\
+        t_project.project,\
+        t_project.`explain`,\
+        t_project.leader,\
+        t_project.remark,\
+        t_project.moduleid\
         FROM\
-        t_product\
+        t_project\
         WHERE\
-        t_product.id = %s" % pid
+        t_project.id = %s" % pid
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -103,13 +121,13 @@ def readproduct():
     return jsonify(response)
 
 
-@bp.route("/updataproduct",methods=["POST"])
-def updataproduct():
+@bp.route("/updataproject",methods=["POST"])
+def updataproject():
     '''
     更新产品信息
     {
         "pid":2,
-        "product":"产品名称",
+        "project":"产品名称",
         "explain":"描述",
         "leader":"责任人",
         "remark":"备注"
@@ -117,16 +135,18 @@ def updataproduct():
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
-    product = dictdata["product"]
+    moduleid = dictdata["moduleid"]
+    project = dictdata["project"]
     explain = dictdata["explain"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "UPDATE `t_product`\
-        SET `product` = '%s',\
+    sql = "UPDATE `t_project`\
+        SET `moduleid` = '%s',\
+        `project` = '%s',\
         `explain` = '%s',\
         `leader` = '%s',\
         `remark` = '%s'\
-        WHERE (`id` = '%s')" % (product, explain, leader, remark, pid)
+        WHERE (`id` = '%s')" % (moduleid,project, explain, leader, remark, pid)
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -135,15 +155,15 @@ def updataproduct():
     return jsonify(response)
 
 
-@bp.route("/runproduct",methods=["POST"])
-def runproduct():
+@bp.route("/runproject",methods=["POST"])
+def runproject():
     '''
     按产品执行所有用例
     {"idlist":"1,2"}
     '''
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "SELECT * FROM t_testcass WHERE productid in (%s)" % idlist
+    sql = "SELECT * FROM t_testcass WHERE projectid in (%s)" % idlist
     res = dbfucs.query(sql)
     jsoncasss = []
     for test in res:
