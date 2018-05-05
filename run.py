@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'nahsor'
 from app import create_app
-from app.response import servers
+from app.response import servers, products
 
 app = create_app("DevelopmentConfig")
 
