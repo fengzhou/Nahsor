@@ -11,12 +11,12 @@ from app.utils.log import Logger
 Logger = Logger()
 
 
-@bp.route("/getproject",methods=["GET"])
-def getproject():
+@bp.route("/getmodule",methods=["GET"])
+def getmodule():
     '''
-    读取产品列表，这个接口是给新增项目等东西的时候，选择所属产品用的
+    读取项目列表，这个接口是给新增项目等东西的时候，选择所属项目用的
     '''
-    sql = "SELECT * FROM t_project"
+    sql = "SELECT * FROM t_module"
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -25,13 +25,13 @@ def getproject():
     return jsonify(response)
 
 
-@bp.route("/addproject",methods=["POST"])
-def addproject():
+@bp.route("/addmodule",methods=["POST"])
+def addmodule():
     '''
     新增项目
     {
         "moduleid":"所属产品id",
-        "project":"项目名称",
+        "module":"项目名称",
         "explain":"描述",
         "leader":"责任人",
         "remark":"备注"
@@ -39,11 +39,11 @@ def addproject():
     '''
     dictdata = request.get_json()
     moduleid = dictdata["moduleid"]
-    project = dictdata["project"]
+    module = dictdata["module"]
     explain = dictdata["explain"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "insert into t_project values(null,'%s','%s','%s','%s','%s',null,null);" % (moduleid,project,explain,leader,remark)
+    sql = "insert into t_module values(null,'%s','%s','%s','%s','%s',null,null);" % (moduleid,module,explain,leader,remark)
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -52,23 +52,25 @@ def addproject():
     return jsonify(response)
 
 
-@bp.route("/queryproject",methods=["GET"])
-def queryproject():
+@bp.route("/querymodule",methods=["GET"])
+def querymodule():
     '''
-    查询项目列表
+    查询模块列表
     '''
     sql = "SELECT\
-        t_project.id,\
-        t_project.project,\
-        t_project.`explain`,\
-        (SELECT COUNT(*) FROM t_modules WHERE projectid = t_project.id) AS modulenum,\
-        (SELECT COUNT(*) FROM t_testcass WHERE projectid = t_project.id) AS cassnum,\
-        t_project.leader,\
-        t_project.remark,\
-        t_project.createtime,\
-        t_project.updatatime\
-        FROM\
-        t_project"
+        t_modules.id as moduleid,\
+        t_modules.modules,\
+        t_modules.`explain`,\
+        (SELECT COUNT(*) FROM t_testcass WHERE t_testcass.moduleid = t_modules.id) AS cassnum,\
+        t_modules.leader,\
+        t_modules.remark,\
+        t_modules.createtime,\
+        t_modules.updatatime\
+    FROM\
+        t_modules\
+    LEFT JOIN t_testcass ON t_modules.id = t_testcass.moduleid\
+    -- WHERE t_module.productid = 2\
+    group by t_modules.id;"
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -77,15 +79,15 @@ def queryproject():
     return jsonify(response)
 
 
-@bp.route("/deleteproject",methods=["POST"])
-def deleteproject():
+@bp.route("/deletemodule",methods=["POST"])
+def deletemodule():
     '''
     删除项目
     {"pid":1}
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
-    sql = "DELETE FROM `t_project` WHERE (`id`='%s')" % pid
+    sql = "DELETE FROM `t_module` WHERE (`id`='%s')" % pid
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -94,8 +96,8 @@ def deleteproject():
     return jsonify(response)
 
 
-@bp.route("/readproject",methods=["POST"])
-def readproject():
+@bp.route("/readmodule",methods=["POST"])
+def readmodule():
     '''
     读取项目信息
     {"pid":1}
@@ -103,16 +105,16 @@ def readproject():
     dictdata = request.get_json()
     pid = dictdata["pid"]
     sql = "SELECT\
-        t_project.moduleid,\
-        t_project.project,\
-        t_project.`explain`,\
-        t_project.leader,\
-        t_project.remark,\
-        t_project.moduleid\
+        t_module.moduleid,\
+        t_module.module,\
+        t_module.`explain`,\
+        t_module.leader,\
+        t_module.remark,\
+        t_module.moduleid\
         FROM\
-        t_project\
+        t_module\
         WHERE\
-        t_project.id = %s" % pid
+        t_module.id = %s" % pid
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -121,13 +123,13 @@ def readproject():
     return jsonify(response)
 
 
-@bp.route("/updataproject",methods=["POST"])
-def updataproject():
+@bp.route("/updatamodule",methods=["POST"])
+def updatamodule():
     '''
     更新产品信息
     {
         "pid":2,
-        "project":"产品名称",
+        "module":"产品名称",
         "explain":"描述",
         "leader":"责任人",
         "remark":"备注"
@@ -136,17 +138,17 @@ def updataproject():
     dictdata = request.get_json()
     pid = dictdata["pid"]
     moduleid = dictdata["moduleid"]
-    project = dictdata["project"]
+    module = dictdata["module"]
     explain = dictdata["explain"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "UPDATE `t_project`\
+    sql = "UPDATE `t_module`\
         SET `moduleid` = '%s',\
-        `project` = '%s',\
+        `module` = '%s',\
         `explain` = '%s',\
         `leader` = '%s',\
         `remark` = '%s'\
-        WHERE (`id` = '%s')" % (moduleid,project, explain, leader, remark, pid)
+        WHERE (`id` = '%s')" % (moduleid,module, explain, leader, remark, pid)
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -155,15 +157,15 @@ def updataproject():
     return jsonify(response)
 
 
-@bp.route("/runproject",methods=["POST"])
-def runproject():
+@bp.route("/runmodule",methods=["POST"])
+def runmodule():
     '''
     按产品执行所有用例
     {"idlist":"1,2"}
     '''
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "SELECT * FROM t_testcass WHERE projectid in (%s)" % idlist
+    sql = "SELECT * FROM t_testcass WHERE moduleid in (%s)" % idlist
     res = dbfucs.query(sql)
     jsoncasss = []
     for test in res:

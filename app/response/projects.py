@@ -55,20 +55,24 @@ def addproject():
 @bp.route("/queryproject",methods=["GET"])
 def queryproject():
     '''
-    查询项目列表
+    查询项目列表，还需要改进搜索的功能
     '''
     sql = "SELECT\
-        t_project.id,\
+        t_project.id as projectid,\
         t_project.project,\
         t_project.`explain`,\
-        (SELECT COUNT(*) FROM t_modules WHERE projectid = t_project.id) AS modulenum,\
-        (SELECT COUNT(*) FROM t_testcass WHERE projectid = t_project.id) AS cassnum,\
+        (SELECT COUNT(*) FROM t_modules WHERE t_modules.projectid = t_project.id) AS modulenum,\
+        (SELECT COUNT(*) FROM t_testcass WHERE t_testcass.moduleid = t_modules.id) AS cassnum,\
         t_project.leader,\
         t_project.remark,\
         t_project.createtime,\
         t_project.updatatime\
-        FROM\
-        t_project"
+    FROM\
+        t_project\
+    LEFT JOIN t_modules ON t_project.id = t_modules.projectid\
+    LEFT JOIN t_testcass ON t_modules.id = t_testcass.moduleid\
+    -- WHERE t_project.productid = 2\
+    group by t_project.id;"
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -80,7 +84,7 @@ def queryproject():
 @bp.route("/deleteproject",methods=["POST"])
 def deleteproject():
     '''
-    删除项目
+    删除项目,项目下面的模块和用例也会被删除(还没完成)
     {"pid":1}
     '''
     dictdata = request.get_json()
@@ -158,12 +162,18 @@ def updataproject():
 @bp.route("/runproject",methods=["POST"])
 def runproject():
     '''
-    按产品执行所有用例
+    按项目执行所有用例
     {"idlist":"1,2"}
     '''
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "SELECT * FROM t_testcass WHERE projectid in (%s)" % idlist
+    sql = "SELECT\
+        t_testcass.id\
+    FROM\
+        t_project\
+    LEFT JOIN t_modules ON t_project.id = t_modules.projectid\
+    LEFT JOIN t_testcass ON t_modules.id = t_testcass.moduleid\
+    WHERE t_project.id in (%s)" % idlist
     res = dbfucs.query(sql)
     jsoncasss = []
     for test in res:

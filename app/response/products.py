@@ -42,17 +42,21 @@ def queryproduct():
     查询产品列表
     '''
     sql = "SELECT\
-        t_product.id,\
-        t_product.product,\
-        t_product.`explain`,\
-        (SELECT COUNT(*) FROM t_project WHERE productid = t_product.id) AS jectnum,\
-        (SELECT COUNT(*) FROM t_modules WHERE productid = t_product.id) AS modulenum,\
-        t_product.leader,\
-        t_product.remark,\
-        t_product.createtime,\
-        t_product.updatatime\
+            t_product.id as productid,\
+            t_product.product,\
+            t_product.`explain`,\
+            (SELECT COUNT(*) FROM t_project WHERE t_project.productid = t_product.id) AS jectnum,\
+            (SELECT COUNT(*) FROM t_modules WHERE t_modules.projectid = t_project.id) AS modulenum,\
+            t_product.leader,\
+            t_product.remark,\
+            t_product.createtime,\
+            t_product.updatatime\
         FROM\
-        t_product"
+            t_product\
+        LEFT JOIN t_project ON t_product.id = t_project.productid\
+        LEFT JOIN t_modules ON t_project.id = t_modules.projectid\
+        -- LEFT JOIN t_testcass ON t_modules.id = t_testcass.moduleid\
+        group by t_product.id"
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -64,7 +68,7 @@ def queryproduct():
 @bp.route("/deleteproduct",methods=["POST"])
 def deleteproduct():
     '''
-    删除产品
+    删除产品，产品下面的所有关联的内容都会被删除(还没完成)
     {"pid":1}
     '''
     dictdata = request.get_json()
@@ -143,7 +147,14 @@ def runproduct():
     '''
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "SELECT * FROM t_testcass WHERE productid in (%s)" % idlist
+    sql = "SELECT\
+        t_testcass.id\
+    FROM\
+        t_product\
+    LEFT JOIN t_project ON t_product.id = t_project.productid\
+    LEFT JOIN t_modules ON t_project.id = t_modules.projectid\
+    LEFT JOIN t_testcass ON t_modules.id = t_testcass.moduleid\
+    WHERE t_product.id in (%s);" % idlist
     res = dbfucs.query(sql)
     jsoncasss = []
     for test in res:
