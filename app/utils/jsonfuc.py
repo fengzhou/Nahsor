@@ -134,8 +134,8 @@ def _basic_format_validate(case):
 
 def _postman_format_validate(case):
     """
-    :校验postman raw部分的json格式
-    :param case: har格式的json字符串
+    :校验postman json文件格式并格式化字符串
+    :param case: raw部分的json格式
     :return: []:失败; Not []:成功
 
      """
@@ -167,7 +167,7 @@ def _postman_format_validate(case):
 
 def _har_format_validate(case):
     """
-    : 校验har请求体中request部分
+    : 校验har文件格式并格式化字符串
     :param case: har格式的json字符串
     :return: []:失败; Not []:成功
     """
