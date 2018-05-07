@@ -142,6 +142,7 @@ def _har_format_validate(case):
     :param case:
     :return:
     """
+    return
 
 
 def validate_req_json(json_str, type='postman'):
