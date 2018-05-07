@@ -126,46 +126,66 @@ def _postman_format_validate(case):
         if validate is None or \
                not isinstance(validate, str) or validate == "":
             return False
-
+        # for val in validate:
+        #     if val is None or\
+        #             not isinstance(val, dict) or val == {}:
+        #         return False
     except (JSONDecodeError, KeyError, SyntaxError) as e:
         return False
 
     return True
 
 
-def validate_req_json(json_str):
+def _har_format_validate(case):
+    """
+    : 校验har请求体中request部分
+    :param case:
+    :return:
+    """
+    return
+
+
+def validate_req_json(json_str, type='postman'):
     """
     :ex:校验并格式化PostMan的Json字符串
-    :param json_str:
+    :param json_str: str; type:postman/har
     :return:   成功:[{json1},{json1},{json1}]
                 失败: False
     """
     import json
     reqs = []
-    try:
-        json_str = json_str.replace("\n", "").replace("\t", "")
-        req_info = json.loads(json_str)["item"]
-        for r in req_info:
-            for h in r["request"]["body"]:
-                if h == "raw":
-                    data = r["request"]["body"][h]
-                    # 判断通过
-                    if _postman_format_validate(data):
-                        data = data.replace("\n", "").replace("\t", "").replace("\\", "").replace("    ", "")
-                        reqs.append(data)
-        return reqs
+    if type == 'postman':
+        try:
+            json_str = json_str.replace("\n", "").replace("\t", "")
+            req_info = json.loads(json_str)["item"]
+            for r in req_info:
+                for h in r["request"]["body"]:
+                    if h == "raw":
+                        data = r["request"]["body"][h]
+                        # 判断通过
+                        if _postman_format_validate(data):
+                            data = data.replace("\n", "").replace("\t", "").replace("\\", "").replace("    ", "")
+                            reqs.append(data)
+            return reqs
+        except (JSONDecodeError, ParamsException) as e:
+            return False
+    else:
+        try:
+            har_drict = json.loads(json_str)["log"]
 
-    except (JSONDecodeError, ParamsException) as e:
-        return False
-
+        except Exception as e:
+            print(e)
 
 
 if __name__ == "__main__":
 
     json = ""
-    file_path = "C:/Users/SNake/PycharmProjects/Nahsor/examples/Nahsor.postman_collection.json"
+    #file_path = "C:/Users/SNake/PycharmProjects/Nahsor/examples/Nahsor.postman_collection.json"
+    file_path = "C:/Users/SNake/PycharmProjects/Nahsor/examples/test.har"
     for line in open(file_path, encoding="utf-8"):
         json += line
 
-    reqs = validate_req_json(json)
+    reqs = validate_req_json(json, 'har')
     print(reqs)
+
+

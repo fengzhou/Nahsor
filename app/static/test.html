@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传demo</title>
+</head>
+<br>
+
+
+<h1>ajax交互例子</h1>
+<button id="login" onclick="login()">点我登陆！！！！！！！！！！！！</button>
+<hr>
+
+<h1>用户header上传示例</h1>
+<hr>
+<form action="/upload/" enctype='multipart/form-data' method='POST'>
+    <input type="file" name="file">
+    <input type="hidden" name="source" id="source" value="userHeadImage"/>
+    <input type="submit" value="上传">
+</form>
+<hr>
+
+
+
+
+</body>
+
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script >
+
+function login(){
+        var datas = JSON.stringify({'username': 'user1', 'password': 'user1', 'captcha': '123456'});
+        $.ajax({
+            type: 'post',
+            url: '/userLogin/',
+            contentType: "application/json",
+            data: datas,
+            success: function (str) { //返回json结果
+                data = JSON.parse(str); // 解析json字符串
+            },
+            fail: function (err, status) {
+                console.log(err);
+            }
+        });
+
+
+        alert("这是登陆例子")
+}
+
+</script>
+</html>
