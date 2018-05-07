@@ -126,14 +126,12 @@ def _postman_format_validate(case):
         if validate is None or \
                not isinstance(validate, str) or validate == "":
             return False
-        # for val in validate:
-        #     if val is None or\
-        #             not isinstance(val, dict) or val == {}:
-        #         return False
+
     except (JSONDecodeError, KeyError, SyntaxError) as e:
         return False
 
     return True
+
 
 def validate_req_json(json_str):
     """
