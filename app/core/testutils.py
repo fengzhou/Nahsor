@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import requests
 from app.utils.log import Logger
 

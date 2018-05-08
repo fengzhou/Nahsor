@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import json
 from app.core.runner import Runner
 from app.utils.log import Logger

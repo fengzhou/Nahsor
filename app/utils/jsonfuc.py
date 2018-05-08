@@ -1,4 +1,4 @@
-# encoding: utf-8
+# -*- coding:utf-8 -*-
 from app.utils.log import Logger
 from app.utils.exception import JSONDecodeError, ParamsException
 
