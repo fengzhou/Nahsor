@@ -43,6 +43,24 @@
 			"response": []
 		},
 		{
+			"name": "http://127.0.0.1:8808/addtcass",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"request\": \"{\\\"url\\\": \\\"http://127.0.0.1:2333/test\\\", \\\"json\\\": {\\\"aaa\\\": \\\"bbb\\\"}, \\\"method\\\": \\\"POST\\\", \\\"headers\\\": {\\\"Content-Type\\\": \\\"application/json\\\"}, \\\"timeout\\\": 10}\",\n    \"testname\": \"用例99\",\n    \"testtype\": \"testcass\",\n    \"validate\": \"[{\\\"Equal\\\": [\\\"r.json()\\\",\\\"request[\\\\\\\\\\\"json\\\\\\\\\\\"]\\\"]},{\\\"Equal\\\": [\\\"r.status_code\\\",\\\"200\\\"]}]\"\n}"
+				},
+				"url": "http://127.0.0.1:8808/addtcass"
+			},
+			"response": []
+		},
+		{
 			"name": "http://127.0.0.1:8808/testgo",
 			"request": {
 				"method": "POST",

@@ -51,9 +51,9 @@ def _basic_format_validate(case):
     :return: False失败,True成功
 
      """
+    import json
     if not isinstance(case, dict):
         try:
-            import json
             case = json.loads(case, encoding="utf-8")
         except JSONDecodeError as e:
             return False
@@ -147,62 +147,79 @@ def _postman_format_validate(case):
             return []
 
         for item in postman_items:
-            postman_items_req = item["request"]
-            if postman_items_req is None:
-                return []
+            try:
+                postman_items_req = item["request"]
+                postman_items_req_body = postman_items_req["body"]
+                raw_data = postman_items_req_body["raw"]
 
-            postman_items_req_body = postman_items_req["body"]
-            if postman_items_req_body is None:
-                return []
+                if raw_data is None:
+                    return []
 
-            data = postman_items_req_body["raw"]
-            if _basic_format_validate(data):
-                data = data.replace("\n", "").replace("\t", "").replace("\\", "").replace("    ", "")
-                reqs.append(data)
-    except:
-        return []
+                if _basic_format_validate(raw_data):
+                    reqs.append(json.loads(raw_data, encoding="utf-8"))
+            except Exception as e:
+                print(e)
+                pass
+    except Exception as e:
+        print(e)
+        pass
     finally:
         return reqs
 
 
 def _har_format_validate(case):
     """
-    : 校验har文件格式并格式化字符串
+    : 校验并格式化har文件格式的字符串
     :param case: har格式的json字符串
     :return: []:失败; Not []:成功
     """
+    FILTER_METHODS_RULES = [
+        "get"
+    ]
+
+    import json
+    from urllib.parse import unquote_plus
+
     reqs = []
     try:
-        import json
-        har_entries = json.loads(case, encoding="utf-8")["log"]["entries"]
-        if har_entries is None:
+        har_entries_list = json.loads(case, encoding="utf-8")["log"]["entries"]
+        if har_entries_list is None:
             return []
 
-        har_entries_req = har_entries[0]["request"]
-        if har_entries_req is None:
-            return []
+        # 遍历每一个entries
+        for har_entries in har_entries_list:
+            try:
+                har_entries_req = har_entries["request"]
+                har_entries_req_method = har_entries_req["method"]
+                har_entries_req_postdate = har_entries_req["postData"]
+                har_entries_req_postdate_params = har_entries_req_postdate["params"]
 
-        har_entries_req_postdate = har_entries_req["postData"]
-        if har_entries_req_postdate is None:
-            return []
+                # 各个条件为空的情况,前面的条件如果为空会报错
+                if har_entries_req_postdate_params is None:
+                    return []
 
-        har_entries_req_postdate_params = har_entries_req_postdate["params"]
-        if har_entries_req_postdate_params is None:
-            return []
+                # 过滤指定方法过滤GET方法，GET方法返回大数据量的html/js/css/image，减少计算量
+                if har_entries_req_method.lower() in FILTER_METHODS_RULES:
+                    continue
 
-        # 获取对应的键值对
-        from urllib.parse import unquote_plus
-        for param in har_entries_req_postdate_params:
-            req = {}
-            key, value = param["name"], param["value"]
-            if key in ("request", "testname", "testtype", "validate"):
-                req[key] = unquote_plus(value)
-                reqs.append(req)
+                # 获取对应的键值对,遍历request/testname/testtype/validate
+                req = {}
+                for param in har_entries_req_postdate_params:
+                    key, value = param["name"], param["value"]
+                    if key in ("request", "testname", "testtype", "validate"):
+                        req[key] = unquote_plus(value)
 
-    except:
-        return []
-
-    return reqs
+                # 格式校验
+                if _basic_format_validate(req):
+                    reqs.append(req)
+            except Exception as e:
+                print(e)
+                pass
+    except Exception as e:
+        print(e)
+        pass
+    finally:
+        return reqs
 
 
 def validate_req_json(json_str, type='postman'):
@@ -213,12 +230,11 @@ def validate_req_json(json_str, type='postman'):
                 失败: []
     """
     reqs = []
-
     try:
-        if type == "har":
+        if type.lower() == "har":
             reqs = _har_format_validate(json_str)
 
-        if type == "postman":
+        if type.lower() == "postman":
             reqs = _postman_format_validate(json_str)
 
     except Exception as e:
@@ -227,20 +243,17 @@ def validate_req_json(json_str, type='postman'):
         return reqs
 
 
-# todo bug1: post字符串输出，不是json或dict输出
-# todo bug2: har基础校验设置，以及多个har兼容问题
-# todo 睡觉休息，太累了...
-
 if __name__ == "__main__":
 
     test_type = "postman"  # 修改我
     if test_type == "postman":
-        file_path = "C:/Users/SNake/PycharmProjects/Nahsor/examples/Nahsor.postman_collection.json"
+        file_path = "C:/Users/SNake/PycharmProjects/Nahsor/examples/postman_test.json"
     if test_type == "har":
-        file_path = "C:/Users/SNake/PycharmProjects/Nahsor/examples/test.har"
+        file_path = "C:/Users/SNake/PycharmProjects/Nahsor/examples/har_test.har"
 
     json = ""
     for line in open(file_path, encoding="utf-8"):
         json += line
 
     print(validate_req_json(json, type=test_type))
+
