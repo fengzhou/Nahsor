@@ -16,7 +16,7 @@ def getproduct():
     '''
     读取产品列表，这个接口是给新增项目等东西的时候，选择所属产品用的
     '''
-    sql = "SELECT * FROM t_product"
+    sql = "SELECT id,product FROM t_product"
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200

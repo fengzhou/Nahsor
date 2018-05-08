@@ -11,12 +11,20 @@ from app.utils.log import Logger
 Logger = Logger()
 
 
-@bp.route("/getmodule",methods=["GET"])
+@bp.route("/getproject",methods=["GET"])
 def getmodule():
     '''
-    读取项目列表，这个接口是给新增项目等东西的时候，选择所属项目用的
+    读取项目列表，这个接口是给新增模块等东西的时候，选择所属项目用的
     '''
-    sql = "SELECT * FROM t_module"
+    sql = "SELECT\
+        t_product.id as productid,\
+        t_product.product,\
+        t_project.id as projectid,\
+        t_project.project\
+    FROM\
+        t_product\
+    LEFT JOIN t_project ON t_product.id = t_project.productid\
+    LEFT JOIN t_modules ON t_project.id = t_modules.projectid"
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -38,12 +46,12 @@ def addmodule():
     }
     '''
     dictdata = request.get_json()
-    moduleid = dictdata["moduleid"]
+    projectid = dictdata["projectid"]
     module = dictdata["module"]
     explain = dictdata["explain"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "insert into t_module values(null,'%s','%s','%s','%s','%s',null,null);" % (moduleid,module,explain,leader,remark)
+    sql = "insert into t_modules values(null,'%s','%s','%s','%s','%s',null,null);" % (projectid,module,explain,leader,remark)
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -69,7 +77,6 @@ def querymodule():
     FROM\
         t_modules\
     LEFT JOIN t_testcass ON t_modules.id = t_testcass.moduleid\
-    -- WHERE t_module.productid = 2\
     group by t_modules.id;"
     res = dbfucs.query(sql)
     response = {}
@@ -87,7 +94,7 @@ def deletemodule():
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
-    sql = "DELETE FROM `t_module` WHERE (`id`='%s')" % pid
+    sql = "DELETE FROM `t_modules` WHERE (`id`='%s')" % pid
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -105,16 +112,16 @@ def readmodule():
     dictdata = request.get_json()
     pid = dictdata["pid"]
     sql = "SELECT\
-        t_module.moduleid,\
-        t_module.module,\
-        t_module.`explain`,\
-        t_module.leader,\
-        t_module.remark,\
-        t_module.moduleid\
+        t_modules.moduleid,\
+        t_modules.module,\
+        t_modules.`explain`,\
+        t_modules.leader,\
+        t_modules.remark,\
+        t_modules.moduleid\
         FROM\
-        t_module\
+        t_modules\
         WHERE\
-        t_module.id = %s" % pid
+        t_modules.id = %s" % pid
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -142,7 +149,7 @@ def updatamodule():
     explain = dictdata["explain"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "UPDATE `t_module`\
+    sql = "UPDATE `t_modules`\
         SET `moduleid` = '%s',\
         `module` = '%s',\
         `explain` = '%s',\
@@ -160,7 +167,7 @@ def updatamodule():
 @bp.route("/runmodule",methods=["POST"])
 def runmodule():
     '''
-    按产品执行所有用例
+    按模块执行所有用例
     {"idlist":"1,2"}
     '''
     dictdata = request.get_json()
