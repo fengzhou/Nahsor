@@ -3,7 +3,7 @@ __author__ = 'nahsor'
 from app import create_app
 from app.response import servers, products, projects
 
-app = create_app("DevelopmentConfig")
+app = create_app("ProductionConfig")
 
 
 @app.route('/')
