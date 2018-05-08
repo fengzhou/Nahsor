@@ -14,7 +14,6 @@ webhook地址：
     http://118.24.105.78:8080/jenkins/github-webhook/
 
 
-
 # 加油！
 
 
