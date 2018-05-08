@@ -6,19 +6,19 @@ import logging, datetime, os, ctypes, codecs
 from functools import wraps
 
 
-FOREGROUND_WHITE = 0x0007  # 白色文字
-FOREGROUND_BLUE = 0x01  # 蓝色文字
-FOREGROUND_GREEN = 0x02  # 绿色文字
-FOREGROUND_RED = 0x04  # 红色文字
-FOREGROUND_YELLOW = FOREGROUND_RED | FOREGROUND_GREEN  # 文字黄色
+# FOREGROUND_WHITE = 0x0007  # 白色文字
+# FOREGROUND_BLUE = 0x01  # 蓝色文字
+# FOREGROUND_GREEN = 0x02  # 绿色文字
+# FOREGROUND_RED = 0x04  # 红色文字
+# FOREGROUND_YELLOW = FOREGROUND_RED | FOREGROUND_GREEN  # 文字黄色
+#
+# STD_OUTPUT_HANDLE = -11
+# std_out_handle = ctypes.windll.kernel32.GetStdHandle(STD_OUTPUT_HANDLE)
 
-STD_OUTPUT_HANDLE = -11
-std_out_handle = ctypes.windll.kernel32.GetStdHandle(STD_OUTPUT_HANDLE)
-
-
-def set_color(color, handle=std_out_handle):
-    bool = ctypes.windll.kernel32.SetConsoleTextAttribute(handle, color)
-    return bool
+#
+# def set_color(color, handle=std_out_handle):
+#     bool = ctypes.windll.kernel32.SetConsoleTextAttribute(handle, color)
+#     return bool
 
 
 def _exception_handle(func):
@@ -113,39 +113,33 @@ class Logger(object):
         self.close()
 
     @_exception_handle
-    def war(self, message, color=FOREGROUND_YELLOW):
+    def war(self, message):
         """
         :ex: warrning模式
         :param message: 输出消息
         :return:
         """
-        set_color(color)
         self.logger.warning(message)
-        set_color(FOREGROUND_WHITE)
         self.close()
 
     @_exception_handle
-    def error(self, message, color=FOREGROUND_RED):
+    def error(self, message):
         """
          :ex: error模式
          :param message: 输出消息， color: 输出颜色
          :return:
          """
-        set_color(color)
         self.logger.error(message)
-        set_color(FOREGROUND_WHITE)
         self.close()
 
     @_exception_handle
-    def cri(self, message, color=FOREGROUND_RED):
+    def cri(self, message):
         """
          :ex: cri模式
          :param message: 输出消息， color: 输出颜色
          :return:
          """
-        set_color(color)
         self.logger.critical(message)
-        set_color(FOREGROUND_WHITE)
         self.close()
 
     @_exception_handle
