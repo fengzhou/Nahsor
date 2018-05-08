@@ -224,7 +224,7 @@ def _har_format_validate(case):
 
 def validate_req_json(json_str, type='postman'):
     """
-    :ex:校验并格式化PostMan的Json字符串
+    :ex:校验并格式化PostMan和har格式的Json字符串
     :param json_str: str; type:postman/har
     :return:   成功:[{json1},{json1},{json1}]
                 失败: []
