@@ -71,8 +71,7 @@ def make_file(path):
 class Logger(object):
     def __init__(self, clevel=logging.INFO, Flevel=logging.DEBUG):
         # 创建日志文件
-        #path = os.getcwd()+"/app/logs/" + datetime.datetime.now().strftime("%Y-%m-%d") + ".log"  # 默认为logs/yyyy-mm-dd.logs
-        path = "../logs/" + datetime.datetime.now().strftime("%Y-%m-%d") + ".log"  # 默认为logs/yyyy-mm-dd.logs
+        path = os.getcwd()+"/app/logs/" + datetime.datetime.now().strftime("%Y-%m-%d") + ".log"  # 默认为logs/yyyy-mm-dd.logs
         make_file(path)
 
         # 设置日志文件路径/格式/日志级别
