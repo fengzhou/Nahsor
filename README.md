@@ -13,6 +13,8 @@ webhook地址：
 
     http://118.24.105.78:8080/jenkins/github-webhook/
 
+test webhook
+
 
 # 加油！
 
