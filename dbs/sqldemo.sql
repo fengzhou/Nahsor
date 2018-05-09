@@ -74,3 +74,30 @@ FROM
 LEFT JOIN t_testcass ON t_modules.id = t_testcass.moduleid
 -- WHERE t_project.productid = 2\
 group by t_modules.id;
+
+
+SELECT
+	t_testcass.id as testid,
+	(SELECT modules FROM t_modules WHERE id = t_testcass.moduleid) as modulename,
+	t_testcass.testname,
+	t_testcass.`explain`,
+	t_testcass.status,
+	t_testcass.leader,
+	t_testcass.remark,
+	t_testcass.createtime
+FROM
+	t_testcass
+LEFT JOIN t_modules ON t_testcass.moduleid = t_modules.id
+
+
+SELECT
+	moduleid,
+	testname,
+	testtype,
+	`explain`,
+	request,
+	validate,
+	extract,
+	leader,
+	remark
+FROM t_testcass WHERE id = 1;

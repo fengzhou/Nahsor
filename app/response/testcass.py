@@ -35,51 +35,50 @@ def getmodules():
     return jsonify(response)
 
 
-@bp.route("/addtest",methods=["POST"])
-def addtest():
+@bp.route("/addtcass", methods=["POST"])
+def addtcass():
     '''
     新增用例
-    {
-        "moduleid":"所属模块id",
-        "testname":"用例名称",
-        "explain":"描述",
-        "leader":"责任人",
-        "remark":"备注"
-    }
     '''
     dictdata = request.get_json()
     moduleid = dictdata["moduleid"]
     testname = dictdata["testname"]
-    explain = dictdata["explain"]
+    testtype = dictdata["testtype"]
+    requests = dictdata["request"]
+    validate = dictdata["validate"]
+    extract = dictdata["extract"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "insert into t_testcass values(null,'%s','%s','%s','%s','%s',null,null);" % (projectid,module,explain,leader,remark)
-    res = dbfucs.excute(sql)
+    sql = "insert into t_testcass values(null,'%s','%s',%s','%s','%s','%s','%s','%s',null,null);" % (moduleid,testname,testtype,requests,validate,extract,leader,remark)
     response = {}
-    response["code"] = 200
-    response["data"] = res
-    response["msg"] = "新增成功！！！"
+    data = dbfucs.excute(sql)
+    if data is True:
+        response["code"] = 200
+        response["msg"] = data
+    else:
+        response["code"] = 500
+        response["msg"] = data
     return jsonify(response)
 
 
-@bp.route("/querymodule",methods=["GET"])
-def querymodule():
+@bp.route("/querytcass",methods=["GET"])
+def querytcass():
     '''
-    查询模块列表
+    获取用例列表
+    编号	名称	所属模块	描述	执行状态	责任人	备注	创建时间
     '''
     sql = "SELECT\
-        t_modules.id as moduleid,\
-        t_modules.modules,\
-        t_modules.`explain`,\
-        (SELECT COUNT(*) FROM t_testcass WHERE t_testcass.moduleid = t_modules.id) AS cassnum,\
-        t_modules.leader,\
-        t_modules.remark,\
-        t_modules.createtime,\
-        t_modules.updatatime\
+        t_testcass.id as testid,\
+        (SELECT modules FROM t_modules WHERE id = t_testcass.moduleid) as modulename,\
+        t_testcass.testname,\
+        t_testcass.`explain`,\
+        t_testcass.status,\
+        t_testcass.leader,\
+        t_testcass.remark,\
+        t_testcass.createtime\
     FROM\
-        t_modules\
-    LEFT JOIN t_testcass ON t_modules.id = t_testcass.moduleid\
-    group by t_modules.id;"
+        t_testcass\
+    LEFT JOIN t_modules ON t_testcass.moduleid = t_modules.id"
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -88,15 +87,15 @@ def querymodule():
     return jsonify(response)
 
 
-@bp.route("/deletemodule",methods=["POST"])
-def deletemodule():
+@bp.route("/deletecass",methods=["POST"])
+def deletecass():
     '''
-    删除项目
+    删除testcass
     {"pid":1}
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
-    sql = "DELETE FROM `t_modules` WHERE (`id`='%s')" % pid
+    sql = "DELETE FROM `t_testcass` WHERE (`id`='%s')" % pid
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -105,25 +104,26 @@ def deletemodule():
     return jsonify(response)
 
 
-@bp.route("/readmodule",methods=["POST"])
-def readmodule():
+
+@bp.route("/readcass",methods=["POST"])
+def readcass():
     '''
-    读取项目信息
+    读取用例信息
     {"pid":1}
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
     sql = "SELECT\
-        t_modules.moduleid,\
-        t_modules.module,\
-        t_modules.`explain`,\
-        t_modules.leader,\
-        t_modules.remark,\
-        t_modules.moduleid\
-        FROM\
-        t_modules\
-        WHERE\
-        t_modules.id = %s" % pid
+        moduleid,\
+        testname,\
+        testtype,\
+        `explain`,\
+        request,\
+        validate,\
+        extract,\
+        leader,\
+        remark\
+    FROM t_testcass WHERE id = %s;" % pid
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -132,13 +132,13 @@ def readmodule():
     return jsonify(response)
 
 
-@bp.route("/updatamodule",methods=["POST"])
-def updatamodule():
+@bp.route("/updatacass",methods=["POST"])
+def updatacass():
     '''
-    更新产品信息
+    更新用例信息
     {
         "pid":2,
-        "module":"产品名称",
+        "product":"产品名称",
         "explain":"描述",
         "leader":"责任人",
         "remark":"备注"
@@ -147,17 +147,24 @@ def updatamodule():
     dictdata = request.get_json()
     pid = dictdata["pid"]
     moduleid = dictdata["moduleid"]
-    module = dictdata["module"]
-    explain = dictdata["explain"]
+    testname = dictdata["testname"]
+    testtype = dictdata["testtype"]
+    requests = dictdata["request"]
+    validate = dictdata["validate"]
+    extract = dictdata["extract"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "UPDATE `t_modules`\
+    sql = "UPDATE `t_testcass`\
         SET `moduleid` = '%s',\
-        `module` = '%s',\
-        `explain` = '%s',\
-        `leader` = '%s',\
+        `moduleid` = '%s',\
+        `testname` = '%s',\
+        `testtype` = '%s'\
+        `request` = '%s'\
+        `validate` = '%s'\
+        `extract` = '%s'\
+        `leader` = '%s'\
         `remark` = '%s'\
-        WHERE (`id` = '%s')" % (moduleid,module, explain, leader, remark, pid)
+        WHERE (`id` = '%s')" % (moduleid,testname,testtype,requests,validate,extract,leader,remark,pid)
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -166,24 +173,22 @@ def updatamodule():
     return jsonify(response)
 
 
-@bp.route("/runmodule",methods=["POST"])
-def runmodule():
-    '''
-    按模块执行所有用例
-    {"idlist":"1,2"}
-    '''
+
+
+@bp.route("/runtests", methods=["POST"])
+def runtests():
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "SELECT * FROM t_testcass WHERE moduleid in (%s)" % idlist
+    sql = "select testname,testtype,request,validate,extract from t_testcass where id in(%s);" % idlist
     res = dbfucs.query(sql)
     jsoncasss = []
     for test in res:
         jsoncasss.append(test)
     # print(jsoncasss)
     for i in collect.collect_db_cass(jsoncasss):
-        Logger.info("*" * 90)
-    Logger.info("共计[%d]条测试用例执行完成！" % len(jsoncasss))
-    Logger.info("*" * 90)
+        Logger().info("*" * 90)
+    Logger().info("共计[%d]条测试用例执行完成！" % len(jsoncasss))
+    Logger().info("*" * 90)
     response = {}
     response["code"] = 200
     response["msg"] = "成功！！！"
