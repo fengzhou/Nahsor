@@ -12,7 +12,7 @@ Logger = Logger()
 
 
 @bp.route("/getproject",methods=["GET"])
-def getmodule():
+def getproject():
     '''
     读取项目列表，这个接口是给新增模块等东西的时候，选择所属项目用的
     '''
@@ -36,9 +36,9 @@ def getmodule():
 @bp.route("/addmodule",methods=["POST"])
 def addmodule():
     '''
-    新增项目
+    新增模块
     {
-        "moduleid":"所属产品id",
+        "projectid":"所属产品id",
         "module":"项目名称",
         "explain":"描述",
         "leader":"责任人",

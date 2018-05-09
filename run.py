@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 __author__ = 'nahsor'
 from app import create_app
-from app.response import servers, products, projects
+from app.response import servers, products, projects, modules
 
 app = create_app("ProductionConfig")
 
