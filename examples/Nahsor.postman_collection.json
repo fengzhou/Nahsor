@@ -1,0 +1,487 @@
+{
+	"info": {
+		"name": "Nahsor",
+		"_postman_id": "d20882de-6d71-84a3-6974-bbc70280c12d",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "产品管理",
+			"description": "",
+			"item": [
+				{
+					"name": "addproduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"product\":\"Nahsor自动化测试平台\",\r\n        \"explain\":\"一个接口自动化测试平台，功能强大，很厉害就是了。\",\r\n        \"leader\":\"浪晋\",\r\n        \"remark\":\"这是例子\"\r\n    }"
+						},
+						"url": "http://127.0.0.1:8808/addproduct",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "deleteproduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pid\":3}"
+						},
+						"url": "http://127.0.0.1:8808/deleteproduct",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "queryproduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "http://127.0.0.1:8808/queryproduct",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "readproduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pid\":5}"
+						},
+						"url": "http://127.0.0.1:8808/readproduct",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "updataproduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"pid\":5,\r\n        \"product\":\"Nahsor自动化测试平台\",\r\n        \"explain\":\"一个接口自动化测试平台，功能强大，很厉害就是了\",\r\n        \"leader\":\"浪晋\",\r\n        \"remark\":\"这是例子\"\r\n    }"
+						},
+						"url": "http://127.0.0.1:8808/updataproduct",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "runproduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"idlist\":\"5\"}"
+						},
+						"url": "http://127.0.0.1:8808/runproduct",
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "项目管理",
+			"description": "",
+			"item": [
+				{
+					"name": "getproduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"product\":\"Nahsor自动化测试平台\",\r\n        \"explain\":\"一个接口自动化测试平台，功能强大，很厉害就是了。\",\r\n        \"leader\":\"浪晋\",\r\n        \"remark\":\"这是例子\"\r\n    }"
+						},
+						"url": "http://127.0.0.1:8808/getproduct",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "addproject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"productid\":\"5\",\r\n        \"project\":\"Nahsor自动化测试平台WEB端\",\r\n        \"explain\":\"功能强大，厉害的不行\",\r\n        \"leader\":\"浪晋\",\r\n        \"remark\":\"没有备注\"\r\n    }"
+						},
+						"url": "http://127.0.0.1:8808/addproject",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "queryproject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"productid\":\"5\",\r\n        \"project\":\"Nahsor自动化测试平台WEB端\",\r\n        \"explain\":\"功能强大，厉害的不行\",\r\n        \"leader\":\"浪晋\",\r\n        \"remark\":\"没有备注\"\r\n    }"
+						},
+						"url": "http://127.0.0.1:8808/queryproject",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "deleteproject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pid\":3}"
+						},
+						"url": "http://127.0.0.1:8808/deleteproject",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "readproject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pid\":5}"
+						},
+						"url": "http://127.0.0.1:8808/readproject",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "updataproject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pid\":5}"
+						},
+						"url": "http://127.0.0.1:8808/readproject",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "runproject",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "60b27821-fb1a-4351-b015-a43a50ce310f",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"idlist\":5}"
+						},
+						"url": "http://127.0.0.1:8808/runproject",
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "模块管理",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "用例管理",
+			"description": "",
+			"item": []
+		}
+	]
+}

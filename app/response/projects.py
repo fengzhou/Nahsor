@@ -30,11 +30,11 @@ def addproject():
     '''
     新增项目
     {
-        "productid":"所属产品id",
-        "project":"项目名称",
-        "explain":"描述",
-        "leader":"责任人",
-        "remark":"备注"
+        "productid":"5",
+        "project":"Nahsor自动化测试平台WEB端",
+        "explain":"功能强大，厉害的不行",
+        "leader":"浪晋",
+        "remark":"没有备注"
     }
     '''
     dictdata = request.get_json()
@@ -130,10 +130,11 @@ def updataproject():
     '''
     更新产品信息
     {
-        "pid":2,
-        "project":"产品名称",
-        "explain":"描述",
-        "leader":"责任人",
+        "pid":5,
+        "productid":5,
+        "project":"Nahsor自动化测试平台WEB端",
+        "explain":"功能强大，厉害的不行",
+        "leader":"浪晋",
         "remark":"备注"
     }
     '''

@@ -16,10 +16,10 @@ def addproduct():
     '''
     新增产品
     {
-        "product":"产品名称",
-        "explain":"描述",
-        "leader":"责任人",
-        "remark":"备注"
+        "product":"Nahsor自动化测试平台",
+        "explain":"一个接口自动化测试平台，功能强大，很厉害就是了。",
+        "leader":"浪晋",
+        "remark":"这是例子"
     }
     '''
     dictdata = request.get_json()
