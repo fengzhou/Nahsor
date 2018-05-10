@@ -112,12 +112,11 @@ def readmodule():
     dictdata = request.get_json()
     pid = dictdata["pid"]
     sql = "SELECT\
-        t_modules.moduleid,\
-        t_modules.module,\
+        t_modules.id,\
+        t_modules.modules,\
         t_modules.`explain`,\
         t_modules.leader,\
-        t_modules.remark,\
-        t_modules.moduleid\
+        t_modules.remark\
         FROM\
         t_modules\
         WHERE\
@@ -133,9 +132,10 @@ def readmodule():
 @bp.route("/updatamodule",methods=["POST"])
 def updatamodule():
     '''
-    更新产品信息
+    更新模块信息
     {
-        "pid":2,
+    	"pid":4,
+        "projectid":2,
         "module":"产品名称",
         "explain":"描述",
         "leader":"责任人",
@@ -144,18 +144,18 @@ def updatamodule():
     '''
     dictdata = request.get_json()
     pid = dictdata["pid"]
-    moduleid = dictdata["moduleid"]
+    projectid = dictdata["projectid"]
     module = dictdata["module"]
     explain = dictdata["explain"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
     sql = "UPDATE `t_modules`\
-        SET `moduleid` = '%s',\
-        `module` = '%s',\
+        SET `projectid` = '%s',\
+        `modules` = '%s',\
         `explain` = '%s',\
         `leader` = '%s',\
         `remark` = '%s'\
-        WHERE (`id` = '%s')" % (moduleid,module, explain, leader, remark, pid)
+        WHERE (`id` = '%s')" % (projectid,module, explain, leader, remark, pid)
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200

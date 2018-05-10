@@ -42,8 +42,6 @@ def collect_db_cass(jsoncasss):
     for test in jsoncasss:
         if not test:
             Logger().error("没有发现测试用例，结束用例执行！")
-        # test = dict_to_json(test)
-        # testcass = json_to_dict(test)
         try:
             runner = Runner(test)
             yield  runner.run_test()

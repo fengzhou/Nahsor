@@ -1,23 +1,17 @@
 # -*- coding:utf-8 -*-
 from app.utils.log import Logger
 from app.utils.exception import JSONDecodeError, ParamsException
+import json
+import pymysql
 
 
-def json_to_dict(json_str):
+def dict_to_dbjson(dict):
     '''
-    将json转换为dict
+    将dict转换为json，并转义为数据库所需要的格式
     '''
-    json = json_str.loads(json_str)
-    return json
-
-
-def dict_to_json(dict):
-    '''
-    将dict转换为json
-    '''
-    import json
-    json = json.dumps(json)
-    return json
+    json = json.dumps(dict)
+    value = pymysql.escape_string(json)
+    return value
 
 
 def _basic_format_validate(case):
@@ -51,7 +45,6 @@ def _basic_format_validate(case):
     :return: False失败,True成功
 
      """
-    import json
     if not isinstance(case, dict):
         try:
             case = json.loads(case, encoding="utf-8")
@@ -141,7 +134,6 @@ def _postman_format_validate(case):
      """
     reqs = []
     try:
-        import json
         postman_items = json.loads(case, encoding="utf-8")["item"]
         if postman_items is None:
             return []
@@ -177,7 +169,6 @@ def _har_format_validate(case):
         "get"
     ]
 
-    import json
     from urllib.parse import unquote_plus
 
     reqs = []

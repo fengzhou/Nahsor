@@ -8,6 +8,7 @@ from app import bp
 from app.utils import dbfucs
 from app.core import collect
 from app.utils.log import Logger
+from app.utils.jsonfuc import dict_to_dbjson
 Logger = Logger()
 
 
@@ -39,18 +40,33 @@ def getmodules():
 def addtcass():
     '''
     新增用例
+    {
+        "moduleid":1,
+        "testname":"测试用例名称",
+        "testtype":"testcass",
+        "explain":"用例描述",
+        "request":{},
+        "validate":[],
+        "extract":[],
+        "leader":"LangJin",
+        "remark":"备注信息"
+    }
     '''
     dictdata = request.get_json()
     moduleid = dictdata["moduleid"]
     testname = dictdata["testname"]
     testtype = dictdata["testtype"]
     explain = dictdata["explain"]
-    requests = dictdata["request"]
-    validate = dictdata["validate"]
-    extract = dictdata["extract"]
+    requests = dict_to_dbjson(dictdata["request"])
+    validate = dict_to_dbjson(dictdata["validate"])
+    extract = dict_to_dbjson(dictdata["extract"])
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "insert into t_testcass values(null,'%s','%s','%s','%s',%s,%s,%s,'%s','%s',null,null);" % (moduleid,testname,testtype,explain,requests,validate,extract,leader,remark)
+    sql = "insert into t_testcass \
+    (`moduleid`, `testname`, `testtype`, `explain`, \
+    `request`, `validate`, `extract`, `leader`, `remark`) \
+    values('%s','%s','%s','%s','%s','%s','%s','%s','%s');\
+    " % (moduleid,testname,testtype,explain,requests,validate,extract,leader,remark)
     response = {}
     data = dbfucs.excute(sql)
     if data is True:
@@ -73,13 +89,31 @@ def querytcass():
         (SELECT modules FROM t_modules WHERE id = t_testcass.moduleid) as modulename,\
         t_testcass.testname,\
         t_testcass.`explain`,\
-        t_testcass.status,\
+        (select t_reports.`status` from t_reports WHERE id = t_testcass.id order by id DESC limit 1) as `status`,\
         t_testcass.leader,\
         t_testcass.remark,\
         t_testcass.createtime\
     FROM\
         t_testcass\
-    LEFT JOIN t_modules ON t_testcass.moduleid = t_modules.id"
+    LEFT JOIN t_modules ON t_testcass.moduleid = t_modules.id\
+    LEFT JOIN t_reports ON t_reports.cassid = t_testcass.id"
+    res = dbfucs.query(sql)
+    response = {}
+    response["code"] = 200
+    response["data"] = res
+    response["msg"] = "查询成功！！！"
+    return jsonify(response)
+
+
+@bp.route("/getcassres",methods=["POST"])
+def getcassres():
+    '''
+    获取用例执行结果
+    {"pid":1}
+    '''
+    dictdata = request.get_json()
+    pid = dictdata["pid"]
+    sql = "select result from t_reports WHERE cassid = %s order by id DESC limit 1" % pid
     res = dbfucs.query(sql)
     response = {}
     response["code"] = 200
@@ -139,10 +173,15 @@ def updatacass():
     更新用例信息
     {
         "pid":2,
-        "product":"产品名称",
-        "explain":"描述",
-        "leader":"责任人",
-        "remark":"备注"
+        "moduleid":1,
+        "testname":"测试用例名称",
+        "testtype":"testcass",
+        "explain":"用例描述",
+        "request":{},
+        "validate":[],
+        "extract":[],
+        "leader":"LangJin",
+        "remark":"备注信息"
     }
     '''
     dictdata = request.get_json()
@@ -150,22 +189,23 @@ def updatacass():
     moduleid = dictdata["moduleid"]
     testname = dictdata["testname"]
     testtype = dictdata["testtype"]
-    requests = dictdata["request"]
-    validate = dictdata["validate"]
-    extract = dictdata["extract"]
+    explain = dictdata["explain"]
+    requests = dict_to_dbjson(dictdata["request"])
+    validate = dict_to_dbjson(dictdata["validate"])
+    extract = dict_to_dbjson(dictdata["extract"])
     leader = dictdata["leader"]
     remark = dictdata["remark"]
     sql = "UPDATE `t_testcass`\
         SET `moduleid` = '%s',\
-        `moduleid` = '%s',\
         `testname` = '%s',\
-        `testtype` = '%s'\
-        `request` = '%s'\
-        `validate` = '%s'\
-        `extract` = '%s'\
-        `leader` = '%s'\
+        `testtype` = '%s',\
+        `explain` = '%s',\
+        `request` = '%s',\
+        `validate` = '%s',\
+        `extract` = '%s',\
+        `leader` = '%s',\
         `remark` = '%s'\
-        WHERE (`id` = '%s')" % (moduleid,testname,testtype,requests,validate,extract,leader,remark,pid)
+        WHERE (`id` = '%s')" % (moduleid,testname,testtype,explain,requests,validate,extract,leader,remark,pid)
     res = dbfucs.excute(sql)
     response = {}
     response["code"] = 200
@@ -176,6 +216,7 @@ def updatacass():
 
 @bp.route("/runtests", methods=["POST"])
 def runtests():
+    '''{"idlist":"1,2"}'''
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
     sql = "select testname,testtype,request,validate,extract from t_testcass where id in(%s);" % idlist
@@ -185,9 +226,9 @@ def runtests():
         jsoncasss.append(test)
     # print(jsoncasss)
     for i in collect.collect_db_cass(jsoncasss):
-        Logger().info("*" * 90)
-    Logger().info("共计[%d]条测试用例执行完成！" % len(jsoncasss))
-    Logger().info("*" * 90)
+        Logger.info("*" * 90)
+    Logger.info("共计[%d]条测试用例执行完成！" % len(jsoncasss))
+    Logger.info("*" * 90)
     response = {}
     response["code"] = 200
     response["msg"] = "成功！！！"

@@ -3,7 +3,6 @@ from app.core.testutils import run_http_test
 from app.core.testutils import extract_global_values
 from app.core.testutils import get_global_values, get_validata_test
 from app.utils.log import Logger
-from app.utils.jsonfuc import json_to_dict
 
 Logger = Logger()
 extracts = {}

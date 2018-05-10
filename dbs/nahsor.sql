@@ -117,7 +117,6 @@ CREATE TABLE `t_testcass` (
   `testname` varchar(32) NOT NULL COMMENT '用例名称',
   `testtype` varchar(16) DEFAULT NULL COMMENT '用例类型',
   `explain` varchar(255) DEFAULT NULL COMMENT '用例描述',
-  `status` int(16) DEFAULT '0' COMMENT '执行状态，0：未执行   1：成功    2：失败',
   `request` json NOT NULL COMMENT '请求参数',
   `validate` json DEFAULT NULL COMMENT '校验参数',
   `extract` json DEFAULT NULL COMMENT '提取参数',
@@ -126,15 +125,15 @@ CREATE TABLE `t_testcass` (
   `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_testcass
 -- ----------------------------
-INSERT INTO `t_testcass` VALUES ('1', '1', 'tastcass1', 'testcass', '2333', '0', '{\"url\": \"http://127.0.0.1:2333/tes1t\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:51', '2018-05-09 18:15:51');
-INSERT INTO `t_testcass` VALUES ('2', '1', 'tastcass2', 'testcass', '2333', '0', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:55', '2018-05-09 18:15:55');
-INSERT INTO `t_testcass` VALUES ('3', '1', '测试流程', 'testsuite', '2333', '0', '{\"url\": \"http://127.0.0.1:2333/login\", \"json\": {\"password\": \"123456\", \"username\": \"admin\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"token\": \"r.json()[\\\"data\\\"]\"}]', 'Jin', null, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
-INSERT INTO `t_testcass` VALUES ('4', '1', '测试流程1', 'testsuite', '2333', '0', '{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$token\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()[\\\"code\\\"]\", \"200\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[]', 'Jin', null, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
+INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('1', '1', 'tastcass1', 'testcass', '2333', '{\"url\": \"http://127.0.0.1:2333/tes1t\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:51', '2018-05-09 18:15:51');
+INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('2', '1', 'tastcass2', 'testcass', '2333', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:55', '2018-05-09 18:15:55');
+INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('3', '1', '测试流程', 'testsuite', '2333', '{\"url\": \"http://127.0.0.1:2333/login\", \"json\": {\"password\": \"123456\", \"username\": \"admin\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"token\": \"r.json()[\\\"data\\\"]\"}]', 'Jin', NULL, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
+INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('4', '1', '测试流程1', 'testsuite', '2333', '{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$token\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()[\\\"code\\\"]\", \"200\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[]', 'Jin', NULL, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
 
 
 -- ----------------------------
