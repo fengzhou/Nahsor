@@ -136,7 +136,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"pid\":5}"
+							"raw": "{\"pid\":1}"
 						},
 						"url": "http://127.0.0.1:8808/readproduct"
 					},
@@ -273,7 +273,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\r\n        \"productid\":\"5\",\r\n        \"project\":\"Nahsor自动化测试平台WEB端\",\r\n        \"explain\":\"功能强大，厉害的不行\",\r\n        \"leader\":\"浪晋\",\r\n        \"remark\":\"没有备注\"\r\n    }"
+							"raw": "    {\r\n        \"productid\":\"1\",\r\n        \"project\":\"Nahsor自动化测试平台WEB端\",\r\n        \"explain\":\"功能强大，厉害的不行\",\r\n        \"leader\":\"浪晋\",\r\n        \"remark\":\"没有备注\"\r\n    }"
 						},
 						"url": "http://127.0.0.1:8808/addproject"
 					},
@@ -472,7 +472,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\r\n        \"projectid\":\"2\",\r\n        \"module\":\"项目名称\",\r\n        \"explain\":\"描述\",\r\n        \"leader\":\"责任人\",\r\n        \"remark\":\"备注\"\r\n    }"
+							"raw": "    {\r\n        \"projectid\":\"1\",\r\n        \"module\":\"测试模块\",\r\n        \"explain\":\"servers里面写的测试的接口\",\r\n        \"leader\":\"浪晋\",\r\n        \"remark\":\"没有备注\"\r\n    }"
 						},
 						"url": "http://127.0.0.1:8808/addmodule",
 						"description": ""
@@ -610,7 +610,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"moduleid\":1,\n\t\"testname\":\"测试用例名称\",\n\t\"testtype\":\"testcass\",\n\t\"explain\":\"用例描述\",\n\t\"request\":\"{\\\"test\\\":\\\"test\\\"}\",\n\t\"validate\":[],\n\t\"extract\":[],\n\t\"leader\":\"LangJin\",\n\t\"remark\":\"备注信息\"\n}"
+							"raw": "{\n\t\"moduleid\":1,\n\t\"testname\":\"test接口测试用例\",\n\t\"testtype\":\"testcass\",\n\t\"explain\":\"测试输入和输出是否一致\",\n\t\"request\":{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10},\n\t\"validate\":[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}],\n\t\"extract\":{},\n\t\"leader\":\"LangJin\",\n\t\"remark\":\"备注信息\"\n}"
 						},
 						"url": "http://127.0.0.1:8808/addtcass",
 						"description": ""
@@ -724,7 +724,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"idlist\":2}"
+							"raw": "{\"idlist\":10}"
 						},
 						"url": "http://127.0.0.1:8808/runtests",
 						"description": ""

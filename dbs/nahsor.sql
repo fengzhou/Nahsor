@@ -32,7 +32,7 @@ CREATE TABLE `t_config` (
 -- ----------------------------
 -- Records of t_config
 -- ----------------------------
-INSERT INTO `t_config` VALUES ('1', '[\"www.baidu.com\"]', '{\"content-type\": \"application/json\"}', '[\"POST\", \"GET\"]');
+-- INSERT INTO `t_config` VALUES ('1', '[\"www.baidu.com\"]', '{\"content-type\": \"application/json\"}', '[\"POST\", \"GET\"]');
 
 -- ----------------------------
 -- Table structure for t_modules
@@ -55,10 +55,10 @@ CREATE TABLE `t_modules` (
 -- ----------------------------
 -- Records of t_modules
 -- ----------------------------
-INSERT INTO `t_modules` VALUES ('1', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:01', '2018-05-03 14:55:01');
-INSERT INTO `t_modules` VALUES ('2', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:08', '2018-05-03 14:55:08');
-INSERT INTO `t_modules` VALUES ('3', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:09', '2018-05-03 14:55:09');
-INSERT INTO `t_modules` VALUES ('4', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:16', '2018-05-03 14:55:16');
+-- INSERT INTO `t_modules` VALUES ('1', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:01', '2018-05-03 14:55:01');
+-- INSERT INTO `t_modules` VALUES ('2', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:08', '2018-05-03 14:55:08');
+-- INSERT INTO `t_modules` VALUES ('3', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:09', '2018-05-03 14:55:09');
+-- INSERT INTO `t_modules` VALUES ('4', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:16', '2018-05-03 14:55:16');
 
 -- ----------------------------
 -- Table structure for t_product
@@ -79,8 +79,8 @@ CREATE TABLE `t_product` (
 -- ----------------------------
 -- Records of t_product
 -- ----------------------------
-INSERT INTO `t_product` VALUES ('1', '测试产品1', '描述', '责任人', '备注', '2018-05-03 13:11:04', '2018-05-03 13:11:04');
-INSERT INTO `t_product` VALUES ('2', '产品名称22', '描述1112', '责任人2', '备注1', '2018-05-06 04:26:20', '2018-05-06 04:26:20');
+-- INSERT INTO `t_product` VALUES ('1', '测试产品1', '描述', '责任人', '备注', '2018-05-03 13:11:04', '2018-05-03 13:11:04');
+-- INSERT INTO `t_product` VALUES ('2', '产品名称22', '描述1112', '责任人2', '备注1', '2018-05-06 04:26:20', '2018-05-06 04:26:20');
 
 -- ----------------------------
 -- Table structure for t_project
@@ -103,9 +103,9 @@ CREATE TABLE `t_project` (
 -- ----------------------------
 -- Records of t_project
 -- ----------------------------
-INSERT INTO `t_project` VALUES ('1', '2', '项目名称1', '描述', '负责人', '备注', '2018-05-03 13:59:35', '2018-05-03 13:59:35');
-INSERT INTO `t_project` VALUES ('2', '2', '项目名称2', '描述', '负责人', '备注', '2018-05-03 13:59:36', '2018-05-03 13:59:36');
-INSERT INTO `t_project` VALUES ('3', '1', '项目名称3', '描述', '负责人', '备注', '2018-05-03 13:59:42', '2018-05-03 13:59:42');
+-- INSERT INTO `t_project` VALUES ('1', '2', '项目名称1', '描述', '负责人', '备注', '2018-05-03 13:59:35', '2018-05-03 13:59:35');
+-- INSERT INTO `t_project` VALUES ('2', '2', '项目名称2', '描述', '负责人', '备注', '2018-05-03 13:59:36', '2018-05-03 13:59:36');
+-- INSERT INTO `t_project` VALUES ('3', '1', '项目名称3', '描述', '负责人', '备注', '2018-05-03 13:59:42', '2018-05-03 13:59:42');
 
 -- ----------------------------
 -- Table structure for t_testcass
@@ -130,10 +130,10 @@ CREATE TABLE `t_testcass` (
 -- ----------------------------
 -- Records of t_testcass
 -- ----------------------------
-INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('1', '1', 'tastcass1', 'testcass', '2333', '{\"url\": \"http://127.0.0.1:2333/tes1t\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:51', '2018-05-09 18:15:51');
-INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('2', '1', 'tastcass2', 'testcass', '2333', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:55', '2018-05-09 18:15:55');
-INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('3', '1', '测试流程', 'testsuite', '2333', '{\"url\": \"http://127.0.0.1:2333/login\", \"json\": {\"password\": \"123456\", \"username\": \"admin\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"token\": \"r.json()[\\\"data\\\"]\"}]', 'Jin', NULL, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
-INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('4', '1', '测试流程1', 'testsuite', '2333', '{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$token\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()[\\\"code\\\"]\", \"200\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[]', 'Jin', NULL, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
+-- INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('1', '1', 'tastcass1', 'testcass', '2333', '{\"url\": \"http://127.0.0.1:2333/tes1t\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:51', '2018-05-09 18:15:51');
+-- INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('2', '1', 'tastcass2', 'testcass', '2333', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:55', '2018-05-09 18:15:55');
+-- INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('3', '1', '测试流程', 'testsuite', '2333', '{\"url\": \"http://127.0.0.1:2333/login\", \"json\": {\"password\": \"123456\", \"username\": \"admin\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"token\": \"r.json()[\\\"data\\\"]\"}]', 'Jin', NULL, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
+-- INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('4', '1', '测试流程1', 'testsuite', '2333', '{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$token\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()[\\\"code\\\"]\", \"200\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[]', 'Jin', NULL, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
 
 
 -- ----------------------------
