@@ -135,3 +135,17 @@ INSERT INTO `t_testcass` VALUES ('1', '1', 'tastcass1', 'testcass', '2333', '0',
 INSERT INTO `t_testcass` VALUES ('2', '1', 'tastcass2', 'testcass', '2333', '0', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:55', '2018-05-09 18:15:55');
 INSERT INTO `t_testcass` VALUES ('3', '1', '测试流程', 'testsuite', '2333', '0', '{\"url\": \"http://127.0.0.1:2333/login\", \"json\": {\"password\": \"123456\", \"username\": \"admin\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"token\": \"r.json()[\\\"data\\\"]\"}]', 'Jin', null, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
 INSERT INTO `t_testcass` VALUES ('4', '1', '测试流程1', 'testsuite', '2333', '0', '{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$token\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()[\\\"code\\\"]\", \"200\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[]', 'Jin', null, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
+
+
+-- ----------------------------
+-- Table structure for t_reports
+-- ----------------------------
+DROP TABLE IF EXISTS `t_reports`;
+CREATE TABLE `t_reports` (
+  `id` int(16) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `cassid` int(16) NOT NULL COMMENT '用例id',
+  `status` int(8) DEFAULT NULL COMMENT '状态，0：成功 1：失败 2：报错',
+  `result` varchar(255) DEFAULT NULL COMMENT '执行结果',
+  `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '运行时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
