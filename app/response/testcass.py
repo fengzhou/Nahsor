@@ -44,12 +44,13 @@ def addtcass():
     moduleid = dictdata["moduleid"]
     testname = dictdata["testname"]
     testtype = dictdata["testtype"]
+    explain = dictdata["explain"]
     requests = dictdata["request"]
     validate = dictdata["validate"]
     extract = dictdata["extract"]
     leader = dictdata["leader"]
     remark = dictdata["remark"]
-    sql = "insert into t_testcass values(null,'%s','%s',%s','%s','%s','%s','%s','%s',null,null);" % (moduleid,testname,testtype,requests,validate,extract,leader,remark)
+    sql = "insert into t_testcass values(null,'%s','%s','%s','%s',%s,%s,%s,'%s','%s',null,null);" % (moduleid,testname,testtype,explain,requests,validate,extract,leader,remark)
     response = {}
     data = dbfucs.excute(sql)
     if data is True:
@@ -171,8 +172,6 @@ def updatacass():
     response["data"] = res
     response["msg"] = "更新成功！！！"
     return jsonify(response)
-
-
 
 
 @bp.route("/runtests", methods=["POST"])
