@@ -329,8 +329,8 @@ var AppRoutingModule = /** @class */ (function () {
     }
     AppRoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(routes, { useHash: true })],
-            exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */]]
+            imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* RouterModule */].forRoot(routes, { useHash: true })],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* RouterModule */]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -368,11 +368,15 @@ module.exports = "<nz-layout>\n  <nz-sider nzCollapsible [(nzCollapsed)]=\"isCol
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__page5_page5_component__ = __webpack_require__("./src/app/page5/page5.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__page6_page6_component__ = __webpack_require__("./src/app/page6/page6.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__page7_page7_component__ = __webpack_require__("./src/app/page7/page7.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
 
@@ -384,8 +388,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(router) {
+        this.router = router;
         this.items = [
             {
                 index: 1,
@@ -433,12 +439,18 @@ var AppComponent = /** @class */ (function () {
         this.isCollapsed = false;
     }
     AppComponent_1 = AppComponent;
+    AppComponent.prototype.ngOnInit = function () {
+        this.gotoHeroes();
+    };
     AppComponent.prototype.getEvent = function (data) {
         for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
             var i = _a[_i];
             i.selected = false;
         }
         this.items[data].selected = true;
+    };
+    AppComponent.prototype.gotoHeroes = function () {
+        this.router.navigate(['/page1']);
     };
     AppComponent.prototype.openChange = function (idx) {
     };
@@ -462,7 +474,8 @@ var AppComponent = /** @class */ (function () {
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_9__angular_router__["a" /* Router */]])
     ], AppComponent);
     return AppComponent;
     var AppComponent_1;
