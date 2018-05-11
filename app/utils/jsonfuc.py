@@ -9,8 +9,8 @@ def dict_to_dbjson(dict):
     '''
     将dict转换为json，并转义为数据库所需要的格式
     '''
-    json = json.dumps(dict)
-    value = pymysql.escape_string(json)
+    t_json = json.dumps(dict)
+    value = pymysql.escape_string(t_json)
     return value
 
 

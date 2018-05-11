@@ -28,13 +28,13 @@ class Runner(object):
                 execlist = get_global_values(request)
                 if len(execlist) != 0:
                     for execkey in execlist:
-                        print("execkey:",execkey)
+                        # print("execkey:",execkey)
                         exec(execkey)
                 r = run_http_test(testname, request)
                 execlist = extract_global_values(extract)
                 if len(execlist) != 0:
                     for execkey in execlist:
-                        print("execkey:",execkey)
+                        # print("execkey:",execkey)
                         exec(execkey)
             else:
                 r = run_http_test(testname, request)
