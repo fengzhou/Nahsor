@@ -610,7 +610,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"moduleid\":1,\n\t\"testname\":\"test接口测试用例\",\n\t\"testtype\":\"testcass\",\n\t\"explain\":\"测试输入和输出是否一致\",\n\t\"request\":{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10},\n\t\"validate\":[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}],\n\t\"extract\":{},\n\t\"leader\":\"LangJin\",\n\t\"remark\":\"备注信息\"\n}"
+							"raw": "{\n\t\"moduleid\":1,\n\t\"testname\":\"接口测试用例2\",\n\t\"testtype\":\"testsuite\",\n\t\"explain\":\"传入token\",\n\t\"request\":{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$token\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10},\n\t\"validate\":[{\"Equal\": [\"r.status_code\", \"200\"]}],\n\t\"extract\":[],\n\t\"leader\":\"LangJin\",\n\t\"remark\":\"备注信息\"\n}"
 						},
 						"url": "http://127.0.0.1:8808/addtcass",
 						"description": ""
@@ -724,7 +724,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\"idlist\":10}"
+							"raw": "{\"idlist\":\"9,10\"}"
 						},
 						"url": "http://127.0.0.1:8808/runtests",
 						"description": ""
