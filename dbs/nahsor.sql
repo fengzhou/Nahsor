@@ -32,7 +32,6 @@ CREATE TABLE `t_config` (
 -- ----------------------------
 -- Records of t_config
 -- ----------------------------
--- INSERT INTO `t_config` VALUES ('1', '[\"www.baidu.com\"]', '{\"content-type\": \"application/json\"}', '[\"POST\", \"GET\"]');
 
 -- ----------------------------
 -- Table structure for t_modules
@@ -50,15 +49,12 @@ CREATE TABLE `t_modules` (
   PRIMARY KEY (`id`),
   KEY `modules` (`modules`),
   KEY `project` (`projectid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_modules
 -- ----------------------------
--- INSERT INTO `t_modules` VALUES ('1', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:01', '2018-05-03 14:55:01');
--- INSERT INTO `t_modules` VALUES ('2', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:08', '2018-05-03 14:55:08');
--- INSERT INTO `t_modules` VALUES ('3', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:09', '2018-05-03 14:55:09');
--- INSERT INTO `t_modules` VALUES ('4', '1', '测试模块', '描述', '责任人', '备注', '2018-05-03 14:55:16', '2018-05-03 14:55:16');
+INSERT INTO `t_modules` VALUES ('1', '1', '测试模块', 'servers里面写的测试的接口', '浪晋', '没有备注', '2018-05-11 05:43:47', '2018-05-11 05:43:47');
 
 -- ----------------------------
 -- Table structure for t_product
@@ -74,13 +70,12 @@ CREATE TABLE `t_product` (
   `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `product` (`product`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_product
 -- ----------------------------
--- INSERT INTO `t_product` VALUES ('1', '测试产品1', '描述', '责任人', '备注', '2018-05-03 13:11:04', '2018-05-03 13:11:04');
--- INSERT INTO `t_product` VALUES ('2', '产品名称22', '描述1112', '责任人2', '备注1', '2018-05-06 04:26:20', '2018-05-06 04:26:20');
+INSERT INTO `t_product` VALUES ('1', 'Nahsor自动化测试平台', '一个接口自动化测试平台，功能强大，很厉害就是了。', '浪晋', '这是例子', '2018-05-11 05:41:08', '2018-05-11 05:41:08');
 
 -- ----------------------------
 -- Table structure for t_project
@@ -98,14 +93,29 @@ CREATE TABLE `t_project` (
   PRIMARY KEY (`id`),
   KEY `project` (`project`),
   KEY `product` (`productid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of t_project
 -- ----------------------------
--- INSERT INTO `t_project` VALUES ('1', '2', '项目名称1', '描述', '负责人', '备注', '2018-05-03 13:59:35', '2018-05-03 13:59:35');
--- INSERT INTO `t_project` VALUES ('2', '2', '项目名称2', '描述', '负责人', '备注', '2018-05-03 13:59:36', '2018-05-03 13:59:36');
--- INSERT INTO `t_project` VALUES ('3', '1', '项目名称3', '描述', '负责人', '备注', '2018-05-03 13:59:42', '2018-05-03 13:59:42');
+INSERT INTO `t_project` VALUES ('1', '1', 'Nahsor自动化测试平台WEB端', '功能强大，厉害的不行', '浪晋', '没有备注', '2018-05-11 05:42:30', '2018-05-11 05:42:30');
+
+-- ----------------------------
+-- Table structure for t_reports
+-- ----------------------------
+DROP TABLE IF EXISTS `t_reports`;
+CREATE TABLE `t_reports` (
+  `id` int(16) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `cassid` int(16) NOT NULL COMMENT '用例id',
+  `status` int(8) DEFAULT NULL COMMENT '状态，0：成功 1：失败 2：报错',
+  `result` varchar(255) DEFAULT NULL COMMENT '执行结果',
+  `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '运行时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of t_reports
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for t_testcass
@@ -125,26 +135,11 @@ CREATE TABLE `t_testcass` (
   `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '创建时间',
   `updatatime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_testcass
 -- ----------------------------
--- INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('1', '1', 'tastcass1', 'testcass', '2333', '{\"url\": \"http://127.0.0.1:2333/tes1t\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:51', '2018-05-09 18:15:51');
--- INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('2', '1', 'tastcass2', 'testcass', '2333', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"201\"]}]', '{}', 'Jin', '2333', '2018-05-09 18:15:55', '2018-05-09 18:15:55');
--- INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('3', '1', '测试流程', 'testsuite', '2333', '{\"url\": \"http://127.0.0.1:2333/login\", \"json\": {\"password\": \"123456\", \"username\": \"admin\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"token\": \"r.json()[\\\"data\\\"]\"}]', 'Jin', NULL, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
--- INSERT INTO `nahsor`.`t_testcass` (`id`, `moduleid`, `testname`, `testtype`, `explain`, `request`, `validate`, `extract`, `leader`, `remark`, `createtime`, `updatatime`) VALUES ('4', '1', '测试流程1', 'testsuite', '2333', '{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$token\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()[\\\"code\\\"]\", \"200\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '[]', 'Jin', NULL, '2018-05-09 18:15:55', '2018-05-09 18:15:55');
-
-
--- ----------------------------
--- Table structure for t_reports
--- ----------------------------
-DROP TABLE IF EXISTS `t_reports`;
-CREATE TABLE `t_reports` (
-  `id` int(16) NOT NULL AUTO_INCREMENT COMMENT 'id',
-  `cassid` int(16) NOT NULL COMMENT '用例id',
-  `status` int(8) DEFAULT NULL COMMENT '状态，0：成功 1：失败 2：报错',
-  `result` varchar(255) DEFAULT NULL COMMENT '执行结果',
-  `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '运行时间',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+INSERT INTO `t_testcass` VALUES ('1', '1', 'test接口测试用例', 'testcass', '测试输入和输出是否一致', '{\"url\": \"http://127.0.0.1:2333/test\", \"json\": {\"aaa\": \"bbb\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.json()\", \"request[\\\"json\\\"]\"]}, {\"Equal\": [\"r.status_code\", \"200\"]}]', '{}', 'LangJin', '备注信息', '2018-05-11 17:06:52', '2018-05-11 17:06:52');
+INSERT INTO `t_testcass` VALUES ('2', '1', '接口测试用例1', 'testsuite', '获取token', '{\"url\": \"http://127.0.0.1:2333/login\", \"json\": {\"password\": \"123456\", \"username\": \"admin\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[{\"token\": \"r.json()[\\\"data\\\"]\"}]', 'LangJin', '备注信息', '2018-05-11 17:06:52', '2018-05-11 17:06:52');
+INSERT INTO `t_testcass` VALUES ('3', '1', '接口测试用例2', 'testsuite', '传入token', '{\"url\": \"http://127.0.0.1:2333/chicktoken\", \"json\": {\"token\": \"$token\"}, \"method\": \"POST\", \"headers\": {\"Content-Type\": \"application/json\"}, \"timeout\": 10}', '[{\"Equal\": [\"r.status_code\", \"200\"]}]', '[]', 'LangJin', '备注信息', '2018-05-11 17:06:54', '2018-05-11 17:06:54');
