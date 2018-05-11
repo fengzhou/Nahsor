@@ -219,7 +219,7 @@ def runtests():
     '''{"idlist":"1,2"}'''
     dictdata = request.get_json()
     idlist = dictdata["idlist"]
-    sql = "select testname,testtype,request,validate,extract from t_testcass where id in(%s);" % idlist
+    sql = "select id,testname,testtype,request,validate,extract from t_testcass where id in(%s);" % idlist
     res = dbfucs.query(sql)
     jsoncasss = []
     for test in res:

@@ -108,7 +108,9 @@ CREATE TABLE `t_reports` (
   `id` int(16) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `cassid` int(16) NOT NULL COMMENT '用例id',
   `status` int(8) DEFAULT NULL COMMENT '状态，0：成功 1：失败 2：报错',
+  `runtime` varchar(16) DEFAULT NULL COMMENT '接口运行的耗时',
   `result` varchar(255) DEFAULT NULL COMMENT '执行结果',
+  `validate` varchar(255) DEFAULT NULL COMMENT '校验结果',
   `createtime` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT '运行时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
