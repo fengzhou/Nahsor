@@ -1,3 +1,4 @@
 flask==0.12.2
 pymysql==0.8.0
 requests==2.18.4
+lask-cors==3.0.4
