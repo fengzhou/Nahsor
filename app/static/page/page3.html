@@ -1,1 +1,48 @@
-<div><h1>3</h1></div>
+<div class="content page2">
+    <div class="projectManager table-responsive">
+        <table class="table table-bordered">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>名称</th>
+                    <th>描述</th>
+                    <th>模块数量</th>
+                    <th>用例数量</th>
+                    <th>责任人</th>
+                    <th>备注</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    (function page2Init(){
+        $.get("http://127.0.0.1:8808/queryproject",function(data){
+            // debugger;
+            if(data&&data.code == 200){
+                for(let i of data.data){
+                    let cassnum = i.cassnum;
+                    let createtime = i.createtime;
+                    let explain = i.explain;
+                    let modulenum = i.modulenum;
+                    let project = i.project;
+                    let leader = i.leader;
+                    let remark = i.remark;
+                    let projectid = i.projectid;
+                    let tableBtn = '<button class="btn btn-link btn-sm">执行</button><button class="btn btn-link btn-sm">修改</button><button class="btn btn-link btn-sm">删除</button>'; 
+                    let tr = $("<tr><td>"+projectid+"</td><td>"+project+"</td><td>"+explain+"</td><td>"+modulenum+"</td><td>"+cassnum+"</td><td>"+leader+"</td><td>"+remark+"</td><td>"+createtime+"</td><td>"+tableBtn+"</td></tr>")
+                    
+                    $(".page2 .table tbody").append(tr);
+                }
+            }
+        });
+        
+        
+    })();
+</script>
