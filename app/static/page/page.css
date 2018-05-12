@@ -1,0 +1,37 @@
+.content{
+    height: auto;
+    width: 100%;
+}
+.topBox{
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    min-height: 400px;
+    min-width: 1020px;
+    width: auto;
+}
+.bottomBox{
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    min-height: 400px;
+    min-width: 1020px;
+    width: auto;
+}
+.box1{
+    float: left;
+    margin-right: 10px;
+    height: 400px;
+    width: 49%;
+}
+.box2{
+    float: left;
+    margin-left: 10px;
+    height: 400px;
+    width: 49%;
+}
+.chartBody{
+    background: #FFF;
+}
