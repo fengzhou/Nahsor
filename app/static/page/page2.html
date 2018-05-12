@@ -23,23 +23,20 @@
 </div>
 <script>
     (function page2Init(){
-        $.get("http://118.24.105.78:8808/queryproduct",function(data){
-            debugger;
+        $.get("http://127.0.0.1:8808/queryproduct",function(data){
+            // debugger;
             if(data&&data.code == 200){
                 for(let i of data.data){
-                    
                     let jectnum = i.jectnum;
                     let product = i.product;
                     let explain = i.explain;
-                    let leader = i.leader;
                     let modulenum = i.modulenum;
                     let productid = i.productid;
+                    let leader = i.leader;
                     let remark = i.remark;
                     let createtime = i.createtime;
-                    
-                    let tableBtn = '<button class="btn btn-link btn-sm">执行</button><button class="btn btn-link btn-sm">修改</button><button class="btn btn-link btn-sm">删除</button>';
-                    
-                    let tr = $("<tr><td>"+jectnum+"</td><td>"+product+"</td><td>"+explain+"</td><td>"+leader+"</td><td>"+modulenum+"</td><td>"+productid+"</td><td>"+remark+"</td><td>"+createtime+"</td><td>"+tableBtn+"</td></tr>")
+                    let tableBtn = '<button class="btn btn-link btn-sm">执行</button><button class="btn btn-link btn-sm">修改</button><button class="btn btn-link btn-sm">删除</button>'; 
+                    let tr = $("<tr><td>"+productid+"</td><td>"+product+"</td><td>"+explain+"</td><td>"+jectnum+"</td><td>"+modulenum+"</td><td>"+leader+"</td><td>"+remark+"</td><td>"+createtime+"</td><td>"+tableBtn+"</td></tr>")
                     
                     $(".page2 .table tbody").append(tr);
                 }
