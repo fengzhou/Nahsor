@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>testCaseManager</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <h1><i>LOGO</i></h1>
+            <i>name</i>
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active" index="1"><a href="#">首页</a></li>
+                        <li index="2"><a href="#">产品管理</a></li>
+                        <li index="3"><a href="#">项目管理</a></li>
+                        <li index="4"><a href="#">模块管理</a></li>
+                        <li index="5"><a href="#">用例管理</a></li>
+                        <li index="6"><a href="#">测试报告</a></li>
+                        <li index="7"><a href="#">公共配置</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="rightBox">
+           <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="title panel-title">首页</h3>
+                    <button type="button" class="userBtn btn btn-default btn-xs">
+                        <span class="glyphicon glyphicon-user"></span> User
+                    </button>
+                </div>
+                <div class="panel-body importPage">
+                
+                </div>
+            </div>
+            <div>
+                <ol class="breadcrumb bottomInfo">
+                    <li class="active">testCaseManager系统 v0.0.1</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        (function init(){
+            var pageNav = [
+                "./page/page1.html",
+                "./page/page2.html",
+                "./page/page3.html",
+                "./page/page4.html",
+                "./page/page5.html",
+                "./page/page6.html",
+                "./page/page7.html"
+            ]
+
+            $.get(pageNav[0],function(data){
+                $(".importPage").html(data);
+            })
+            
+            $(".nav li").on("click",function(){
+                if($(this).attr("class") != "active"){
+                    $(this).addClass("active");
+                    $(this).siblings().removeClass("active");
+                    let showTitle = $(this).text();
+                    $(".title").text(showTitle);
+                    
+                    let index = parseInt($(this).attr("index"))-1;
+                    let url;
+                    
+                    for(let i of pageNav){
+                        if(i == pageNav[index]){
+                            url = i;
+                        } 
+                    }
+                    
+                    $.get(url,function(data){
+                        $(".importPage").html(data);
+                    })
+                }
+            });
+            
+            
+        })();
+    </script>
+</body>
