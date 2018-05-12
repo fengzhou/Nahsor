@@ -10,7 +10,21 @@ html,body{
     width: 10%;
     height: 100%;
     text-align: center;
-    background: #222;
+    background: #f69941;
+}
+.menu a{
+    color: #FFF;
+}
+.menu a:hover{
+    color: #f69941;;
+}
+.navbar{
+    background: #f69941;
+    border-color: #f69941;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+    color: #fff;
+    background-color: #f19e78;
 }
 .menu i{
     color: #FFF;
@@ -43,4 +57,24 @@ html,body{
     text-align: center;
     margin-bottom: 0;
     background: #fff;
+}
+.logo{
+    background-image: url(../img/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: 65% 0;
+    background-size: 160%;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+.panel-primary{
+    border-color: #777;
+}
+.panel-primary h3{
+    color: #777;
+}
+.panel-primary>.panel-heading{
+    background: #FFF;
+    border-color: #CCC;
 }
