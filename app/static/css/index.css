@@ -1,3 +1,6 @@
+html,body{
+    overflow: hidden;
+}
 .container{
     height: 100%;
 }
@@ -17,6 +20,7 @@
     width: 90%;
     height: 100%;
     left: 10%;
+    overflow: auto;
 }
 .userBtn{
     position: absolute;
@@ -24,12 +28,16 @@
     margin-right: 15px;
     margin-top: -20px;
 }
-.panel-primary{
-    height: 95%;
+.master{
+    height:920px;
     background: #ececec;
+    overflow: hidden;
 }
 .panel{
     margin-bottom: 0;
+}
+.importPage{
+    overflow: hidden;
 }
 .bottomInfo{
     text-align: center;
