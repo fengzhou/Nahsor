@@ -71,7 +71,6 @@ def queryproject():
         t_project\
     LEFT JOIN t_modules ON t_project.id = t_modules.projectid\
     LEFT JOIN t_testcass ON t_modules.id = t_testcass.moduleid\
-    -- WHERE t_project.productid = 2\
     group by t_project.id;"
     res = dbfucs.query(sql)
     response = {}
