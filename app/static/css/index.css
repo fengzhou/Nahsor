@@ -10,7 +10,11 @@ html,body{
     width: 12%;
     height: 100%;
     text-align: center;
-    background: #f69941;
+    background-color: rgba(246, 153, 65,0.6);
+    background-image: url("../img/nav1.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 650%;
 }
 .menu a{
     color: #FFF;
@@ -19,8 +23,8 @@ html,body{
     color: #f69941;;
 }
 .navbar{
-    background: #f69941;
-    border-color: #f69941;
+    background: rgba(246, 153, 65,0.3);
+    border-color: rgba(246, 153, 65,0.3);
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
     color: #fff;
