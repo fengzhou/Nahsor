@@ -7,7 +7,7 @@ html,body{
 .menu{
     position: absolute;
     left: 0;
-    width: 10%;
+    width: 12%;
     height: 100%;
     text-align: center;
     background: #f69941;
@@ -31,16 +31,19 @@ html,body{
 }
 .rightBox{
     position: absolute;
-    width: 90%;
+    width: 88%;
     height: 100%;
-    left: 10%;
+    left: 12%;
     overflow: auto;
+}
+.headTitle{
+    line-height: 70px;
 }
 .userBtn{
     position: absolute;
     right: 0;
-    margin-right: 15px;
-    margin-top: -20px;
+    margin-right: 30px;
+    margin-top: -50px;
 }
 .master{
     height:920px;
